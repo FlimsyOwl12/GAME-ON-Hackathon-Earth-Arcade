@@ -1,0 +1,224 @@
+[gd_scene load_steps=24 format=3 uid="uid://3yt3n0n3h1x7"]
+
+[ext_resource type="Texture2D" uid="uid://26q0w5pjkpc4" path="res://Assets/Scenes/Homepage/SampleBackground.jpg" id="1_nbdjj"]
+[ext_resource type="Script" uid="uid://cpb63otx13cxm" path="res://Assets/Scripts/MainMenuBGMusic.gd" id="1_nlnxk"]
+[ext_resource type="Texture2D" uid="uid://dtkjjhkbsii6w" path="res://Assets/Scenes/Homepage/Earth1.png" id="2_3nx0c"]
+[ext_resource type="Script" uid="uid://7x1yb4w5wapr" path="res://Assets/Scripts/Earth1_Rotation.gd" id="3_280xq"]
+[ext_resource type="Texture2D" uid="uid://d1loachrsrhr1" path="res://Assets/Scenes/Homepage/PlayButton.PNG" id="4_3nx0c"]
+[ext_resource type="Texture2D" uid="uid://b8ow24k67j8k" path="res://Assets/Scenes/Homepage/OptionButton.PNG" id="4_isecm"]
+[ext_resource type="Texture2D" uid="uid://be2qu6v3mv5eu" path="res://Assets/Scenes/Homepage/ExitButton.PNG" id="4_ksr66"]
+[ext_resource type="Texture2D" uid="uid://f5nc1j11kwrs" path="res://Assets/Scenes/Homepage/PlayButtonPressed.PNG" id="5_15b3v"]
+[ext_resource type="FontFile" uid="uid://c147if7tplg4j" path="res://Assets/Fonts/ARCADECLASSIC.TTF" id="5_c5xtv"]
+[ext_resource type="Texture2D" uid="uid://b6u1j8qcowha0" path="res://Assets/Scenes/Homepage/OptionButtonPressed.PNG" id="5_d6s3x"]
+[ext_resource type="Texture2D" uid="uid://cdg0eby3gkqob" path="res://Assets/Scenes/Homepage/ExitButtonPressed.PNG" id="5_jf6a2"]
+[ext_resource type="Texture2D" uid="uid://bvtv0ok5nqf60" path="res://Assets/Scenes/Homepage/vines.PNG" id="6_3nx0c"]
+[ext_resource type="Texture2D" uid="uid://c0y06v5tsrn4x" path="res://Assets/Scenes/Homepage/Title.png" id="11_d6s3x"]
+[ext_resource type="AudioStream" uid="uid://ca1scusyma8yn" path="res://Assets/SoundEffects/CLICKMenu.mp3" id="12_ksr66"]
+[ext_resource type="AudioStream" uid="uid://dbsft6mm6qnnf" path="res://Assets/BackgroundMusic/RetroBGMusic.ogg" id="14_x7wnk"]
+[ext_resource type="Texture2D" uid="uid://p5i86hij3360" path="res://Assets/Scenes/Homepage/OptionBoard.png" id="15_x7wnk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbdjj"]
+texture = ExtResource("1_nbdjj")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nlnxk"]
+atlas = ExtResource("4_ksr66")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x7wnk"]
+atlas = ExtResource("5_jf6a2")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ksr66"]
+atlas = ExtResource("4_isecm")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_jf6a2"]
+atlas = ExtResource("5_d6s3x")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_isecm"]
+atlas = ExtResource("4_3nx0c")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_d6s3x"]
+atlas = ExtResource("5_15b3v")
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_nlnxk")
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("14_x7wnk")
+
+[node name="Background" type="Panel" parent="."]
+clip_children = 2
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 1.0
+anchor_bottom = 1.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_nbdjj")
+
+[node name="Earth1" type="Sprite2D" parent="Background"]
+position = Vector2(893, 605)
+scale = Vector2(1.45652, 1.45652)
+texture = ExtResource("2_3nx0c")
+script = ExtResource("3_280xq")
+
+[node name="EXIT" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.729
+anchor_right = 0.235
+anchor_bottom = 0.986
+offset_left = 1.0
+offset_top = -0.0720215
+offset_right = 99.28
+offset_bottom = 73.142
+scale = Vector2(0.731, 0.695)
+texture_normal = SubResource("AtlasTexture_nlnxk")
+texture_pressed = SubResource("AtlasTexture_x7wnk")
+
+[node name="Label" type="Label" parent="EXIT"]
+layout_mode = 0
+offset_left = 20.755
+offset_top = 81.32
+offset_right = 237.755
+offset_bottom = 227.32
+scale = Vector2(1.035, 0.86)
+theme_override_font_sizes/font_size = 106
+text = "EXIT"
+
+[node name="ExitClickSound" type="AudioStreamPlayer" parent="EXIT"]
+stream = ExtResource("12_ksr66")
+volume_db = 5.0
+
+[node name="OPTION" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.5
+anchor_right = 0.239
+anchor_bottom = 0.77
+offset_left = 1.0
+offset_top = 0.559998
+offset_right = 101.672
+offset_bottom = 76.6
+scale = Vector2(0.731, 0.695)
+texture_normal = SubResource("AtlasTexture_ksr66")
+texture_pressed = SubResource("AtlasTexture_jf6a2")
+
+[node name="Label" type="Label" parent="OPTION"]
+layout_mode = 0
+offset_left = 7.64
+offset_top = 101.445
+offset_right = 261.64
+offset_bottom = 192.445
+scale = Vector2(0.98, 1.201)
+theme_override_font_sizes/font_size = 66
+text = "OPTION"
+
+[node name="OptionClickSound" type="AudioStreamPlayer" parent="OPTION"]
+stream = ExtResource("12_ksr66")
+volume_db = 5.0
+
+[node name="PLAY" type="TextureButton" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_top = 0.215
+anchor_right = 0.229
+anchor_bottom = 0.538
+offset_left = 1.0
+offset_top = -0.320007
+offset_right = 97.192
+offset_bottom = 92.376
+scale = Vector2(0.731, 0.695)
+texture_normal = SubResource("AtlasTexture_isecm")
+texture_pressed = SubResource("AtlasTexture_d6s3x")
+
+[node name="Play" type="Label" parent="PLAY"]
+layout_mode = 0
+offset_left = 16.225
+offset_top = 155.385
+offset_right = 271.225
+offset_bottom = 301.385
+scale = Vector2(0.97, 0.855)
+theme_override_font_sizes/font_size = 101
+text = "PLAY"
+
+[node name="PlayClickSound" type="AudioStreamPlayer" parent="PLAY"]
+stream = ExtResource("12_ksr66")
+volume_db = 5.0
+
+[node name="Vines" type="Sprite2D" parent="."]
+position = Vector2(137, 162)
+scale = Vector2(0.662813, 0.662813)
+texture = ExtResource("6_3nx0c")
+region_enabled = true
+region_rect = Rect2(0, 14.25, 389, 256.75)
+
+[node name="TitleLabel" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.674
+anchor_bottom = 0.39
+offset_left = 32.0
+offset_top = -49.0
+offset_right = 31.552
+offset_bottom = -48.72
+
+[node name="Title" type="Sprite2D" parent="TitleLabel"]
+position = Vector2(305, 171)
+rotation = 1.65806
+scale = Vector2(0.759272, 0.759272)
+skew = -0.0471239
+texture = ExtResource("11_d6s3x")
+region_enabled = true
+region_rect = Rect2(347.453, 71.4173, 318.581, 787.856)
+
+[node name="PanelContainer" type="PanelContainer" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.238
+anchor_top = 0.198
+anchor_right = 0.763
+anchor_bottom = 0.852
+offset_left = -0.216003
+offset_top = -0.159012
+offset_right = 605.984
+offset_bottom = 222.814
+scale = Vector2(0.5, 0.655)
+
+[node name="MarginContainer" type="MarginContainer" parent="PanelContainer"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="PanelContainer/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("15_x7wnk")
+
+[node name="BackGroundMusic" type="Label" parent="PanelContainer/MarginContainer/TextureRect"]
+layout_mode = 2
+offset_left = 158.0
+offset_top = 154.0
+offset_right = 536.0
+offset_bottom = 200.0
+scale = Vector2(1.145, 1)
+size_flags_horizontal = 0
+theme_override_fonts/font = ExtResource("5_c5xtv")
+theme_override_font_sizes/font_size = 70
+text = "Background Music"
+horizontal_alignment = 1
+
+[node name="HSlider" type="HSlider" parent="PanelContainer/MarginContainer/TextureRect"]
+layout_mode = 1
+anchors_preset = -1
+anchor_right = 0.206
+anchor_bottom = 0.242
+offset_left = 142.08
+offset_top = 224.206
+offset_right = 126.614
+offset_bottom = 94.8741
+scale = Vector2(3.89, 3)
+
+[connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="OPTION" to="." method="_on_option_pressed"]
+[connection signal="pressed" from="PLAY" to="." method="_on_play_pressed"]
