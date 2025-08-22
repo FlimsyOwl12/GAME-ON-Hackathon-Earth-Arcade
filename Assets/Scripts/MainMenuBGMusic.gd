@@ -49,10 +49,6 @@ func _ready():
 	music_slider.value_changed.connect(_on_music_slider_changed)
 	sfx_slider.value_changed.connect(_on_sfx_slider_changed)
 
-	# Connect ExitBoard button signals
-	yes_button.pressed.connect(_on_yes_pressed)
-	no_button.pressed.connect(_on_no_pressed)
-
 	# Connect fade animation signal
 	fade_anim.animation_finished.connect(_on_animation_finished)
 
