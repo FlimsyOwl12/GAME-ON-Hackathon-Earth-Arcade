@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bifpap3hmb20x"
-path="res://.godot/imported/Earth3.png-8a6990a67ab6cd1a3818850abed9b21b.ctex"
+uid="uid://daquoqgxm0ss8"
+path="res://.godot/imported/Pixel UI pack 1.png-9dce3e778ebb4a75db333dc3c8efd0fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Scenes/Homepage/Earth3.png"
-dest_files=["res://.godot/imported/Earth3.png-8a6990a67ab6cd1a3818850abed9b21b.ctex"]
+source_file="res://Assets/PixelArtAssets/Pixel UI pack 1.png"
+dest_files=["res://.godot/imported/Pixel UI pack 1.png-9dce3e778ebb4a75db333dc3c8efd0fe.ctex"]
 
 [params]
 

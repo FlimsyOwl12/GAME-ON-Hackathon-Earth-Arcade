@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bvtv0ok5nqf60"
-path="res://.godot/imported/vines.PNG-53a17143940545556c8f2c656a215767.ctex"
+uid="uid://bifpap3hmb20x"
+path="res://.godot/imported/Earth3.png-1c63eac9c509a7274f494b0a03d0f394.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Scenes/Homepage/vines.PNG"
-dest_files=["res://.godot/imported/vines.PNG-53a17143940545556c8f2c656a215767.ctex"]
+source_file="res://Assets/PixelArtAssets/Earth3.png"
+dest_files=["res://.godot/imported/Earth3.png-1c63eac9c509a7274f494b0a03d0f394.ctex"]
 
 [params]
 

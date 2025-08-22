@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b25u048xoaxn7"
-path="res://.godot/imported/Earth2.png-0f64c167d3cbce162b44dca164285777.ctex"
+uid="uid://d1loachrsrhr1"
+path="res://.godot/imported/PlayButton.PNG-c073681b6e1ec3173ab3d82adb557121.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Scenes/Homepage/Earth2.png"
-dest_files=["res://.godot/imported/Earth2.png-0f64c167d3cbce162b44dca164285777.ctex"]
+source_file="res://Assets/PixelArtAssets/PlayButton.PNG"
+dest_files=["res://.godot/imported/PlayButton.PNG-c073681b6e1ec3173ab3d82adb557121.ctex"]
 
 [params]
 

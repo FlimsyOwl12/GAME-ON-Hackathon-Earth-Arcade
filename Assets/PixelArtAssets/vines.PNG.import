@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://be2qu6v3mv5eu"
-path="res://.godot/imported/ExitButton.PNG-c110f042432d7bba3d5f5f92f49038c6.ctex"
+uid="uid://bvtv0ok5nqf60"
+path="res://.godot/imported/vines.PNG-381eaa0acdef4b02142b3b99036eb2ab.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Scenes/Homepage/ExitButton.PNG"
-dest_files=["res://.godot/imported/ExitButton.PNG-c110f042432d7bba3d5f5f92f49038c6.ctex"]
+source_file="res://Assets/PixelArtAssets/vines.PNG"
+dest_files=["res://.godot/imported/vines.PNG-381eaa0acdef4b02142b3b99036eb2ab.ctex"]
 
 [params]
 

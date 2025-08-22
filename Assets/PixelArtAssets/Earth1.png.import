@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://p5i86hij3360"
-path="res://.godot/imported/OptionBoard.png-1f75b1cb1a94993a0e00f82489d412e3.ctex"
+uid="uid://dtkjjhkbsii6w"
+path="res://.godot/imported/Earth1.png-d1e625d5e4244ab7873199ec9970ef58.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Scenes/Homepage/OptionBoard.png"
-dest_files=["res://.godot/imported/OptionBoard.png-1f75b1cb1a94993a0e00f82489d412e3.ctex"]
+source_file="res://Assets/PixelArtAssets/Earth1.png"
+dest_files=["res://.godot/imported/Earth1.png-d1e625d5e4244ab7873199ec9970ef58.ctex"]
 
 [params]
 

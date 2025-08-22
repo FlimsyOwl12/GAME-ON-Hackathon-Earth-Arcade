@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://26q0w5pjkpc4"
-path="res://.godot/imported/SampleBackground.jpg-793312d738dc6e5c208adf69c272fabb.ctex"
+uid="uid://b6u1j8qcowha0"
+path="res://.godot/imported/OptionButtonPressed.PNG-0e97aff076e077871fffd1c9d094064a.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Scenes/Homepage/SampleBackground.jpg"
-dest_files=["res://.godot/imported/SampleBackground.jpg-793312d738dc6e5c208adf69c272fabb.ctex"]
+source_file="res://Assets/PixelArtAssets/OptionButtonPressed.PNG"
+dest_files=["res://.godot/imported/OptionButtonPressed.PNG-0e97aff076e077871fffd1c9d094064a.ctex"]
 
 [params]
 

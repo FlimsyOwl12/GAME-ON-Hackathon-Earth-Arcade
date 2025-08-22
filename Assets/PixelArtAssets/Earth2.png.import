@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b6u1j8qcowha0"
-path="res://.godot/imported/OptionButtonPressed.PNG-cdd01e7ec8c3fcaf40223bcfaadf639b.ctex"
+uid="uid://b25u048xoaxn7"
+path="res://.godot/imported/Earth2.png-b2ddb912cfad96515edddc7e4d02963f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Scenes/Homepage/OptionButtonPressed.PNG"
-dest_files=["res://.godot/imported/OptionButtonPressed.PNG-cdd01e7ec8c3fcaf40223bcfaadf639b.ctex"]
+source_file="res://Assets/PixelArtAssets/Earth2.png"
+dest_files=["res://.godot/imported/Earth2.png-b2ddb912cfad96515edddc7e4d02963f.ctex"]
 
 [params]
 
