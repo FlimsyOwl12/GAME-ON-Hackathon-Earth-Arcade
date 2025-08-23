@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://26q0w5pjkpc4"
-path="res://.godot/imported/SampleBackground.jpg-2fe682a5f5e401915c25123e0b8fe1fb.ctex"
+uid="uid://cqmfr1esqptum"
+path="res://.godot/imported/MyNormalYesButton.png-5e98654ea2b5b86014360a5cd9629b8b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/PixelArtAssets/SampleBackground.jpg"
-dest_files=["res://.godot/imported/SampleBackground.jpg-2fe682a5f5e401915c25123e0b8fe1fb.ctex"]
+source_file="res://Assets/PixelArtAssets/MyNormalYesButton.png"
+dest_files=["res://.godot/imported/MyNormalYesButton.png-5e98654ea2b5b86014360a5cd9629b8b.ctex"]
 
 [params]
 

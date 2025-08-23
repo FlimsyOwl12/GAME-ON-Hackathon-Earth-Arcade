@@ -1,8 +1,8 @@
-[gd_scene load_steps=36 format=3 uid="uid://3yt3n0n3h1x7"]
+[gd_scene load_steps=38 format=3 uid="uid://3yt3n0n3h1x7"]
 
 [ext_resource type="Script" uid="uid://cpb63otx13cxm" path="res://Assets/Scripts/MainMenuBGMusic.gd" id="1_xrxl6"]
 [ext_resource type="AudioStream" uid="uid://dbsft6mm6qnnf" path="res://Assets/BackgroundMusic/RetroBGMusic.ogg" id="2_wviaj"]
-[ext_resource type="Texture2D" uid="uid://26q0w5pjkpc4" path="res://Assets/PixelArtAssets/SampleBackground.jpg" id="3_6p5i3"]
+[ext_resource type="Texture2D" uid="uid://chmnkjwwqjjbb" path="res://Assets/PixelArtAssets/MainMenuBackground.png" id="3_trxxf"]
 [ext_resource type="Texture2D" uid="uid://dtkjjhkbsii6w" path="res://Assets/PixelArtAssets/Earth1.png" id="4_glntp"]
 [ext_resource type="Script" uid="uid://7x1yb4w5wapr" path="res://Assets/Scripts/Earth1_Rotation.gd" id="5_e4dwj"]
 [ext_resource type="Texture2D" uid="uid://be2qu6v3mv5eu" path="res://Assets/PixelArtAssets/ExitButton.PNG" id="6_0k300"]
@@ -15,12 +15,20 @@
 [ext_resource type="Texture2D" uid="uid://f5nc1j11kwrs" path="res://Assets/PixelArtAssets/PlayButtonPressed.PNG" id="13_anfs5"]
 [ext_resource type="Texture2D" uid="uid://bvtv0ok5nqf60" path="res://Assets/PixelArtAssets/vines.PNG" id="14_1cwdq"]
 [ext_resource type="Texture2D" uid="uid://c0y06v5tsrn4x" path="res://Assets/PixelArtAssets/Title.png" id="15_ijlot"]
-[ext_resource type="Texture2D" uid="uid://p5i86hij3360" path="res://Assets/PixelArtAssets/OptionBoard.png" id="16_qysyp"]
-[ext_resource type="Texture2D" uid="uid://daquoqgxm0ss8" path="res://Assets/PixelArtAssets/Pixel UI pack 1.png" id="17_1akyi"]
+[ext_resource type="Texture2D" uid="uid://dwxdepyng6ki5" path="res://Assets/PixelArtAssets/MyOptionBoard.png" id="16_5o35t"]
+[ext_resource type="Texture2D" uid="uid://dtqje6uhnrvr" path="res://Assets/PixelArtAssets/MyNormalReturnButton.png" id="17_fwa5k"]
+[ext_resource type="Texture2D" uid="uid://dnmusrysy3nhn" path="res://Assets/PixelArtAssets/MyExitBoard.png" id="18_5o35t"]
 [ext_resource type="FontFile" uid="uid://cwj6iqdtre78n" path="res://Assets/Fonts/I-pixel-u.ttf" id="18_71i8g"]
+[ext_resource type="Texture2D" uid="uid://c2yq05qq2j6en" path="res://Assets/PixelArtAssets/MyPressedButton.png" id="18_rw3b1"]
+[ext_resource type="Texture2D" uid="uid://cqmfr1esqptum" path="res://Assets/PixelArtAssets/MyNormalYesButton.png" id="21_trxxf"]
+[ext_resource type="Texture2D" uid="uid://cr17n0i13geni" path="res://Assets/PixelArtAssets/MyPressedYesButton.png" id="22_4gy81"]
+[ext_resource type="Texture2D" uid="uid://bfswcpctubd00" path="res://Assets/PixelArtAssets/MyNormalNoButton.png" id="23_38te7"]
+[ext_resource type="Texture2D" uid="uid://cp41dlo1eb18" path="res://Assets/PixelArtAssets/MyPressedNoButton.png" id="24_v0wod"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbdjj"]
-texture = ExtResource("3_6p5i3")
+texture = ExtResource("3_trxxf")
+axis_stretch_horizontal = 1
+axis_stretch_vertical = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlnxk"]
 atlas = ExtResource("6_0k300")
@@ -44,31 +52,16 @@ atlas = ExtResource("13_anfs5")
 bg_color = Color(0.6, 0.6, 0.6, 0)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_skjwm"]
-atlas = ExtResource("17_1akyi")
-region = Rect2(385, 193, 30, 30)
+atlas = ExtResource("17_fwa5k")
+region = Rect2(2, 4, 257, 257)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_xk561"]
-atlas = ExtResource("17_1akyi")
-region = Rect2(417, 193, 30, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_q2p20"]
-atlas = ExtResource("17_1akyi")
-region = Rect2(265, 321, 46, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_jcvh0"]
-atlas = ExtResource("17_1akyi")
-region = Rect2(329, 321, 46, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_2begb"]
-atlas = ExtResource("17_1akyi")
-region = Rect2(265, 353, 46, 30)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_e1ypg"]
-atlas = ExtResource("17_1akyi")
-region = Rect2(329, 353, 46, 30)
+[sub_resource type="AtlasTexture" id="AtlasTexture_e4du8"]
+atlas = ExtResource("18_rw3b1")
+region = Rect2(3, 2, 257, 257)
 
 [sub_resource type="Animation" id="Animation_cmo68"]
 resource_name = "FadeOut"
+length = 2.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -76,7 +69,7 @@ tracks/0/path = NodePath("ColorRect:modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.0333333, 1),
+"times": PackedFloat32Array(0.0333333, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), 1.0]
@@ -88,7 +81,7 @@ tracks/1/path = NodePath("ColorRect:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 1),
+"times": PackedFloat32Array(0, 2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
@@ -260,7 +253,7 @@ text = "PLAY"
 stream = ExtResource("9_xeoa6")
 
 [node name="Vines" type="Sprite2D" parent="."]
-position = Vector2(137, 162)
+position = Vector2(129, 162)
 scale = Vector2(0.662813, 0.662813)
 texture = ExtResource("14_1cwdq")
 region_enabled = true
@@ -277,7 +270,7 @@ offset_right = 31.552
 offset_bottom = -48.72
 
 [node name="Title" type="Sprite2D" parent="TitleLabel"]
-position = Vector2(305, 171)
+position = Vector2(280, 176)
 rotation = 1.65806
 scale = Vector2(0.759272, 0.759272)
 skew = -0.0471239
@@ -297,17 +290,12 @@ color = Color(0, 0, 0, 0.796078)
 
 [node name="OptionBoard" type="PanelContainer" parent="."]
 visible = false
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.238
-anchor_top = 0.198
-anchor_right = 0.763
-anchor_bottom = 0.852
-offset_left = -0.175995
-offset_top = -31.304
-offset_right = 606.024
-offset_bottom = 188.904
-scale = Vector2(0.5, 0.745)
+layout_mode = 0
+offset_left = 331.16
+offset_top = 171.045
+offset_right = 1130.16
+offset_bottom = 739.045
+scale = Vector2(0.64, 0.543)
 theme_override_styles/panel = SubResource("StyleBoxFlat_skjwm")
 
 [node name="MarginContainerOptionBoard" type="MarginContainer" parent="OptionBoard"]
@@ -315,20 +303,22 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="OptionBoard/MarginContainerOptionBoard"]
 layout_mode = 2
-texture = ExtResource("16_qysyp")
+texture = ExtResource("16_5o35t")
 
 [node name="BackgroundMusic" type="Label" parent="OptionBoard/MarginContainerOptionBoard/TextureRect"]
 layout_mode = 2
-anchor_left = 0.182
-anchor_top = 0.272
-anchor_right = 0.811
-anchor_bottom = 0.382
-offset_left = -0.321991
-offset_top = -0.067688
-offset_right = -176.041
-offset_bottom = -0.127701
-scale = Vector2(1.3, 1)
+anchor_left = 0.137
+anchor_top = 0.24
+anchor_right = 0.874
+anchor_bottom = 0.365
+offset_left = -4.46301
+offset_top = -0.123001
+offset_right = -7.32599
+offset_bottom = -0.123001
+scale = Vector2(1.005, 1)
 size_flags_horizontal = 0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("8_0kd7v")
 theme_override_font_sizes/font_size = 70
 text = "Background Music"
@@ -340,24 +330,26 @@ anchor_left = 0.122
 anchor_top = 0.378
 anchor_right = 0.122
 anchor_bottom = 0.482
-offset_left = 0.337997
-offset_top = -0.087326
-offset_right = 234.338
-offset_bottom = -40.2713
-scale = Vector2(3.89, 2.5)
+offset_left = 7.522
+offset_top = 2.524
+offset_right = 241.522
+offset_bottom = -37.66
+scale = Vector2(2.5, 2.5)
 
 [node name="SoundEffects" type="Label" parent="OptionBoard/MarginContainerOptionBoard/TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.263
-anchor_top = 0.525
-anchor_right = 0.729
-anchor_bottom = 0.635
-offset_left = -0.413025
-offset_top = 0.252686
-offset_right = -93.739
-offset_bottom = 0.192688
-scale = Vector2(1.2, 1)
+anchor_left = 0.211
+anchor_top = 0.538
+anchor_right = 0.792
+anchor_bottom = 0.663
+offset_left = -8.589
+offset_top = 0.0419922
+offset_right = -1.80804
+offset_bottom = 0.0419922
+scale = Vector2(0.985, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("8_0kd7v")
 theme_override_font_sizes/font_size = 70
 text = "Sound Effects"
@@ -369,26 +361,26 @@ anchor_left = 0.119
 anchor_top = 0.617
 anchor_right = 0.119
 anchor_bottom = 0.721
-offset_left = -0.029007
-offset_top = -0.118896
-offset_right = 233.971
-offset_bottom = -40.3029
-scale = Vector2(3.89, 2.5)
+offset_left = 9.919
+offset_top = 36.201
+offset_right = 243.919
+offset_bottom = -3.98297
+scale = Vector2(2.5, 2.5)
 
 [node name="RETURN" type="TextureButton" parent="OptionBoard/MarginContainerOptionBoard/TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.814
-anchor_top = 0.05
-anchor_right = 0.959
-anchor_bottom = 0.247
-offset_left = -0.119019
-offset_top = 3.928
-offset_right = -145.714
-offset_bottom = -93.334
-scale = Vector2(5.859, 4.111)
+anchor_left = 0.854
+anchor_top = 0.051
+anchor_right = 0.957
+anchor_bottom = 0.213
+offset_left = 0.653992
+offset_top = 0.0319977
+offset_right = 175.357
+offset_bottom = 165.016
+scale = Vector2(0.317, 0.359)
 texture_normal = SubResource("AtlasTexture_skjwm")
-texture_pressed = SubResource("AtlasTexture_xk561")
+texture_pressed = SubResource("AtlasTexture_e4du8")
 
 [node name="ReturnClickSound" type="AudioStreamPlayer" parent="OptionBoard/MarginContainerOptionBoard/TextureRect/RETURN"]
 stream = ExtResource("9_xeoa6")
@@ -401,10 +393,10 @@ anchor_left = 0.286
 anchor_top = 0.276
 anchor_right = 0.722
 anchor_bottom = 0.738
-offset_left = -0.247009
-offset_top = 0.196976
-offset_right = 708.481
-offset_bottom = 344.821
+offset_left = 6.543
+offset_top = -3.49799
+offset_right = 715.271
+offset_bottom = 341.126
 scale = Vector2(0.415, 0.465)
 theme_override_styles/panel = SubResource("StyleBoxFlat_skjwm")
 
@@ -413,26 +405,30 @@ layout_mode = 2
 
 [node name="TextureRect" type="TextureRect" parent="ExitBoard/MarginContainerExitBoard"]
 layout_mode = 2
-texture = ExtResource("16_qysyp")
+texture = ExtResource("18_5o35t")
 
 [node name="Label" type="Label" parent="ExitBoard/MarginContainerExitBoard/TextureRect"]
 layout_mode = 0
-offset_left = 257.289
-offset_top = 116.032
-offset_right = 972.289
-offset_bottom = 254.032
+offset_left = 201.867
+offset_top = 100.979
+offset_right = 1014.87
+offset_bottom = 257.979
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
 theme_override_fonts/font = ExtResource("18_71i8g")
-theme_override_font_sizes/font_size = 110
+theme_override_font_sizes/font_size = 125
 text = "QUIT GAME"
 horizontal_alignment = 1
 
 [node name="ExitMessage" type="Label" parent="ExitBoard/MarginContainerExitBoard/TextureRect"]
 layout_mode = 0
-offset_left = 115.12
-offset_top = 247.215
-offset_right = 994.12
-offset_bottom = 328.215
+offset_left = 127.169
+offset_top = 275.172
+offset_right = 1006.17
+offset_bottom = 356.172
 scale = Vector2(1.11, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("8_0kd7v")
 theme_override_font_sizes/font_size = 60
 text = "ARE YOU SURE YOU WANT TO EXIT ?"
@@ -442,16 +438,16 @@ horizontal_alignment = 1
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.218
-anchor_top = 0.521
-anchor_right = 0.408
-anchor_bottom = 0.707
-offset_left = 0.52005
-offset_top = -0.136871
-offset_right = -183.57
-offset_bottom = -89.9209
-scale = Vector2(5, 4)
-texture_normal = SubResource("AtlasTexture_q2p20")
-texture_pressed = SubResource("AtlasTexture_jcvh0")
+anchor_top = 0.605
+anchor_right = 0.432
+anchor_bottom = 0.773
+offset_left = 3.302
+offset_top = 0.124969
+offset_right = 256.148
+offset_bottom = 147.933
+scale = Vector2(0.5, 0.422)
+texture_normal = ExtResource("21_trxxf")
+texture_pressed = ExtResource("22_4gy81")
 
 [node name="YesClickSound" type="AudioStreamPlayer" parent="ExitBoard/MarginContainerExitBoard/TextureRect/YES"]
 stream = ExtResource("9_xeoa6")
@@ -459,17 +455,17 @@ stream = ExtResource("9_xeoa6")
 [node name="NO" type="TextureButton" parent="ExitBoard/MarginContainerExitBoard/TextureRect"]
 layout_mode = 1
 anchors_preset = -1
-anchor_left = 0.585
-anchor_top = 0.521
-anchor_right = 0.774
-anchor_bottom = 0.707
-offset_left = -0.543579
-offset_top = -0.136902
-offset_right = -183.423
-offset_bottom = -89.9209
-scale = Vector2(5, 4)
-texture_normal = SubResource("AtlasTexture_2begb")
-texture_pressed = SubResource("AtlasTexture_e1ypg")
+anchor_left = 0.555
+anchor_top = 0.595
+anchor_right = 0.745
+anchor_bottom = 0.781
+offset_left = 0.676025
+offset_top = 6.56497
+offset_right = 282.586
+offset_bottom = 142.781
+scale = Vector2(0.5, 0.422)
+texture_normal = ExtResource("23_38te7")
+texture_pressed = ExtResource("24_v0wod")
 
 [node name="NoClickSound" type="AudioStreamPlayer" parent="ExitBoard/MarginContainerExitBoard/TextureRect/NO"]
 stream = ExtResource("9_xeoa6")
@@ -480,6 +476,8 @@ stream = ExtResource("9_xeoa6")
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = -7.0
+offset_right = 4.66504
 grow_horizontal = 2
 grow_vertical = 2
 color = Color(0, 0, 0, 0)

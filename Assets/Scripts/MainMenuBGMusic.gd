@@ -62,6 +62,13 @@ func _ready():
 func _on_play_pressed():
 	if not modal_blocker.visible:
 		play_click.play()
+
+		# 🌀 Create tween dynamically for music fade
+		var music_tween := create_tween()
+		music_tween.set_trans(Tween.TRANS_LINEAR)
+		music_tween.set_ease(Tween.EASE_IN_OUT)
+		music_tween.tween_property(music_player, "volume_db", -80, 1.5)
+
 		fade_anim.play("FadeOut")  # Trigger fade-out animation
 
 # ⚙️ Option button
@@ -86,6 +93,8 @@ func _on_return_pressed():
 
 # ✅ YES pressed (quit game)
 func _on_yes_pressed() -> void:
+	exit_click.play()
+	await get_tree().create_timer(0.5).timeout  # Wait for sound to finish
 	get_tree().quit()
 
 # ❎ NO pressed (cancel exit)
@@ -110,4 +119,5 @@ func _on_sfx_slider_changed(value):
 # 🎬 Handle fade-out completion
 func _on_animation_finished(anim_name):
 	if anim_name == "FadeOut":
+		await get_tree().create_timer(0.5).timeout  # Optional delay for audio fade
 		get_tree().change_scene_to_file("res://Scenes/GameSampleScene/sample_scene.tscn")
