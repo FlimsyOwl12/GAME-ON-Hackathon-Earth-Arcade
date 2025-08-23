@@ -1,0 +1,281 @@
+[gd_scene load_steps=27 format=3 uid="uid://bvgjc2k5tv8f2"]
+
+[ext_resource type="Texture2D" uid="uid://c8aoso7hi3p35" path="res://Assets/PixelArtAssets/Minigame1 Assets/Placeholder.png" id="1_770w0"]
+[ext_resource type="Script" uid="uid://w5v46oq5aeqw" path="res://Assets/Scripts/main-minigame.gd" id="1_wq1rt"]
+[ext_resource type="Script" uid="uid://dg84m2wach8bh" path="res://Assets/Scripts/maincharacter.gd" id="2_7dw7j"]
+[ext_resource type="Texture2D" uid="uid://dhv7ppbcw2hxs" path="res://Assets/PixelArtAssets/Minigame1 Assets/GAME 1 BG.png" id="2_8jner"]
+[ext_resource type="Texture2D" uid="uid://bfae6cf8wfkja" path="res://Assets/PixelArtAssets/Minigame1 Assets/Relaxed.png" id="2_mamnj"]
+[ext_resource type="Texture2D" uid="uid://ddeyqaayp2xh4" path="res://Assets/PixelArtAssets/Minigame1 Assets/Throw body.png" id="3_vovbx"]
+[ext_resource type="Texture2D" uid="uid://b6ajkp32njt7b" path="res://Assets/PixelArtAssets/Minigame1 Assets/Hold.png" id="4_lp0bk"]
+[ext_resource type="Texture2D" uid="uid://cchkgui4itcwh" path="res://Assets/PixelArtAssets/Minigame1 Assets/Ready.png" id="5_e8iw6"]
+[ext_resource type="Texture2D" uid="uid://bom5spwi3g8mg" path="res://Assets/PixelArtAssets/Minigame1 Assets/Throw.png" id="6_uqgsb"]
+[ext_resource type="Texture2D" uid="uid://1eik65ff460p" path="res://Assets/PixelArtAssets/Minigame1 Assets/MyExitBoard.png" id="10_7dw7j"]
+[ext_resource type="Script" uid="uid://joalmfwdkqgs" path="res://Assets/Scripts/AreaNon-Bio.gd" id="10_8jner"]
+[ext_resource type="Texture2D" uid="uid://b3odco48r7fja" path="res://Assets/PixelArtAssets/Minigame1 Assets/Non-Biodegradable.png" id="11_nrv47"]
+[ext_resource type="Script" uid="uid://d1vifxvlqf25n" path="res://Assets/Scripts/Area-Bio.gd" id="12_teprs"]
+[ext_resource type="Texture2D" uid="uid://bqgprviwk427n" path="res://Assets/PixelArtAssets/Minigame1 Assets/Biodegrable.png" id="13_35g86"]
+[ext_resource type="Script" uid="uid://b7esox7orlhk0" path="res://Assets/Scripts/Area-Recyclable.gd" id="14_ii2c5"]
+[ext_resource type="Texture2D" uid="uid://wm7u7c1jwunn" path="res://Assets/PixelArtAssets/Minigame1 Assets/Recylable.png" id="15_s3r6w"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_wq1rt"]
+font_size = 32
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7dw7j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_mamnj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_vovbx")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8jner"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("4_lp0bk")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_e8iw6")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_uqgsb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="LabelSettings" id="LabelSettings_8jner"]
+font_size = 64
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 30
+shadow_color = Color(0.288518, 0.288518, 0.288518, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nrv47"]
+font_size = 64
+outline_size = 30
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 30
+shadow_color = Color(0.2484, 0.2484, 0.2484, 0)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_s0p2d"]
+size = Vector2(40, 102)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5mrbq"]
+size = Vector2(1165, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_0tpae"]
+size = Vector2(13, 103)
+
+[sub_resource type="LabelSettings" id="LabelSettings_3pawu"]
+font_size = 32
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 10
+shadow_color = Color(0.145098, 0.145098, 0.145098, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_7dw7j"]
+font_size = 32
+outline_size = 10
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Minigame1" type="Node2D"]
+script = ExtResource("1_wq1rt")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(575, 323)
+texture = ExtResource("2_8jner")
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("2_7dw7j")
+
+[node name="DisplayTrash" type="Label" parent="CharacterBody2D"]
+offset_left = 227.0
+offset_top = 35.0
+offset_right = 518.0
+offset_bottom = 129.0
+label_settings = SubResource("LabelSettings_wq1rt")
+
+[node name="Placeholder" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(118, 125.5)
+scale = Vector2(0.734375, 0.753906)
+texture = ExtResource("1_770w0")
+
+[node name="ThrowPreview" type="TextureRect" parent="CharacterBody2D"]
+offset_left = 53.0
+offset_top = 46.0
+offset_right = 66.0
+offset_bottom = 61.0
+
+[node name="SpawnerNode" type="Node2D" parent="CharacterBody2D"]
+position = Vector2(236, 449)
+
+[node name="Body" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(214, 441)
+sprite_frames = SubResource("SpriteFrames_7dw7j")
+
+[node name="Hands" type="AnimatedSprite2D" parent="CharacterBody2D"]
+position = Vector2(216, 442)
+sprite_frames = SubResource("SpriteFrames_8jner")
+
+[node name="CharginBar" type="ProgressBar" parent="CharacterBody2D"]
+offset_left = 146.0
+offset_top = 316.0
+offset_right = 281.0
+offset_bottom = 362.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 30
+
+[node name="StartButton" type="TextureButton" parent="."]
+offset_left = 383.0
+offset_top = 151.0
+offset_right = 1186.0
+offset_bottom = 795.0
+scale = Vector2(0.48, 0.295)
+toggle_mode = true
+action_mode = 0
+texture_normal = ExtResource("10_7dw7j")
+
+[node name="Label" type="Label" parent="StartButton"]
+layout_mode = 0
+offset_left = 283.333
+offset_top = 186.441
+offset_right = 483.333
+offset_bottom = 367.774
+scale = Vector2(1.23941, 1.948)
+text = "START
+"
+label_settings = SubResource("LabelSettings_8jner")
+
+[node name="TimesUpButton" type="TextureButton" parent="."]
+top_level = true
+offset_left = 383.0
+offset_top = 150.0
+offset_right = 1186.0
+offset_bottom = 698.0
+scale = Vector2(0.48, 0.295)
+texture_normal = ExtResource("10_7dw7j")
+
+[node name="Label" type="Label" parent="TimesUpButton"]
+layout_mode = 0
+offset_left = 66.6666
+offset_top = 183.051
+offset_right = 791.667
+offset_bottom = 381.051
+scale = Vector2(1, 1.63)
+text = "Continue! Next Game
+"
+label_settings = SubResource("LabelSettings_nrv47")
+
+[node name="Non-Biodegradable" type="Area2D" parent="."]
+position = Vector2(976, 457)
+script = ExtResource("10_8jner")
+
+[node name="Sprite2D" type="Sprite2D" parent="Non-Biodegradable"]
+position = Vector2(0, 4.76837e-07)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("11_nrv47")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Non-Biodegradable"]
+position = Vector2(-1, 7.0625)
+shape = SubResource("RectangleShape2D_s0p2d")
+
+[node name="Biodegradable" type="Area2D" parent="."]
+position = Vector2(742, 457)
+script = ExtResource("12_teprs")
+
+[node name="Sprite2D" type="Sprite2D" parent="Biodegradable"]
+position = Vector2(0, -1.90735e-06)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("13_35g86")
+
+[node name="ScoreHitbox" type="CollisionShape2D" parent="Biodegradable"]
+position = Vector2(2, 6)
+shape = SubResource("RectangleShape2D_s0p2d")
+
+[node name="Recylable" type="Area2D" parent="."]
+position = Vector2(860, 457)
+script = ExtResource("14_ii2c5")
+
+[node name="Sprite2D" type="Sprite2D" parent="Recylable"]
+position = Vector2(-3.8147e-06, -1.90735e-06)
+scale = Vector2(0.15, 0.15)
+texture = ExtResource("15_s3r6w")
+
+[node name="ScoreHitbox" type="CollisionShape2D" parent="Recylable"]
+position = Vector2(-1, 7.25)
+shape = SubResource("RectangleShape2D_s0p2d")
+
+[node name="Collision Hitbox" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Hitbox"]
+position = Vector2(574, 525)
+shape = SubResource("RectangleShape2D_5mrbq")
+
+[node name="HitboxBioleft" type="CollisionShape2D" parent="Collision Hitbox"]
+position = Vector2(713, 463.5)
+shape = SubResource("RectangleShape2D_0tpae")
+
+[node name="HitBoxBioright" type="CollisionShape2D" parent="Collision Hitbox"]
+position = Vector2(774, 464)
+shape = SubResource("RectangleShape2D_0tpae")
+
+[node name="HitboxRecyleft" type="CollisionShape2D" parent="Collision Hitbox"]
+position = Vector2(829, 463)
+shape = SubResource("RectangleShape2D_0tpae")
+
+[node name="HitboxRecylright" type="CollisionShape2D" parent="Collision Hitbox"]
+position = Vector2(890, 463)
+shape = SubResource("RectangleShape2D_0tpae")
+
+[node name="HitboxNonBioleft" type="CollisionShape2D" parent="Collision Hitbox"]
+position = Vector2(944, 463)
+shape = SubResource("RectangleShape2D_0tpae")
+
+[node name="HitboxNonBioright" type="CollisionShape2D" parent="Collision Hitbox"]
+position = Vector2(1006, 464)
+shape = SubResource("RectangleShape2D_0tpae")
+
+[node name="ScoredLabel" type="Label" parent="."]
+offset_left = 552.0
+offset_top = 1.0
+offset_right = 769.0
+offset_bottom = 66.0
+text = "Score:"
+label_settings = SubResource("LabelSettings_3pawu")
+
+[node name="GoalPopup" type="Label" parent="."]
+offset_left = 662.0
+offset_top = 316.0
+offset_right = 1088.0
+offset_bottom = 407.0
+text = "
+"
+label_settings = SubResource("LabelSettings_3pawu")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Timer" type="Timer" parent="."]
+
+[node name="TimerLabel" type="Label" parent="."]
+offset_left = 919.0
+offset_top = 5.0
+offset_right = 1066.0
+offset_bottom = 69.0
+text = "Timer: "
+label_settings = SubResource("LabelSettings_7dw7j")
+
+[connection signal="pressed" from="StartButton" to="." method="_on_start_button_pressed"]
+[connection signal="pressed" from="TimesUpButton" to="." method="_on_times_up_button_pressed"]

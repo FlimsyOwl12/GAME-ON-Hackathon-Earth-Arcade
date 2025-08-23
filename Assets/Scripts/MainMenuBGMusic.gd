@@ -110,4 +110,4 @@ func _on_sfx_slider_changed(value):
 # 🎬 Handle fade-out completion
 func _on_animation_finished(anim_name):
 	if anim_name == "FadeOut":
-		get_tree().change_scene_to_file("res://Scenes/GameSampleScene/sample_scene.tscn")
+		get_tree().change_scene_to_file("res://Scenes/cutscenes/cutscene1.tscn")
