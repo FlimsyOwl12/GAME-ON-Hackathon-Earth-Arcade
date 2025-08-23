@@ -1,26 +1,26 @@
 extends Control
 
-# 🎵 Audio Players
+# Audio Players
 @onready var music_player = $AudioPlayer
 @onready var play_click = $PLAY/PlayClickSound
 @onready var option_click = $OPTION/OptionClickSound
 @onready var exit_click = $EXIT/ExitClickSound
 @onready var return_click = get_node("OptionBoard/MarginContainerOptionBoard/TextureRect/RETURN/ReturnClickSound")
 
-# 🧩 UI Boards
+# UI Boards
 @onready var option_board = $OptionBoard
 @onready var exit_board = $ExitBoard
 @onready var modal_blocker = $ModalBlocker  # 🛡️ Blocks input when OptionBoard or ExitBoard is open
 
-# 🎚 Sliders
+# Sliders
 @onready var music_slider = $OptionBoard/MarginContainerOptionBoard/TextureRect/BGMusicSlider
 @onready var sfx_slider = $OptionBoard/MarginContainerOptionBoard/TextureRect/SoundEffectSlider
 
-# 🔘 ExitBoard Buttons
+# ExitBoard Buttons
 @onready var yes_button = $ExitBoard/MarginContainerExitBoard/TextureRect/YES
 @onready var no_button = $ExitBoard/MarginContainerExitBoard/TextureRect/NO
 
-# 🔊 Audio Players for SFX
+# Audio Players for SFX
 @onready var sfx_players = [
 	play_click,
 	option_click,
@@ -28,7 +28,7 @@ extends Control
 	return_click
 ]
 
-# 🎬 Fade Animation
+# Fade Animation
 @onready var fade_anim = $FadeLayer/FadeOut
 @onready var fade_rect = $FadeLayer/ColorRect  # 🖼️ Fade overlay
 
@@ -58,12 +58,12 @@ func _ready():
 	_on_music_slider_changed(music_slider.value)
 	_on_sfx_slider_changed(sfx_slider.value)
 
-# ▶️ Play button
+# Play button
 func _on_play_pressed():
 	if not modal_blocker.visible:
 		play_click.play()
 
-		# 🌀 Create tween dynamically for music fade
+		# Create tween dynamically for music fade
 		var music_tween := create_tween()
 		music_tween.set_trans(Tween.TRANS_LINEAR)
 		music_tween.set_ease(Tween.EASE_IN_OUT)
@@ -71,44 +71,44 @@ func _on_play_pressed():
 
 		fade_anim.play("FadeOut")  # Trigger fade-out animation
 
-# ⚙️ Option button
+# Option button
 func _on_option_pressed():
 	if not modal_blocker.visible:
 		option_click.play()
 		option_board.visible = true
 		modal_blocker.visible = true
 
-# ❌ Exit button
+# Exit button
 func _on_exit_pressed():
 	if not modal_blocker.visible:
 		exit_click.play()
 		exit_board.visible = true
 		modal_blocker.visible = true
 
-# 🔙 Return from OptionBoard
+# Return from OptionBoard
 func _on_return_pressed():
 	return_click.play()
 	option_board.visible = false
 	modal_blocker.visible = false
 
-# ✅ YES pressed (quit game)
+# YES pressed (quit game)
 func _on_yes_pressed() -> void:
 	exit_click.play()
 	await get_tree().create_timer(0.5).timeout  # Wait for sound to finish
 	get_tree().quit()
 
-# ❎ NO pressed (cancel exit)
+# NO pressed (cancel exit)
 func _on_no_pressed() -> void:
 	return_click.play()
 	exit_board.visible = false
 	modal_blocker.visible = false
 
-# 🎚 Adjust background music volume
+# Adjust background music volume
 func _on_music_slider_changed(value):
 	var ratio = clamp(value / music_slider.max_value, 0.0, 1.0)
 	music_player.volume_db = linear_to_db(ratio)
 
-# 🔊 Adjust sound effects volume
+# Adjust sound effects volume
 func _on_sfx_slider_changed(value):
 	var ratio = clamp(value / sfx_slider.max_value, 0.0, 1.0)
 	var db = linear_to_db(ratio)
@@ -116,7 +116,7 @@ func _on_sfx_slider_changed(value):
 		if player is AudioStreamPlayer:
 			player.volume_db = db
 
-# 🎬 Handle fade-out completion
+# Handle fade-out completion
 func _on_animation_finished(anim_name):
 	if anim_name == "FadeOut":
 		await get_tree().create_timer(0.5).timeout  # Optional delay for audio fade

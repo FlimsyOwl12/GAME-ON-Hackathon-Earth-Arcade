@@ -1,19 +1,19 @@
 extends Node2D
 
-# ------------------- Game State -------------------
+# Game State
 var score: int = 0
 var current_trash: String = ""
 var time_left: float = 180
 var cursor_texture = preload("res://Assets/PixelArtAssets/Minigame1 Assets/Cursor-removebg-preview.png")
 
-# ------------------- Nodes -------------------
+# Nodes 
 @onready var timer_label = $TimerLabel
 @onready var score_label = $ScoredLabel
 @onready var goal_popup = $GoalPopup
 @onready var start_button = $StartButton
 @onready var continue_button = $TimesUpButton
 
-# ------------------- Signals from child hoops -------------------
+# Signals from child hoops 
 func _ready():
 	# Make buttons work even when game is paused
 	start_button.process_mode = Node.PROCESS_MODE_ALWAYS
@@ -37,7 +37,7 @@ func _ready():
 	#Button Visibility
 	continue_button.visible = false
 
-# ------------------- Score Handling -------------------
+# Score Handling 
 func _on_Hoop_scored():
 	score += 1
 	score_label.text = "Score: " + str(score)
@@ -50,12 +50,12 @@ func _on_wrong():
 	score_label.text = "Score: " + str(score)
 	goal_popup.text = "Oh no! Wrong Trashcan"
 
-# ------------------- Trash Display -------------------
+# Trash Display 
 func update_display_label():
 	if $DisplayTrash != null:
 		$DisplayTrash.text = current_trash.capitalize()
 
-# ------------------- Timer -------------------
+# Timer 
 func _process(delta):
 	if time_left > 0 and not get_tree().paused:
 		time_left -= delta
@@ -65,7 +65,7 @@ func _process(delta):
 		if not get_tree().paused: # prevent multiple game_over calls
 			game_over()
 
-# ------------------- Game Over -------------------
+# Game Over 
 func game_over():
 	if timer_label != null:
 		timer_label.text = ""
@@ -75,7 +75,7 @@ func game_over():
 	continue_button.visible = true # show continue button
 	get_tree().paused = true
 
-# ------------------- Start Button -------------------
+# Start Button 
 func _on_start_button_pressed():
 	# Reset values
 	score = 0
@@ -89,7 +89,7 @@ func _on_start_button_pressed():
 	start_button.visible = false
 	continue_button.visible = false
 
-# ------------------- Continue Button -------------------
+# Continue button
 func _on_continue_button_pressed():
 	# Reset timer only, keep the score
 	time_left = 60
