@@ -33,9 +33,6 @@ func _ready():
 	#PAUSE AREA
 	get_tree().paused = true
 
-	#Button Signal
-	start_button.pressed.connect(_on_start_button_pressed)
-	continue_button.pressed.connect(_on_continue_button_pressed)
 
 	#Button Visibility
 	continue_button.visible = false
