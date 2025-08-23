@@ -1,24 +1,26 @@
-[gd_scene load_steps=27 format=3 uid="uid://bvgjc2k5tv8f2"]
+[gd_scene load_steps=28 format=3 uid="uid://bvgjc2k5tv8f2"]
 
 [ext_resource type="Texture2D" uid="uid://c8aoso7hi3p35" path="res://Assets/PixelArtAssets/Minigame1 Assets/Placeholder.png" id="1_770w0"]
 [ext_resource type="Script" uid="uid://w5v46oq5aeqw" path="res://Assets/Scripts/main-minigame.gd" id="1_wq1rt"]
-[ext_resource type="Script" path="res://Assets/Scripts/maincharacter.gd" id="2_7dw7j"]
+[ext_resource type="Script" uid="uid://dg84m2wach8bh" path="res://Assets/Scripts/maincharacter.gd" id="2_7dw7j"]
 [ext_resource type="Texture2D" uid="uid://dhv7ppbcw2hxs" path="res://Assets/PixelArtAssets/Minigame1 Assets/GAME 1 BG.png" id="2_8jner"]
 [ext_resource type="Texture2D" uid="uid://bfae6cf8wfkja" path="res://Assets/PixelArtAssets/Minigame1 Assets/Relaxed.png" id="2_mamnj"]
 [ext_resource type="Texture2D" uid="uid://ddeyqaayp2xh4" path="res://Assets/PixelArtAssets/Minigame1 Assets/Throw body.png" id="3_vovbx"]
+[ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/PixelArtAssets/BoldPixels1.4.ttf" id="4_8jner"]
 [ext_resource type="Texture2D" uid="uid://b6ajkp32njt7b" path="res://Assets/PixelArtAssets/Minigame1 Assets/Hold.png" id="4_lp0bk"]
 [ext_resource type="Texture2D" uid="uid://cchkgui4itcwh" path="res://Assets/PixelArtAssets/Minigame1 Assets/Ready.png" id="5_e8iw6"]
 [ext_resource type="Texture2D" uid="uid://bom5spwi3g8mg" path="res://Assets/PixelArtAssets/Minigame1 Assets/Throw.png" id="6_uqgsb"]
 [ext_resource type="Texture2D" uid="uid://1eik65ff460p" path="res://Assets/PixelArtAssets/Minigame1 Assets/MyExitBoard.png" id="10_7dw7j"]
-[ext_resource type="Script" path="res://Assets/Scripts/AreaNon-Bio.gd" id="10_8jner"]
+[ext_resource type="Script" uid="uid://joalmfwdkqgs" path="res://Assets/Scripts/AreaNon-Bio.gd" id="10_8jner"]
 [ext_resource type="Texture2D" uid="uid://b3odco48r7fja" path="res://Assets/PixelArtAssets/Minigame1 Assets/Non-Biodegradable.png" id="11_nrv47"]
-[ext_resource type="Script" path="res://Assets/Scripts/Area-Bio.gd" id="12_teprs"]
+[ext_resource type="Script" uid="uid://d1vifxvlqf25n" path="res://Assets/Scripts/Area-Bio.gd" id="12_teprs"]
 [ext_resource type="Texture2D" uid="uid://bqgprviwk427n" path="res://Assets/PixelArtAssets/Minigame1 Assets/Biodegrable.png" id="13_35g86"]
-[ext_resource type="Script" path="res://Assets/Scripts/Area-Recyclable.gd" id="14_ii2c5"]
+[ext_resource type="Script" uid="uid://b7esox7orlhk0" path="res://Assets/Scripts/Area-Recyclable.gd" id="14_ii2c5"]
 [ext_resource type="Texture2D" uid="uid://wm7u7c1jwunn" path="res://Assets/PixelArtAssets/Minigame1 Assets/Recylable.png" id="15_s3r6w"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_wq1rt"]
-font_size = 32
+font = ExtResource("4_8jner")
+font_size = 44
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 10
@@ -55,6 +57,7 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_8jner"]
+font = ExtResource("4_8jner")
 font_size = 64
 outline_size = 30
 outline_color = Color(0, 0, 0, 1)
@@ -62,6 +65,7 @@ shadow_size = 30
 shadow_color = Color(0.288518, 0.288518, 0.288518, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_nrv47"]
+font = ExtResource("4_8jner")
 font_size = 64
 outline_size = 30
 outline_color = Color(0, 0, 0, 1)
@@ -78,14 +82,16 @@ size = Vector2(1165, 20)
 size = Vector2(13, 103)
 
 [sub_resource type="LabelSettings" id="LabelSettings_3pawu"]
-font_size = 32
+font = ExtResource("4_8jner")
+font_size = 44
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 shadow_size = 10
 shadow_color = Color(0.145098, 0.145098, 0.145098, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_7dw7j"]
-font_size = 32
+font = ExtResource("4_8jner")
+font_size = 44
 outline_size = 10
 outline_color = Color(0, 0, 0, 1)
 
@@ -170,10 +176,10 @@ texture_normal = ExtResource("10_7dw7j")
 
 [node name="Label" type="Label" parent="TimesUpButton"]
 layout_mode = 0
-offset_left = 66.6666
-offset_top = 183.051
-offset_right = 791.667
-offset_bottom = 381.051
+offset_left = 127.083
+offset_top = 203.39
+offset_right = 852.084
+offset_bottom = 401.39
 scale = Vector2(1, 1.63)
 text = "Continue! Next Game
 "
@@ -249,10 +255,10 @@ position = Vector2(1006, 464)
 shape = SubResource("RectangleShape2D_0tpae")
 
 [node name="ScoredLabel" type="Label" parent="."]
-offset_left = 552.0
-offset_top = 1.0
-offset_right = 769.0
-offset_bottom = 66.0
+offset_left = 554.0
+offset_top = 3.0
+offset_right = 771.0
+offset_bottom = 68.0
 text = "Score:"
 label_settings = SubResource("LabelSettings_3pawu")
 
@@ -271,9 +277,9 @@ vertical_alignment = 1
 
 [node name="TimerLabel" type="Label" parent="."]
 offset_left = 919.0
-offset_top = 5.0
+offset_top = 3.0
 offset_right = 1066.0
-offset_bottom = 69.0
+offset_bottom = 67.0
 text = "Timer: "
 label_settings = SubResource("LabelSettings_7dw7j")
 

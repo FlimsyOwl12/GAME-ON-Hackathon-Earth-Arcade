@@ -1,9 +1,12 @@
-[gd_scene load_steps=8 format=3 uid="uid://rfj35l1jm5me"]
+[gd_scene load_steps=11 format=3 uid="uid://rfj35l1jm5me"]
 
-[ext_resource type="Script" path="res://Assets/Scripts/cutscene1_script.gd" id="1_2887s"]
+[ext_resource type="Script" uid="uid://don4vc4t01atq" path="res://Assets/Scripts/cutscene1_script.gd" id="1_2887s"]
 [ext_resource type="Texture2D" uid="uid://cb8kpxp0aev06" path="res://Assets/PixelArtAssets/CutsceneBG.png" id="1_i2wuq"]
 [ext_resource type="Texture2D" uid="uid://dtkjjhkbsii6w" path="res://Assets/PixelArtAssets/Earth1.png" id="2_p0wsn"]
 [ext_resource type="Script" uid="uid://7x1yb4w5wapr" path="res://Assets/Scripts/Earth1_Rotation.gd" id="3_titso"]
+[ext_resource type="Script" uid="uid://cmqlqdffte7d4" path="res://Assets/Scripts/dialogue_node.gd" id="5_shiou"]
+[ext_resource type="Texture2D" uid="uid://dh4s7ra8tdq3n" path="res://Assets/PixelArtAssets/DialougeCutscene.png" id="6_vmhu5"]
+[ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/PixelArtAssets/BoldPixels1.4.ttf" id="7_vmhu5"]
 
 [sub_resource type="Animation" id="Animation_shiou"]
 length = 0.001
@@ -54,7 +57,7 @@ tracks/1/path = NodePath(".:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0.0333333, 3),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -89,6 +92,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+mouse_filter = 2
 color = Color(0, 0, 0, 1)
 
 [node name="Animation" type="AnimationPlayer" parent="FadeIn"]
@@ -96,3 +100,30 @@ root_node = NodePath("../ColorRect")
 libraries = {
 &"": SubResource("AnimationLibrary_vmhu5")
 }
+
+[node name="DialogueNode" type="Node2D" parent="."]
+script = ExtResource("5_shiou")
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueNode"]
+position = Vector2(605, 478)
+texture = ExtResource("6_vmhu5")
+
+[node name="DialogueLabel" type="RichTextLabel" parent="DialogueNode"]
+offset_left = 138.0
+offset_top = 413.0
+offset_right = 948.0
+offset_bottom = 570.0
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/normal_font = ExtResource("7_vmhu5")
+theme_override_fonts/mono_font = ExtResource("7_vmhu5")
+theme_override_fonts/italics_font = ExtResource("7_vmhu5")
+theme_override_fonts/bold_italics_font = ExtResource("7_vmhu5")
+theme_override_fonts/bold_font = ExtResource("7_vmhu5")
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+metadata/_edit_use_anchors_ = true
