@@ -1,7 +1,6 @@
-[gd_scene load_steps=15 format=3 uid="uid://c7wlto2f3rbp1"]
+[gd_scene load_steps=14 format=3 uid="uid://c7wlto2f3rbp1"]
 
 [ext_resource type="Script" uid="uid://60iw47fjvar7" path="res://scripts/hero.gd" id="1_3a4aj"]
-[ext_resource type="PackedScene" uid="uid://cwuyf0jsmgcqs" path="res://scenes/DirtClump.tscn" id="2_yiovg"]
 [ext_resource type="Texture2D" uid="uid://brj65uxtm01xu" path="res://Assets/Free assets/Player/Mini shovel_.png" id="3_fvcx0"]
 [ext_resource type="Texture2D" uid="uid://2l8fk40v3ibp" path="res://Assets/Free assets/Player/Stand 2.png" id="3_ub320"]
 [ext_resource type="Texture2D" uid="uid://thpju5pn5d10" path="res://Assets/Free assets/Player/Crouch.png" id="4_qkgar"]
@@ -91,7 +90,6 @@ radius = 6.40312
 
 [node name="player" type="CharacterBody2D"]
 script = ExtResource("1_3a4aj")
-dirt_scene = ExtResource("2_yiovg")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(-1, -13)

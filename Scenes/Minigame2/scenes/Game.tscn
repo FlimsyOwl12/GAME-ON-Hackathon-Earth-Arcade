@@ -1,7 +1,8 @@
-[gd_scene load_steps=30 format=3 uid="uid://djxk74jrq7a6y"]
+[gd_scene load_steps=32 format=3 uid="uid://djxk74jrq7a6y"]
 
 [ext_resource type="PackedScene" uid="uid://c7wlto2f3rbp1" path="res://scenes/Hero.tscn" id="1_ibkli"]
 [ext_resource type="Texture2D" uid="uid://b0x5ypmxvwyjn" path="res://Assets/Background/combined_bg.png" id="1_mcffj"]
+[ext_resource type="PackedScene" uid="uid://cwuyf0jsmgcqs" path="res://scenes/DirtClump.tscn" id="4_3xj3m"]
 [ext_resource type="Texture2D" uid="uid://c8spxiurfwv81" path="res://Assets/Free assets/Tiles/FarmLand_Tile.png" id="4_aug50"]
 [ext_resource type="PackedScene" uid="uid://bbe7gsa4flmii" path="res://scenes/seed.tscn" id="9_g4kob"]
 [ext_resource type="PackedScene" uid="uid://w4qu0whahsuh" path="res://scenes/covered_clump.tscn" id="10_qy1jj"]
@@ -234,11 +235,19 @@ shadow_size = 15
 shadow_color = Color(0, 0, 0, 0.819608)
 shadow_offset = Vector2(-2, 2)
 
+[sub_resource type="LabelSettings" id="LabelSettings_mcffj"]
+font = ExtResource("11_3xj3m")
+font_size = 40
+shadow_size = 13
+shadow_color = Color(0, 0, 0, 0.819608)
+shadow_offset = Vector2(-2, 2)
+
 [node name="Game" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
 offset_bottom = 40.0
+metadata/_edit_use_anchors_ = true
 
 [node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
 position = Vector2(199, -72)
@@ -262,9 +271,11 @@ tile_set = SubResource("TileSet_qy1jj")
 visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+visible = false
 motion_mirroring = Vector2(460, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+visible = false
 position = Vector2(4, -49)
 scale = Vector2(0.400174, 0.384259)
 texture = ExtResource("1_mcffj")
@@ -273,6 +284,7 @@ texture = ExtResource("1_mcffj")
 z_index = 2
 position = Vector2(-1, 8)
 counter_label = NodePath("../UI/Counter")
+dirt_scene = ExtResource("4_3xj3m")
 seed_scene = ExtResource("9_g4kob")
 covered_clump_scene = ExtResource("10_qy1jj")
 
@@ -304,6 +316,7 @@ grow_horizontal = 0
 scale = Vector2(0.28, 0.28)
 texture_normal = ExtResource("13_y5y3l")
 texture_pressed = ExtResource("14_vjgi4")
+metadata/_edit_use_anchors_ = true
 
 [node name="Counter" type="Label" parent="UI"]
 top_level = true
@@ -314,6 +327,7 @@ offset_bottom = 101.0
 theme_override_font_sizes/font_size = 35
 text = "Seeds: 0/15"
 label_settings = SubResource("LabelSettings_qy1jj")
+metadata/_edit_use_anchors_ = true
 
 [node name="InstructionLabel" type="Label" parent="UI"]
 offset_left = 72.0
@@ -323,6 +337,7 @@ offset_bottom = 233.0
 theme_override_fonts/font = ExtResource("11_3xj3m")
 theme_override_font_sizes/font_size = 32
 label_settings = SubResource("LabelSettings_y5y3l")
+metadata/_edit_use_anchors_ = true
 
 [node name="Controls" type="Label" parent="UI"]
 offset_left = 72.0
@@ -334,6 +349,16 @@ A - move left
 D - moveright
 Spacebar - jump"
 label_settings = SubResource("LabelSettings_3xj3m")
+metadata/_edit_use_anchors_ = true
+
+[node name="TimerLabel" type="Label" parent="UI"]
+offset_left = 776.0
+offset_top = 63.0
+offset_right = 816.0
+offset_bottom = 114.0
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 50
+label_settings = SubResource("LabelSettings_mcffj")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_2rd6h")
