@@ -4,6 +4,7 @@ const SPEED = 100.0
 const JUMP_VELOCITY = -200.0
 var gravity: float = 800.0
 
+@onready var instruction_label = $"../UI/InstructionLabel"
 @onready var animated_sprite = $AnimatedSprite2D
 @export var counter_label: Label
 
@@ -34,6 +35,7 @@ var is_performing_action := false
 
 func _ready():
 	update_counter()
+	update_instructions()
 
 #-------------------physics sections
 func _physics_process(delta: float) -> void:
@@ -255,3 +257,17 @@ func update_counter():
 			counter_label.text = str(seeds_covered) + " / " + str(holes_needed) + " Holes Covered"
 		Phase.DONE:
 			counter_label.text = "All steps complete!"
+	update_instructions()
+			
+			
+# Add this new function to hero.gd
+func update_instructions():
+	match current_phase:
+		Phase.DIG:
+			instruction_label.text = "Press 'Q' or 'right click' to dig 10 holes!"
+		Phase.PLANT:
+			instruction_label.text = "Stand on a hole and press 'E' or 'left click' to plant a seed!"
+		Phase.COVER:
+			instruction_label.text = "Now, press 'space' to jump! jump 2 times on the seeds to cover them up!"
+		Phase.DONE:
+			instruction_label.text = "Great job! You're an expert gardener! 🌱"

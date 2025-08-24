@@ -2,21 +2,19 @@
 
 [ext_resource type="PackedScene" uid="uid://c7wlto2f3rbp1" path="res://scenes/Hero.tscn" id="1_ibkli"]
 [ext_resource type="Texture2D" uid="uid://b0x5ypmxvwyjn" path="res://Assets/Background/combined_bg.png" id="1_mcffj"]
-[ext_resource type="Texture2D" uid="uid://d3mai00uipiyv" path="res://Assets/Free assets/Tiles/Cliff_Tile.png" id="2_78awf"]
-[ext_resource type="Texture2D" uid="uid://bi3bkag82057" path="res://Assets/Free assets/Tiles/Grass_Middle.png" id="3_s0nni"]
-[ext_resource type="Texture2D" uid="uid://dsin0ga87t4at" path="res://Assets/Free assets/Outdoor decoration/Oak_Tree.png" id="4_400sg"]
 [ext_resource type="Texture2D" uid="uid://c8spxiurfwv81" path="res://Assets/Free assets/Tiles/FarmLand_Tile.png" id="4_aug50"]
-[ext_resource type="Texture2D" uid="uid://b0sao5arwt0ob" path="res://Assets/Free assets/Outdoor decoration/House.png" id="5_g4kob"]
-[ext_resource type="Texture2D" uid="uid://c5r6y5r3inyku" path="res://Assets/Free assets/Outdoor decoration/Outdoor_Decor_Free.png" id="6_qy1jj"]
-[ext_resource type="Texture2D" uid="uid://bfgqj6pxkoqqp" path="res://Assets/Free assets/Tiles/Water_Middle.png" id="7_3xj3m"]
 [ext_resource type="PackedScene" uid="uid://bbe7gsa4flmii" path="res://scenes/seed.tscn" id="9_g4kob"]
 [ext_resource type="PackedScene" uid="uid://w4qu0whahsuh" path="res://scenes/covered_clump.tscn" id="10_qy1jj"]
 [ext_resource type="FontFile" uid="uid://carwltveetg7r" path="res://Assets/GrapeSoda.ttf" id="11_3xj3m"]
 [ext_resource type="Script" uid="uid://beiw3c44x1qo" path="res://scripts/HUD.gd" id="12_7ua8r"]
 [ext_resource type="AudioStream" uid="uid://dp105yh2gipni" path="res://Assets/Sounds/G2_Music.mp3" id="13_2rd6h"]
+[ext_resource type="Texture2D" uid="uid://bt5677o2qeqam" path="res://Assets/buttons/MyNormalReturnButton.png" id="13_y5y3l"]
+[ext_resource type="Texture2D" uid="uid://pqh4j2s6h7kd" path="res://Assets/buttons/MyPressedButton.png" id="14_vjgi4"]
+
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_2rd6h"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_kiw3p"]
-texture = ExtResource("2_78awf")
+texture = SubResource("CompressedTexture2D_2rd6h")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -34,8 +32,10 @@ texture = ExtResource("2_78awf")
 1:5/0 = 0
 2:5/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_7ua8r"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_400sg"]
-texture = ExtResource("3_s0nni")
+texture = SubResource("CompressedTexture2D_7ua8r")
 0:0/0 = 0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_g4kob"]
@@ -53,8 +53,11 @@ texture = ExtResource("4_aug50")
 1:2/0 = 0
 2:2/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_qy1jj"]
+load_path = "res://.godot/imported/Oak_Tree.png-caacf935fcb623a1c82aff785449f18f.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_mcffj"]
-texture = ExtResource("4_400sg")
+texture = SubResource("CompressedTexture2D_qy1jj")
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 2:0/0 = 0
@@ -82,8 +85,11 @@ texture = ExtResource("4_400sg")
 0:0/0 = 0
 3:0/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_3xj3m"]
+load_path = "res://.godot/imported/House.png-27d7d4ce1e2a8ed82badf63758bbde55.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_2rd6h"]
-texture = ExtResource("5_g4kob")
+texture = SubResource("CompressedTexture2D_3xj3m")
 1:0/0 = 0
 2:0/0 = 0
 3:0/0 = 0
@@ -118,8 +124,11 @@ texture = ExtResource("5_g4kob")
 3:6/0 = 0
 4:6/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_mcffj"]
+load_path = "res://.godot/imported/Outdoor_Decor_Free.png-f3416ecc00349bface7f89f37d305160.ctex"
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_7ua8r"]
-texture = ExtResource("6_qy1jj")
+texture = SubResource("CompressedTexture2D_mcffj")
 0:0/0 = 0
 1:0/0 = 0
 2:0/0 = 0
@@ -180,8 +189,10 @@ texture = ExtResource("6_qy1jj")
 2:11/0 = 0
 3:11/0 = 0
 
+[sub_resource type="CompressedTexture2D" id="CompressedTexture2D_r7sob"]
+
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_r7sob"]
-texture = ExtResource("7_3xj3m")
+texture = SubResource("CompressedTexture2D_r7sob")
 0:0/0 = 0
 
 [sub_resource type="TileSet" id="TileSet_qy1jj"]
@@ -202,36 +213,15 @@ distance = 20.0
 normal = Vector2(-1, 0)
 distance = -441.0
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2rd6h"]
-bg_color = Color(0.784314, 0.615686, 0, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_7ua8r"]
-bg_color = Color(0.521569, 0.262745, 0.027451, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_r7sob"]
-bg_color = Color(0.984314, 0.780392, 0.0431373, 1)
-border_width_left = 5
-border_width_top = 5
-border_width_right = 5
-border_width_bottom = 5
-border_color = Color(0, 0, 0, 1)
-border_blend = true
-
 [sub_resource type="LabelSettings" id="LabelSettings_qy1jj"]
 font = ExtResource("11_3xj3m")
-font_size = 40
+font_size = 50
+shadow_size = 13
+shadow_color = Color(0, 0, 0, 0.819608)
+shadow_offset = Vector2(-2, 2)
+
+[sub_resource type="LabelSettings" id="LabelSettings_y5y3l"]
+font_size = 32
 shadow_size = 13
 shadow_color = Color(0, 0, 0, 0.819608)
 shadow_offset = Vector2(-2, 2)
@@ -243,7 +233,7 @@ offset_right = 40.0
 offset_bottom = 40.0
 
 [node name="Sprite2D" type="Sprite2D" parent="TextureRect"]
-position = Vector2(199, -78)
+position = Vector2(199, -72)
 scale = Vector2(0.536458, 0.57716)
 texture = ExtResource("1_mcffj")
 
@@ -294,30 +284,37 @@ shape = SubResource("WorldBoundaryShape2D_g4kob")
 [node name="UI" type="CanvasLayer" parent="."]
 script = ExtResource("12_7ua8r")
 
-[node name="pause" type="Button" parent="UI"]
+[node name="pause" type="TextureButton" parent="UI"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -22.0
-offset_bottom = 20.0
+offset_left = -121.0
+offset_top = 44.0
+offset_right = 140.0
+offset_bottom = 307.0
 grow_horizontal = 0
-theme_override_constants/outline_size = 3
-theme_override_fonts/font = ExtResource("11_3xj3m")
-theme_override_font_sizes/font_size = 40
-theme_override_styles/hover = SubResource("StyleBoxFlat_2rd6h")
-theme_override_styles/pressed = SubResource("StyleBoxFlat_7ua8r")
-theme_override_styles/normal = SubResource("StyleBoxFlat_r7sob")
-text = " X "
+scale = Vector2(0.28, 0.28)
+texture_normal = ExtResource("13_y5y3l")
+texture_pressed = ExtResource("14_vjgi4")
 
 [node name="Counter" type="Label" parent="UI"]
 top_level = true
 offset_left = 74.0
-offset_top = 69.0
+offset_top = 52.0
 offset_right = 265.0
-offset_bottom = 118.0
+offset_bottom = 101.0
 theme_override_font_sizes/font_size = 35
 text = "Seeds: 0/15"
 label_settings = SubResource("LabelSettings_qy1jj")
+
+[node name="InstructionLabel" type="Label" parent="UI"]
+offset_left = 72.0
+offset_top = 125.0
+offset_right = 364.0
+offset_bottom = 233.0
+theme_override_fonts/font = ExtResource("11_3xj3m")
+theme_override_font_sizes/font_size = 32
+label_settings = SubResource("LabelSettings_y5y3l")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_2rd6h")
