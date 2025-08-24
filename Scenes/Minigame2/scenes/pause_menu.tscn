@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://bme3dy7p5202m"]
 
 [ext_resource type="Texture2D" uid="uid://fwtytd8gkdr1" path="res://Assets/buttons/MyOptionBoard.png" id="1_5d2l8"]
-[ext_resource type="Script" uid="uid://bx5sfevrxdb64" path="res://scripts/PauseMenu.gd" id="1_7l7mv"]
+[ext_resource type="Script" uid="uid://dkpyimtsdoobk" path="res://scenes/PauseMenu.gd" id="1_7l7mv"]
 [ext_resource type="FontFile" uid="uid://carwltveetg7r" path="res://Assets/GrapeSoda.ttf" id="2_7l7mv"]
 [ext_resource type="Texture2D" uid="uid://bt5677o2qeqam" path="res://Assets/buttons/MyNormalReturnButton.png" id="3_v4r4p"]
 [ext_resource type="Texture2D" uid="uid://pqh4j2s6h7kd" path="res://Assets/buttons/MyPressedButton.png" id="4_1s2dm"]

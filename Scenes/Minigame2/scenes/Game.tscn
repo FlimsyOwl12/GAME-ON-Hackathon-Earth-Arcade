@@ -1,4 +1,4 @@
-[gd_scene load_steps=29 format=3 uid="uid://djxk74jrq7a6y"]
+[gd_scene load_steps=30 format=3 uid="uid://djxk74jrq7a6y"]
 
 [ext_resource type="PackedScene" uid="uid://c7wlto2f3rbp1" path="res://scenes/Hero.tscn" id="1_ibkli"]
 [ext_resource type="Texture2D" uid="uid://b0x5ypmxvwyjn" path="res://Assets/Background/combined_bg.png" id="1_mcffj"]
@@ -226,6 +226,14 @@ shadow_size = 13
 shadow_color = Color(0, 0, 0, 0.819608)
 shadow_offset = Vector2(-2, 2)
 
+[sub_resource type="LabelSettings" id="LabelSettings_3xj3m"]
+font = ExtResource("11_3xj3m")
+font_size = 25
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.819608)
+shadow_offset = Vector2(-2, 2)
+
 [node name="Game" type="Node2D"]
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -315,6 +323,17 @@ offset_bottom = 233.0
 theme_override_fonts/font = ExtResource("11_3xj3m")
 theme_override_font_sizes/font_size = 32
 label_settings = SubResource("LabelSettings_y5y3l")
+
+[node name="Controls" type="Label" parent="UI"]
+offset_left = 72.0
+offset_top = 174.0
+offset_right = 236.0
+offset_bottom = 287.0
+text = "Controls:
+A - move left
+D - moveright
+Spacebar - jump"
+label_settings = SubResource("LabelSettings_3xj3m")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("13_2rd6h")

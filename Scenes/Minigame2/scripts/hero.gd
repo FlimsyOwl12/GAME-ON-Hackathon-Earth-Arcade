@@ -268,6 +268,6 @@ func update_instructions():
 		Phase.PLANT:
 			instruction_label.text = "Stand on a hole and press 'E' or 'left click' to plant a seed!"
 		Phase.COVER:
-			instruction_label.text = "Now, press 'space' to jump! jump 2 times on the seeds to cover them up!"
+			instruction_label.text = "Now, jump 2 times on the seeds to cover them up!"
 		Phase.DONE:
 			instruction_label.text = "Great job! You're an expert gardener! 🌱"
