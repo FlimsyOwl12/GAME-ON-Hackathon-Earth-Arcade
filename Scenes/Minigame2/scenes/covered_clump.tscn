@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://w4qu0whahsuh"]
+
+[ext_resource type="Texture2D" uid="uid://c5r6y5r3inyku" path="res://Assets/Free assets/Outdoor decoration/Outdoor_Decor_Free.png" id="1_1thbo"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lofbi"]
+atlas = ExtResource("1_1thbo")
+region = Rect2(0, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_o0srw"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lofbi")
+}],
+"loop": true,
+"name": &"CoveredClump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hs6d0"]
+size = Vector2(16.5, 7.5)
+
+[node name="CoveredClump" type="Node2D"]
+position = Vector2(0, 3)
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_o0srw")
+animation = &"CoveredClump"
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-0.25, 4.75)
+shape = SubResource("RectangleShape2D_hs6d0")

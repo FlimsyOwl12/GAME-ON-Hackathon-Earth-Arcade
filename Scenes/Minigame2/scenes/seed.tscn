@@ -1,0 +1,47 @@
+[gd_scene load_steps=7 format=3 uid="uid://bbe7gsa4flmii"]
+
+[ext_resource type="Texture2D" uid="uid://c5r6y5r3inyku" path="res://Assets/Free assets/Outdoor decoration/Outdoor_Decor_Free.png" id="1_a1cqr"]
+[ext_resource type="Script" uid="uid://b4yesgbdtfnwq" path="res://scripts/seed_area.gd" id="2_6mtvd"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_24r2x"]
+atlas = ExtResource("1_a1cqr")
+region = Rect2(64, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_7wu6j"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_24r2x")
+}],
+"loop": true,
+"name": &"seed",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7hxkq"]
+size = Vector2(17, 16)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6mtvd"]
+size = Vector2(16, 16)
+
+[node name="Seed" type="Area2D"]
+script = ExtResource("2_6mtvd")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_7wu6j")
+animation = &"seed"
+
+[node name="seed_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="seed_area"]
+shape = SubResource("RectangleShape2D_7hxkq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_6mtvd")
+
+[node name="JumpTimer" type="Timer" parent="."]
+wait_time = 0.5
+one_shot = true
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="body_entered" from="seed_area" to="." method="_on_seed_area_body_entered"]

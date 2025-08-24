@@ -1,0 +1,32 @@
+[gd_scene load_steps=5 format=3 uid="uid://cwuyf0jsmgcqs"]
+
+[ext_resource type="Texture2D" uid="uid://c5r6y5r3inyku" path="res://Assets/Free assets/Outdoor decoration/Outdoor_Decor_Free.png" id="1_cf84w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3ltvx"]
+atlas = ExtResource("1_cf84w")
+region = Rect2(80, 16, 16, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8tiu8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3ltvx")
+}],
+"loop": true,
+"name": &"dirt_clump",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_cf84w"]
+size = Vector2(36, 12)
+
+[node name="DirtClump" type="Node2D" groups=["dirt"]]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_8tiu8")
+animation = &"dirt_clump"
+
+[node name="dirt_area" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="dirt_area"]
+shape = SubResource("RectangleShape2D_cf84w")
