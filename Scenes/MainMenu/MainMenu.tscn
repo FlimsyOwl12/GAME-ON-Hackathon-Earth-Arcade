@@ -4,7 +4,7 @@
 [ext_resource type="AudioStream" uid="uid://dbsft6mm6qnnf" path="res://Assets/BackgroundMusic/RetroBGMusic.ogg" id="2_wviaj"]
 [ext_resource type="Texture2D" uid="uid://chmnkjwwqjjbb" path="res://Assets/PixelArtAssets/MainMenuBackground.png" id="3_trxxf"]
 [ext_resource type="Texture2D" uid="uid://dtkjjhkbsii6w" path="res://Assets/PixelArtAssets/Earth1.png" id="4_glntp"]
-[ext_resource type="Script" uid="uid://7x1yb4w5wapr" path="res://Assets/Scripts/Earth1_Rotation.gd" id="5_e4dwj"]
+[ext_resource type="Script" uid="uid://7x1yb4w5wapr" path="res://Assets/Scripts/Earth_Progressive_Rotation.gd" id="5_e4dwj"]
 [ext_resource type="Texture2D" uid="uid://be2qu6v3mv5eu" path="res://Assets/PixelArtAssets/ExitButton.PNG" id="6_0k300"]
 [ext_resource type="Texture2D" uid="uid://cdg0eby3gkqob" path="res://Assets/PixelArtAssets/ExitButtonPressed.PNG" id="7_g56io"]
 [ext_resource type="FontFile" uid="uid://c147if7tplg4j" path="res://Assets/Fonts/ARCADECLASSIC.TTF" id="8_0kd7v"]
@@ -27,8 +27,6 @@
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbdjj"]
 texture = ExtResource("3_trxxf")
-axis_stretch_horizontal = 1
-axis_stretch_vertical = 2
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_nlnxk"]
 atlas = ExtResource("6_0k300")
@@ -141,9 +139,9 @@ anchor_bottom = 1.0
 offset_right = -167.04
 theme_override_styles/panel = SubResource("StyleBoxTexture_nbdjj")
 
-[node name="Earth1" type="Sprite2D" parent="Background"]
-position = Vector2(893, 605)
-scale = Vector2(1.45652, 1.45652)
+[node name="Earth" type="Sprite2D" parent="Background"]
+position = Vector2(944.696, 506)
+scale = Vector2(0.880435, 0.880435)
 texture = ExtResource("4_glntp")
 script = ExtResource("5_e4dwj")
 
