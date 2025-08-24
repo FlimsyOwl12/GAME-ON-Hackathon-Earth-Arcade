@@ -123,7 +123,7 @@ func _on_continue_button_pressed():
 func _on_times_up_button_pressed():
 	click_times_up_sfx_player.play()
 	await get_tree().create_timer(0.5).timeout
-	var new_scene = preload("res://Scenes/cutscenes/cutscene2.tscn").instantiate()
+	var new_scene = preload("res://Scenes/cutscenes/cutscene1.tscn").instantiate()
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene.queue_free()
 	get_tree().current_scene = new_scene
