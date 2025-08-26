@@ -1,0 +1,113 @@
+[gd_scene load_steps=8 format=3 uid="uid://bme3dy7p5202m"]
+
+[ext_resource type="Texture2D" uid="uid://fwtytd8gkdr1" path="res://Scenes/Minigame2/buttons/MyOptionBoard.png" id="1_5d2l8"]
+[ext_resource type="Script" uid="uid://dkpyimtsdoobk" path="res://Scenes/Minigame2/scripts/PauseMenu.gd" id="1_7l7mv"]
+[ext_resource type="Texture2D" uid="uid://bt5677o2qeqam" path="res://Scenes/Minigame2/buttons/MyNormalReturnButton.png" id="3_v4r4p"]
+[ext_resource type="Texture2D" uid="uid://pqh4j2s6h7kd" path="res://Scenes/Minigame2/buttons/MyPressedButton.png" id="4_1s2dm"]
+[ext_resource type="FontFile" uid="uid://du38hsxxifgjr" path="res://Assets/PixelArtAssets/Minigame2 Assets/Fonts/GrapeSoda.ttf" id="5_igjyo"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_88e76"]
+font = ExtResource("5_igjyo")
+font_size = 43
+outline_size = 6
+outline_color = Color(0.0295066, 0.0295066, 0.0295066, 1)
+
+[sub_resource type="StyleBoxLine" id="StyleBoxLine_88e76"]
+color = Color(0, 0.847765, 0, 1)
+thickness = 10
+
+[node name="PauseMenu" type="CanvasLayer"]
+process_mode = 3
+layer = 2
+script = ExtResource("1_7l7mv")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.588235)
+
+[node name="music_SFX" type="TextureRect" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -232.0
+offset_top = -148.0
+offset_right = 232.0
+offset_bottom = 149.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("1_5d2l8")
+expand_mode = 1
+
+[node name="resume" type="TextureButton" parent="ColorRect/music_SFX"]
+layout_mode = 0
+offset_left = 396.0
+offset_top = 16.0
+offset_right = 657.0
+offset_bottom = 279.0
+scale = Vector2(0.2, 0.2)
+texture_normal = ExtResource("3_v4r4p")
+texture_pressed = ExtResource("4_1s2dm")
+
+[node name="pause label" type="Label" parent="ColorRect/music_SFX"]
+layout_mode = 0
+offset_left = 173.0
+offset_top = 11.0
+offset_right = 305.0
+offset_bottom = 102.0
+theme_override_font_sizes/font_size = 21
+text = "PAUSED
+"
+label_settings = SubResource("LabelSettings_88e76")
+
+[node name="Music label" type="Label" parent="ColorRect/music_SFX"]
+layout_mode = 0
+offset_left = 77.0
+offset_top = 61.0
+offset_right = 209.0
+offset_bottom = 152.0
+theme_override_font_sizes/font_size = 21
+text = "Music:
+"
+label_settings = SubResource("LabelSettings_88e76")
+
+[node name="SFX label" type="Label" parent="ColorRect/music_SFX"]
+layout_mode = 0
+offset_left = 76.0
+offset_top = 152.0
+offset_right = 208.0
+offset_bottom = 243.0
+theme_override_font_sizes/font_size = 21
+text = "SFX:
+"
+label_settings = SubResource("LabelSettings_88e76")
+
+[node name="MusicSlider" type="HSlider" parent="ColorRect/music_SFX"]
+layout_mode = 0
+offset_left = 72.0
+offset_top = 110.0
+offset_right = 398.0
+offset_bottom = 126.0
+theme_override_styles/slider = SubResource("StyleBoxLine_88e76")
+max_value = 1.0
+step = 0.02
+
+[node name="SFXSlider" type="HSlider" parent="ColorRect/music_SFX"]
+layout_mode = 0
+offset_left = 73.0
+offset_top = 204.0
+offset_right = 399.0
+offset_bottom = 220.0
+theme_override_styles/slider = SubResource("StyleBoxLine_88e76")
+max_value = 1.0
+step = 0.02
+
+[connection signal="pressed" from="ColorRect/music_SFX/resume" to="." method="_on_resume_button_pressed"]
+[connection signal="value_changed" from="ColorRect/music_SFX/MusicSlider" to="." method="_on_music_slider_value_changed"]
+[connection signal="value_changed" from="ColorRect/music_SFX/SFXSlider" to="." method="_on_sfx_slider_value_changed"]
