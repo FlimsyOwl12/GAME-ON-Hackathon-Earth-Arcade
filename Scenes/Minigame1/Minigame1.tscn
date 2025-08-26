@@ -1,22 +1,22 @@
 [gd_scene load_steps=38 format=3 uid="uid://bvgjc2k5tv8f2"]
 
 [ext_resource type="Texture2D" uid="uid://c8aoso7hi3p35" path="res://Assets/PixelArtAssets/Minigame1 Assets/Placeholder.png" id="1_770w0"]
-[ext_resource type="Script" uid="uid://w5v46oq5aeqw" path="res://Assets/Scripts/main-minigame.gd" id="1_wq1rt"]
-[ext_resource type="Script" path="res://Assets/Scripts/maincharacter.gd" id="2_7dw7j"]
+[ext_resource type="Script" uid="uid://w5v46oq5aeqw" path="res://Scripts/main-minigame.gd" id="1_wq1rt"]
+[ext_resource type="Script" uid="uid://dg84m2wach8bh" path="res://Scripts/maincharacter.gd" id="2_7dw7j"]
 [ext_resource type="Texture2D" uid="uid://dhv7ppbcw2hxs" path="res://Assets/PixelArtAssets/Minigame1 Assets/GAME 1 BG.png" id="2_8jner"]
 [ext_resource type="Texture2D" uid="uid://bfae6cf8wfkja" path="res://Assets/PixelArtAssets/Minigame1 Assets/Relaxed.png" id="2_mamnj"]
 [ext_resource type="Texture2D" uid="uid://ddeyqaayp2xh4" path="res://Assets/PixelArtAssets/Minigame1 Assets/Throw body.png" id="3_vovbx"]
-[ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/PixelArtAssets/BoldPixels1.4.ttf" id="4_8jner"]
+[ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/Fonts/BoldPixels1.4.ttf" id="4_8jner"]
 [ext_resource type="Texture2D" uid="uid://b6ajkp32njt7b" path="res://Assets/PixelArtAssets/Minigame1 Assets/Hold.png" id="4_lp0bk"]
 [ext_resource type="Texture2D" uid="uid://cchkgui4itcwh" path="res://Assets/PixelArtAssets/Minigame1 Assets/Ready.png" id="5_e8iw6"]
 [ext_resource type="Texture2D" uid="uid://bom5spwi3g8mg" path="res://Assets/PixelArtAssets/Minigame1 Assets/Throw.png" id="6_uqgsb"]
-[ext_resource type="Script" path="res://Assets/Scripts/AreaNon-Bio.gd" id="10_8jner"]
+[ext_resource type="Script" uid="uid://joalmfwdkqgs" path="res://Scripts/AreaNon-Bio.gd" id="10_8jner"]
 [ext_resource type="Texture2D" uid="uid://b3odco48r7fja" path="res://Assets/PixelArtAssets/Minigame1 Assets/Non-Biodegradable.png" id="11_nrv47"]
 [ext_resource type="Texture2D" uid="uid://c84oxm8gtjwbr" path="res://Assets/PixelArtAssets/Minigame1 Assets/TimesUpBoard.png" id="12_35g86"]
-[ext_resource type="Script" path="res://Assets/Scripts/Area-Bio.gd" id="12_teprs"]
+[ext_resource type="Script" uid="uid://d1vifxvlqf25n" path="res://Scripts/Area-Bio.gd" id="12_teprs"]
 [ext_resource type="Texture2D" uid="uid://bqgprviwk427n" path="res://Assets/PixelArtAssets/Minigame1 Assets/Biodegrable.png" id="13_35g86"]
 [ext_resource type="FontFile" uid="uid://c147if7tplg4j" path="res://Assets/Fonts/ARCADECLASSIC.TTF" id="13_ii2c5"]
-[ext_resource type="Script" path="res://Assets/Scripts/Area-Recyclable.gd" id="14_ii2c5"]
+[ext_resource type="Script" uid="uid://b7esox7orlhk0" path="res://Scripts/Area-Recyclable.gd" id="14_ii2c5"]
 [ext_resource type="Texture2D" uid="uid://bu26jl1i1js6b" path="res://Assets/PixelArtAssets/Minigame1 Assets/MyNormalTimesUpButton.png" id="14_s3r6w"]
 [ext_resource type="Texture2D" uid="uid://dmbxh152j54t" path="res://Assets/PixelArtAssets/Minigame1 Assets/MyPressedTimesUpButton.png" id="15_s0p2d"]
 [ext_resource type="Texture2D" uid="uid://wm7u7c1jwunn" path="res://Assets/PixelArtAssets/Minigame1 Assets/Recylable.png" id="15_s3r6w"]
@@ -24,7 +24,7 @@
 [ext_resource type="Texture2D" uid="uid://ci57a5eounlm1" path="res://Assets/PixelArtAssets/Minigame1 Assets/Timer.png" id="18_s0p2d"]
 [ext_resource type="AudioStream" uid="uid://ca1scusyma8yn" path="res://Assets/SoundEffects/CLICKMenu.mp3" id="21_ii2c5"]
 
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_8jner"]
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_3pawu"]
 texture = ExtResource("2_8jner")
 
 [sub_resource type="LabelSettings" id="LabelSettings_wq1rt"]
@@ -110,12 +110,15 @@ atlas = ExtResource("15_s0p2d")
 script = ExtResource("1_wq1rt")
 
 [node name="Panel" type="Panel" parent="."]
-offset_right = 1152.0
-offset_bottom = 648.0
-theme_override_styles/panel = SubResource("StyleBoxTexture_8jner")
+layout_direction = 2
+offset_right = 1162.0
+offset_bottom = 649.0
+theme_override_styles/panel = SubResource("StyleBoxTexture_3pawu")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(576, 324)
+visible = false
+position = Vector2(577.5, 327.5)
+scale = Vector2(0.997396, 1.0108)
 texture = ExtResource("2_8jner")
 
 [node name="CharacterBody2D" type="CharacterBody2D" parent="."]
@@ -274,10 +277,10 @@ label_settings = SubResource("LabelSettings_7dw7j")
 horizontal_alignment = 1
 
 [node name="ModalBlocker" type="ColorRect" parent="."]
-visible = false
-offset_right = 77.525
-offset_bottom = 43.515
-scale = Vector2(14.915, 14.915)
+offset_left = -5.0
+offset_right = 66.0
+offset_bottom = 40.0
+scale = Vector2(16.39, 16.39)
 color = Color(0, 0, 0, 0.796078)
 
 [node name="StartGameBoard" type="PanelContainer" parent="."]

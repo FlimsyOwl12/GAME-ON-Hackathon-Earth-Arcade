@@ -1,29 +1,28 @@
-[gd_scene load_steps=38 format=3 uid="uid://3yt3n0n3h1x7"]
+[gd_scene load_steps=34 format=3 uid="uid://3yt3n0n3h1x7"]
 
-[ext_resource type="Script" uid="uid://cpb63otx13cxm" path="res://Assets/Scripts/MainMenuScript.gd" id="1_xrxl6"]
-[ext_resource type="AudioStream" uid="uid://dbsft6mm6qnnf" path="res://Assets/BackgroundMusic/RetroBGMusic.ogg" id="2_wviaj"]
-[ext_resource type="Texture2D" uid="uid://chmnkjwwqjjbb" path="res://Assets/PixelArtAssets/MainMenuBackground.png" id="3_trxxf"]
-[ext_resource type="Texture2D" uid="uid://dtkjjhkbsii6w" path="res://Assets/PixelArtAssets/Earth1.png" id="4_glntp"]
-[ext_resource type="Script" uid="uid://7x1yb4w5wapr" path="res://Assets/Scripts/Earth_Progressive_Rotation.gd" id="5_e4dwj"]
-[ext_resource type="Texture2D" uid="uid://be2qu6v3mv5eu" path="res://Assets/PixelArtAssets/ExitButton.PNG" id="6_0k300"]
-[ext_resource type="Texture2D" uid="uid://cdg0eby3gkqob" path="res://Assets/PixelArtAssets/ExitButtonPressed.PNG" id="7_g56io"]
+[ext_resource type="Script" uid="uid://cpb63otx13cxm" path="res://Scripts/MainMenuScript.gd" id="1_xrxl6"]
+[ext_resource type="Texture2D" uid="uid://chmnkjwwqjjbb" path="res://Assets/PixelArtAssets/MainMenu Assets/MainMenuBackground.png" id="3_trxxf"]
+[ext_resource type="Texture2D" uid="uid://dtkjjhkbsii6w" path="res://Assets/PixelArtAssets/MainMenu Assets/Earth1.png" id="4_glntp"]
+[ext_resource type="Script" uid="uid://7x1yb4w5wapr" path="res://Scripts/Earth_Progressive_Rotation.gd" id="5_e4dwj"]
+[ext_resource type="Texture2D" uid="uid://be2qu6v3mv5eu" path="res://Assets/PixelArtAssets/MainMenu Assets/ExitButton.PNG" id="6_0k300"]
+[ext_resource type="Texture2D" uid="uid://cdg0eby3gkqob" path="res://Assets/PixelArtAssets/MainMenu Assets/ExitButtonPressed.PNG" id="7_g56io"]
 [ext_resource type="FontFile" uid="uid://c147if7tplg4j" path="res://Assets/Fonts/ARCADECLASSIC.TTF" id="8_0kd7v"]
 [ext_resource type="AudioStream" uid="uid://ca1scusyma8yn" path="res://Assets/SoundEffects/CLICKMenu.mp3" id="9_xeoa6"]
-[ext_resource type="Texture2D" uid="uid://b8ow24k67j8k" path="res://Assets/PixelArtAssets/OptionButton.PNG" id="10_cgdfw"]
-[ext_resource type="Texture2D" uid="uid://b6u1j8qcowha0" path="res://Assets/PixelArtAssets/OptionButtonPressed.PNG" id="11_7lkrp"]
-[ext_resource type="Texture2D" uid="uid://d1loachrsrhr1" path="res://Assets/PixelArtAssets/PlayButton.PNG" id="12_kitub"]
-[ext_resource type="Texture2D" uid="uid://f5nc1j11kwrs" path="res://Assets/PixelArtAssets/PlayButtonPressed.PNG" id="13_anfs5"]
-[ext_resource type="Texture2D" uid="uid://bvtv0ok5nqf60" path="res://Assets/PixelArtAssets/vines.PNG" id="14_1cwdq"]
-[ext_resource type="Texture2D" uid="uid://c0y06v5tsrn4x" path="res://Assets/PixelArtAssets/Title.png" id="15_ijlot"]
-[ext_resource type="Texture2D" uid="uid://dwxdepyng6ki5" path="res://Assets/PixelArtAssets/MyOptionBoard.png" id="16_5o35t"]
-[ext_resource type="Texture2D" uid="uid://dtqje6uhnrvr" path="res://Assets/PixelArtAssets/MyNormalReturnButton.png" id="17_fwa5k"]
-[ext_resource type="Texture2D" uid="uid://dnmusrysy3nhn" path="res://Assets/PixelArtAssets/MyExitBoard.png" id="18_5o35t"]
+[ext_resource type="Texture2D" uid="uid://b8ow24k67j8k" path="res://Assets/PixelArtAssets/MainMenu Assets/OptionButton.PNG" id="10_cgdfw"]
+[ext_resource type="Texture2D" uid="uid://b6u1j8qcowha0" path="res://Assets/PixelArtAssets/MainMenu Assets/OptionButtonPressed.PNG" id="11_7lkrp"]
+[ext_resource type="Texture2D" uid="uid://d1loachrsrhr1" path="res://Assets/PixelArtAssets/MainMenu Assets/PlayButton.PNG" id="12_kitub"]
+[ext_resource type="Texture2D" uid="uid://f5nc1j11kwrs" path="res://Assets/PixelArtAssets/MainMenu Assets/PlayButtonPressed.PNG" id="13_anfs5"]
+[ext_resource type="Texture2D" uid="uid://bvtv0ok5nqf60" path="res://Assets/PixelArtAssets/MainMenu Assets/vines.PNG" id="14_1cwdq"]
+[ext_resource type="Texture2D" uid="uid://c0y06v5tsrn4x" path="res://Assets/PixelArtAssets/MainMenu Assets/Title.png" id="15_ijlot"]
+[ext_resource type="Texture2D" uid="uid://dwxdepyng6ki5" path="res://Assets/PixelArtAssets/MainMenu Assets/MyOptionBoard.png" id="16_5o35t"]
+[ext_resource type="Texture2D" uid="uid://dtqje6uhnrvr" path="res://Assets/PixelArtAssets/MainMenu Assets/MyNormalReturnButton.png" id="17_fwa5k"]
+[ext_resource type="Texture2D" uid="uid://dnmusrysy3nhn" path="res://Assets/PixelArtAssets/MainMenu Assets/MyExitBoard.png" id="18_5o35t"]
 [ext_resource type="FontFile" uid="uid://cwj6iqdtre78n" path="res://Assets/Fonts/I-pixel-u.ttf" id="18_71i8g"]
-[ext_resource type="Texture2D" uid="uid://c2yq05qq2j6en" path="res://Assets/PixelArtAssets/MyPressedButton.png" id="18_rw3b1"]
-[ext_resource type="Texture2D" uid="uid://cqmfr1esqptum" path="res://Assets/PixelArtAssets/MyNormalYesButton.png" id="21_trxxf"]
-[ext_resource type="Texture2D" uid="uid://cr17n0i13geni" path="res://Assets/PixelArtAssets/MyPressedYesButton.png" id="22_4gy81"]
-[ext_resource type="Texture2D" uid="uid://bfswcpctubd00" path="res://Assets/PixelArtAssets/MyNormalNoButton.png" id="23_38te7"]
-[ext_resource type="Texture2D" uid="uid://cp41dlo1eb18" path="res://Assets/PixelArtAssets/MyPressedNoButton.png" id="24_v0wod"]
+[ext_resource type="Texture2D" uid="uid://c2yq05qq2j6en" path="res://Assets/PixelArtAssets/MainMenu Assets/MyPressedButton.png" id="18_rw3b1"]
+[ext_resource type="Texture2D" uid="uid://cqmfr1esqptum" path="res://Assets/PixelArtAssets/MainMenu Assets/MyNormalYesButton.png" id="21_trxxf"]
+[ext_resource type="Texture2D" uid="uid://cr17n0i13geni" path="res://Assets/PixelArtAssets/MainMenu Assets/MyPressedYesButton.png" id="22_4gy81"]
+[ext_resource type="Texture2D" uid="uid://bfswcpctubd00" path="res://Assets/PixelArtAssets/MainMenu Assets/MyNormalNoButton.png" id="23_38te7"]
+[ext_resource type="Texture2D" uid="uid://cp41dlo1eb18" path="res://Assets/PixelArtAssets/MainMenu Assets/MyPressedNoButton.png" id="24_v0wod"]
 
 [sub_resource type="StyleBoxTexture" id="StyleBoxTexture_nbdjj"]
 texture = ExtResource("3_trxxf")
@@ -57,67 +56,6 @@ region = Rect2(2, 4, 257, 257)
 atlas = ExtResource("18_rw3b1")
 region = Rect2(3, 2, 257, 257)
 
-[sub_resource type="Animation" id="Animation_cmo68"]
-resource_name = "FadeOut"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_5o35t"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ahojg"]
-_data = {
-&"FadeOut": SubResource("Animation_cmo68"),
-&"RESET": SubResource("Animation_5o35t")
-}
-
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -126,9 +64,6 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xrxl6")
-
-[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
-stream = ExtResource("2_wviaj")
 
 [node name="Background" type="Panel" parent="."]
 clip_children = 2
@@ -467,23 +402,6 @@ texture_pressed = ExtResource("24_v0wod")
 
 [node name="NoClickSound" type="AudioStreamPlayer" parent="ExitBoard/MarginContainerExitBoard/TextureRect/NO"]
 stream = ExtResource("9_xeoa6")
-
-[node name="FadeLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="FadeLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -7.0
-offset_right = 4.66504
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-
-[node name="FadeOut" type="AnimationPlayer" parent="FadeLayer"]
-libraries = {
-&"": SubResource("AnimationLibrary_ahojg")
-}
 
 [connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="OPTION" to="." method="_on_option_pressed"]
