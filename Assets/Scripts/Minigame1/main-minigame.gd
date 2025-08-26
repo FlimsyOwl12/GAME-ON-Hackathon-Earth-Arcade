@@ -20,6 +20,8 @@ var click_stream = preload("res://Assets/SoundEffects/CLICKMenu.mp3")
 @onready var times_up_board = $TimesUpBoard
 @onready var click_start_sfx_player = $StartGameBoard/MarginContainer/TextureRect/StartGameButton/StartGameButtonClickSoundEffect
 @onready var click_times_up_sfx_player = $TimesUpBoard/MarginContainer/TextureRect/TimesUpButton/TimesUpButtonClickSoundEffect
+@onready var anim_player_in = $FadeIn/AnimationPlayer 
+@onready var anim_player_out = $FadeOut/AnimationPlayer
 
 # Signals from child hoops
 func _ready():
@@ -44,9 +46,13 @@ func _ready():
 	times_up_board.visible = false
 	times_up_button.visible = false
 
+	anim_player_in.process_mode = Node.PROCESS_MODE_ALWAYS
+	anim_player_in.play("transition")
+		
+
 # Score Handling
 func _on_Hoop_scored():
-	score += 1
+	score += 1	
 	score_label.text = "Score: " + str(score)
 	goal_popup.text = "Good job! Correct Trashcan"
 	await get_tree().create_timer(1.5).timeout
@@ -93,7 +99,7 @@ func _on_start_game_button_pressed():
 	click_start_sfx_player.play()
 
 	score = 0
-	time_left = 120
+	time_left = 30
 	score_label.text = "Score: 0"
 	timer_label.text = str(int(time_left))
 	goal_popup.text = ""
@@ -122,8 +128,10 @@ func _on_continue_button_pressed():
 # Times Up Button (delayed transition)
 func _on_times_up_button_pressed():
 	click_times_up_sfx_player.play()
-	await get_tree().create_timer(0.5).timeout
-	var new_scene = preload("res://Scenes/cutscenes/cutscene1.tscn").instantiate()
+	anim_player_out.play("transition")
+	anim_player_out.process_mode = Node.PROCESS_MODE_ALWAYS
+	await get_tree().create_timer(3.0).timeout
+	var new_scene = preload("res://Scenes/cutscenes/cutscene2.tscn").instantiate()
 	get_tree().root.add_child(new_scene)
 	get_tree().current_scene.queue_free()
 	get_tree().current_scene = new_scene

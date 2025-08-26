@@ -1,8 +1,8 @@
-[gd_scene load_steps=38 format=3 uid="uid://bvgjc2k5tv8f2"]
+[gd_scene load_steps=44 format=3 uid="uid://bvgjc2k5tv8f2"]
 
 [ext_resource type="Texture2D" uid="uid://c8aoso7hi3p35" path="res://Assets/PixelArtAssets/Minigame1 Assets/Placeholder.png" id="1_770w0"]
-[ext_resource type="Script" uid="uid://w5v46oq5aeqw" path="res://Assets/Scripts/main-minigame.gd" id="1_wq1rt"]
-[ext_resource type="Script" path="res://Assets/Scripts/maincharacter.gd" id="2_7dw7j"]
+[ext_resource type="Script" uid="uid://w5v46oq5aeqw" path="res://Assets/Scripts/Minigame1/main-minigame.gd" id="1_wq1rt"]
+[ext_resource type="Script" uid="uid://dg84m2wach8bh" path="res://Assets/Scripts/Minigame1/maincharacter.gd" id="2_7dw7j"]
 [ext_resource type="Texture2D" uid="uid://dhv7ppbcw2hxs" path="res://Assets/PixelArtAssets/Minigame1 Assets/GAME 1 BG.png" id="2_8jner"]
 [ext_resource type="Texture2D" uid="uid://bfae6cf8wfkja" path="res://Assets/PixelArtAssets/Minigame1 Assets/Relaxed.png" id="2_mamnj"]
 [ext_resource type="Texture2D" uid="uid://ddeyqaayp2xh4" path="res://Assets/PixelArtAssets/Minigame1 Assets/Throw body.png" id="3_vovbx"]
@@ -10,13 +10,13 @@
 [ext_resource type="Texture2D" uid="uid://b6ajkp32njt7b" path="res://Assets/PixelArtAssets/Minigame1 Assets/Hold.png" id="4_lp0bk"]
 [ext_resource type="Texture2D" uid="uid://cchkgui4itcwh" path="res://Assets/PixelArtAssets/Minigame1 Assets/Ready.png" id="5_e8iw6"]
 [ext_resource type="Texture2D" uid="uid://bom5spwi3g8mg" path="res://Assets/PixelArtAssets/Minigame1 Assets/Throw.png" id="6_uqgsb"]
-[ext_resource type="Script" path="res://Assets/Scripts/AreaNon-Bio.gd" id="10_8jner"]
+[ext_resource type="Script" uid="uid://joalmfwdkqgs" path="res://Assets/Scripts/Minigame1/AreaNon-Bio.gd" id="10_8jner"]
 [ext_resource type="Texture2D" uid="uid://b3odco48r7fja" path="res://Assets/PixelArtAssets/Minigame1 Assets/Non-Biodegradable.png" id="11_nrv47"]
 [ext_resource type="Texture2D" uid="uid://c84oxm8gtjwbr" path="res://Assets/PixelArtAssets/Minigame1 Assets/TimesUpBoard.png" id="12_35g86"]
-[ext_resource type="Script" path="res://Assets/Scripts/Area-Bio.gd" id="12_teprs"]
+[ext_resource type="Script" uid="uid://d1vifxvlqf25n" path="res://Assets/Scripts/Minigame1/Area-Bio.gd" id="12_teprs"]
 [ext_resource type="Texture2D" uid="uid://bqgprviwk427n" path="res://Assets/PixelArtAssets/Minigame1 Assets/Biodegrable.png" id="13_35g86"]
 [ext_resource type="FontFile" uid="uid://c147if7tplg4j" path="res://Assets/Fonts/ARCADECLASSIC.TTF" id="13_ii2c5"]
-[ext_resource type="Script" path="res://Assets/Scripts/Area-Recyclable.gd" id="14_ii2c5"]
+[ext_resource type="Script" uid="uid://b7esox7orlhk0" path="res://Assets/Scripts/Minigame1/Area-Recyclable.gd" id="14_ii2c5"]
 [ext_resource type="Texture2D" uid="uid://bu26jl1i1js6b" path="res://Assets/PixelArtAssets/Minigame1 Assets/MyNormalTimesUpButton.png" id="14_s3r6w"]
 [ext_resource type="Texture2D" uid="uid://dmbxh152j54t" path="res://Assets/PixelArtAssets/Minigame1 Assets/MyPressedTimesUpButton.png" id="15_s0p2d"]
 [ext_resource type="Texture2D" uid="uid://wm7u7c1jwunn" path="res://Assets/PixelArtAssets/Minigame1 Assets/Recylable.png" id="15_s3r6w"]
@@ -105,6 +105,128 @@ atlas = ExtResource("14_s3r6w")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_3pawu"]
 atlas = ExtResource("15_s0p2d")
+
+[sub_resource type="Animation" id="Animation_shiou"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_pvwyg"]
+resource_name = "transition"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_vmhu5"]
+_data = {
+&"RESET": SubResource("Animation_shiou"),
+&"transition": SubResource("Animation_pvwyg")
+}
+
+[sub_resource type="Animation" id="Animation_0mh0k"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_vmhu5"]
+resource_name = "transition"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ft58"]
+_data = {
+&"RESET": SubResource("Animation_0mh0k"),
+&"transition": SubResource("Animation_vmhu5")
+}
 
 [node name="Minigame1" type="Node2D"]
 script = ExtResource("1_wq1rt")
@@ -201,7 +323,7 @@ shape = SubResource("RectangleShape2D_s0p2d")
 
 [node name="Collision Hitbox" type="StaticBody2D" parent="."]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision Hitbox"]
+[node name="Hitbox Floor" type="CollisionShape2D" parent="Collision Hitbox"]
 position = Vector2(576, 525)
 shape = SubResource("RectangleShape2D_5mrbq")
 
@@ -365,6 +487,40 @@ texture_pressed = SubResource("AtlasTexture_3pawu")
 
 [node name="TimesUpButtonClickSoundEffect" type="AudioStreamPlayer" parent="TimesUpBoard/MarginContainer/TextureRect/TimesUpButton"]
 stream = ExtResource("21_ii2c5")
+
+[node name="FadeIn" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="FadeIn"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeIn"]
+root_node = NodePath("../ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_vmhu5")
+}
+autoplay = "transition"
+
+[node name="FadeOut" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="FadeOut"]
+modulate = Color(0, 0, 0, 0)
+top_level = true
+offset_right = 1152.0
+offset_bottom = 648.0
+mouse_filter = 2
+color = Color(0, 0, 0, 1)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeOut"]
+root_node = NodePath("../ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_7ft58")
+}
 
 [connection signal="pressed" from="StartGameBoard/MarginContainer/TextureRect/StartGameButton" to="." method="_on_start_game_button_pressed"]
 [connection signal="pressed" from="TimesUpBoard/MarginContainer/TextureRect/TimesUpButton" to="." method="_on_times_up_button_pressed"]

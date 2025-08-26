@@ -1,13 +1,13 @@
-[gd_scene load_steps=15 format=3 uid="uid://rfj35l1jm5me"]
+[gd_scene load_steps=15 format=3 uid="uid://bfeno0sxp7js6"]
 
-[ext_resource type="Script" uid="uid://don4vc4t01atq" path="res://Assets/Scripts/Cutscenes/cutscene1_script.gd" id="1_2887s"]
-[ext_resource type="Texture2D" uid="uid://cb8kpxp0aev06" path="res://Assets/PixelArtAssets/Cutscene Assets/CutsceneBG.png" id="1_i2wuq"]
-[ext_resource type="Texture2D" uid="uid://dtkjjhkbsii6w" path="res://Assets/PixelArtAssets/Earth1.png" id="2_p0wsn"]
-[ext_resource type="Texture2D" uid="uid://ywp1yw6p2dil" path="res://Assets/PixelArtAssets/Cutscene Assets/Mawkie-Mascot.png" id="3_0mh0k"]
-[ext_resource type="Script" uid="uid://fnv5ilq36ayc" path="res://Assets/Scripts/Cutscenes/dialogue_cutscene1_node.gd" id="4_0mh0k"]
-[ext_resource type="Script" uid="uid://b7x2venitjt2g" path="res://Assets/Scripts/Cutscenes/Cutscene1-Earth.gd" id="4_vmhu5"]
-[ext_resource type="Texture2D" uid="uid://dh4s7ra8tdq3n" path="res://Assets/PixelArtAssets/Cutscene Assets/DialougeCutscene.png" id="6_vmhu5"]
-[ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/PixelArtAssets/BoldPixels1.4.ttf" id="7_vmhu5"]
+[ext_resource type="Texture2D" uid="uid://cb8kpxp0aev06" path="res://Assets/PixelArtAssets/Cutscene Assets/CutsceneBG.png" id="1_xmfbb"]
+[ext_resource type="Script" uid="uid://xl2dv2qap7vg" path="res://Assets/Scripts/Cutscenes/cutscene_2.gd" id="1_xty6g"]
+[ext_resource type="Texture2D" uid="uid://ywp1yw6p2dil" path="res://Assets/PixelArtAssets/Cutscene Assets/Mawkie-Mascot.png" id="3_g8qd0"]
+[ext_resource type="Script" uid="uid://b7x2venitjt2g" path="res://Assets/Scripts/Cutscenes/Cutscene1-Earth.gd" id="5_si7kr"]
+[ext_resource type="Script" uid="uid://cmqlqdffte7d4" path="res://Assets/Scripts/Cutscenes/dialogue_cutscene2_node.gd" id="6_n4fbh"]
+[ext_resource type="Texture2D" uid="uid://dh4s7ra8tdq3n" path="res://Assets/PixelArtAssets/Cutscene Assets/DialougeCutscene.png" id="7_u32jc"]
+[ext_resource type="Texture2D" uid="uid://b25u048xoaxn7" path="res://Assets/PixelArtAssets/Earth2.png" id="7_xty6g"]
+[ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/PixelArtAssets/BoldPixels1.4.ttf" id="8_w1je1"]
 
 [sub_resource type="Animation" id="Animation_shiou"]
 length = 0.001
@@ -46,7 +46,7 @@ tracks/0/path = NodePath(".:modulate:a")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(-1, 3),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [1.0, Color(0, 0, 0, 0)]
@@ -58,7 +58,7 @@ tracks/1/path = NodePath(".:color")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(-1, 3),
+"times": PackedFloat32Array(0, 3),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
@@ -131,20 +131,20 @@ _data = {
 &"transition": SubResource("Animation_vmhu5")
 }
 
-[node name="Cutscene1" type="Node2D"]
-script = ExtResource("1_2887s")
+[node name="Cutscene2" type="Node2D"]
+script = ExtResource("1_xty6g")
 
 [node name="CutsceneBg" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(577, 354)
 scale = Vector2(1.2, 1.2)
-texture = ExtResource("1_i2wuq")
+texture = ExtResource("1_xmfbb")
 
 [node name="Mawkie-mascot" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(939, 222)
 scale = Vector2(0.24, 0.24)
-texture = ExtResource("3_0mh0k")
+texture = ExtResource("3_g8qd0")
 flip_h = true
 
 [node name="FadeIn" type="CanvasLayer" parent="."]
@@ -180,14 +180,14 @@ libraries = {
 &"": SubResource("AnimationLibrary_7ft58")
 }
 
-[node name="DialogueNode1" type="Node2D" parent="."]
-script = ExtResource("4_0mh0k")
+[node name="DialogueNode2" type="Node2D" parent="."]
+script = ExtResource("6_n4fbh")
 
-[node name="Sprite2D" type="Sprite2D" parent="DialogueNode1"]
+[node name="Sprite2D" type="Sprite2D" parent="DialogueNode2"]
 position = Vector2(605, 478)
-texture = ExtResource("6_vmhu5")
+texture = ExtResource("7_u32jc")
 
-[node name="DialogueLabel1" type="RichTextLabel" parent="DialogueNode1"]
+[node name="DialogueLabel2" type="RichTextLabel" parent="DialogueNode2"]
 offset_left = 138.0
 offset_top = 413.0
 offset_right = 947.85
@@ -195,11 +195,11 @@ offset_bottom = 569.04
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 12
 theme_override_constants/shadow_outline_size = 10
-theme_override_fonts/normal_font = ExtResource("7_vmhu5")
-theme_override_fonts/mono_font = ExtResource("7_vmhu5")
-theme_override_fonts/italics_font = ExtResource("7_vmhu5")
-theme_override_fonts/bold_italics_font = ExtResource("7_vmhu5")
-theme_override_fonts/bold_font = ExtResource("7_vmhu5")
+theme_override_fonts/normal_font = ExtResource("8_w1je1")
+theme_override_fonts/mono_font = ExtResource("8_w1je1")
+theme_override_fonts/italics_font = ExtResource("8_w1je1")
+theme_override_fonts/bold_italics_font = ExtResource("8_w1je1")
+theme_override_fonts/bold_font = ExtResource("8_w1je1")
 theme_override_font_sizes/bold_italics_font_size = 32
 theme_override_font_sizes/italics_font_size = 32
 theme_override_font_sizes/mono_font_size = 32
@@ -207,8 +207,8 @@ theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 32
 metadata/_edit_use_anchors_ = true
 
-[node name="Earth1" type="Sprite2D" parent="DialogueNode1"]
+[node name="Earth1" type="Sprite2D" parent="DialogueNode2"]
 position = Vector2(181, 182)
 scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_p0wsn")
-script = ExtResource("4_vmhu5")
+texture = ExtResource("7_xty6g")
+script = ExtResource("5_si7kr")
