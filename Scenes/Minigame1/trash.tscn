@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://c3kbw60lvix8s"]
 
-[ext_resource type="Script" uid="uid://dqqvmggh6q6rx" path="res://Assets/Scripts/trash.gd" id="1_6w7be"]
+[ext_resource type="Script" uid="uid://dqqvmggh6q6rx" path="res://Assets/Scripts/Minigame1/trash.gd" id="1_6w7be"]
 [ext_resource type="Texture2D" uid="uid://ckfcj1p4pofe7" path="res://Assets/PixelArtAssets/Minigame1 Assets/apple2.png" id="2_vcbs1"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_6w7be"]
