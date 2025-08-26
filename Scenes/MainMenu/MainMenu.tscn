@@ -1,20 +1,11 @@
-[gd_scene load_steps=34 format=3 uid="uid://3yt3n0n3h1x7"]
+[gd_scene load_steps=38 format=3 uid="uid://3yt3n0n3h1x7"]
 
-<<<<<<< HEAD
 [ext_resource type="Script" uid="uid://cpb63otx13cxm" path="res://Scripts/MainMenuScript.gd" id="1_xrxl6"]
+[ext_resource type="AudioStream" uid="uid://dbsft6mm6qnnf" path="res://Assets/BackgroundMusic/RetroBGMusic.ogg" id="2_wviaj"]
 [ext_resource type="Texture2D" uid="uid://chmnkjwwqjjbb" path="res://Assets/PixelArtAssets/MainMenu Assets/MainMenuBackground.png" id="3_trxxf"]
 [ext_resource type="Texture2D" uid="uid://dtkjjhkbsii6w" path="res://Assets/PixelArtAssets/MainMenu Assets/Earth1.png" id="4_glntp"]
-[ext_resource type="Script" uid="uid://7x1yb4w5wapr" path="res://Scripts/Earth_Progressive_Rotation.gd" id="5_e4dwj"]
 [ext_resource type="Texture2D" uid="uid://be2qu6v3mv5eu" path="res://Assets/PixelArtAssets/MainMenu Assets/ExitButton.PNG" id="6_0k300"]
 [ext_resource type="Texture2D" uid="uid://cdg0eby3gkqob" path="res://Assets/PixelArtAssets/MainMenu Assets/ExitButtonPressed.PNG" id="7_g56io"]
-=======
-[ext_resource type="Script" uid="uid://cpb63otx13cxm" path="res://Assets/Scripts/MainMenu/MainMenuScript.gd" id="1_xrxl6"]
-[ext_resource type="AudioStream" uid="uid://dbsft6mm6qnnf" path="res://Assets/BackgroundMusic/RetroBGMusic.ogg" id="2_wviaj"]
-[ext_resource type="Texture2D" uid="uid://chmnkjwwqjjbb" path="res://Assets/PixelArtAssets/MainMenuBackground.png" id="3_trxxf"]
-[ext_resource type="Texture2D" uid="uid://dtkjjhkbsii6w" path="res://Assets/PixelArtAssets/Earth1.png" id="4_glntp"]
-[ext_resource type="Texture2D" uid="uid://be2qu6v3mv5eu" path="res://Assets/PixelArtAssets/ExitButton.PNG" id="6_0k300"]
-[ext_resource type="Texture2D" uid="uid://cdg0eby3gkqob" path="res://Assets/PixelArtAssets/ExitButtonPressed.PNG" id="7_g56io"]
->>>>>>> origin/main
 [ext_resource type="FontFile" uid="uid://c147if7tplg4j" path="res://Assets/Fonts/ARCADECLASSIC.TTF" id="8_0kd7v"]
 [ext_resource type="AudioStream" uid="uid://ca1scusyma8yn" path="res://Assets/SoundEffects/CLICKMenu.mp3" id="9_xeoa6"]
 [ext_resource type="Texture2D" uid="uid://b8ow24k67j8k" path="res://Assets/PixelArtAssets/MainMenu Assets/OptionButton.PNG" id="10_cgdfw"]
@@ -116,6 +107,67 @@ region = Rect2(2, 4, 257, 257)
 atlas = ExtResource("18_rw3b1")
 region = Rect2(3, 2, 257, 257)
 
+[sub_resource type="Animation" id="Animation_cmo68"]
+resource_name = "FadeOut"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), 1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_5o35t"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("ColorRect:modulate:a")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_ahojg"]
+_data = {
+&"FadeOut": SubResource("Animation_cmo68"),
+&"RESET": SubResource("Animation_5o35t")
+}
+
 [node name="MainMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15
@@ -124,6 +176,9 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_xrxl6")
+
+[node name="AudioPlayer" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("2_wviaj")
 
 [node name="Background" type="Panel" parent="."]
 clip_children = 2
@@ -462,6 +517,23 @@ texture_pressed = ExtResource("24_v0wod")
 
 [node name="NoClickSound" type="AudioStreamPlayer" parent="ExitBoard/MarginContainerExitBoard/TextureRect/NO"]
 stream = ExtResource("9_xeoa6")
+
+[node name="FadeLayer" type="CanvasLayer" parent="."]
+
+[node name="ColorRect" type="ColorRect" parent="FadeLayer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -7.0
+offset_right = 4.66504
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="FadeOut" type="AnimationPlayer" parent="FadeLayer"]
+libraries = {
+&"": SubResource("AnimationLibrary_ahojg")
+}
 
 [connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="OPTION" to="." method="_on_option_pressed"]

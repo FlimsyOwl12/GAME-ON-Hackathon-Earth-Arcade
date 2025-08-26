@@ -1,14 +1,3 @@
-<<<<<<< HEAD
-[gd_scene load_steps=8 format=3 uid="uid://rfj35l1jm5me"]
-
-[ext_resource type="Script" uid="uid://don4vc4t01atq" path="res://Scripts/cutscene1_script.gd" id="1_2887s"]
-[ext_resource type="Texture2D" uid="uid://cb8kpxp0aev06" path="res://Assets/PixelArtAssets/MainMenu Assets/CutsceneBG.png" id="1_i2wuq"]
-[ext_resource type="Texture2D" uid="uid://dtkjjhkbsii6w" path="res://Assets/PixelArtAssets/MainMenu Assets/Earth1.png" id="2_p0wsn"]
-[ext_resource type="Script" uid="uid://7x1yb4w5wapr" path="res://Scripts/Earth_Progressive_Rotation.gd" id="3_titso"]
-[ext_resource type="Script" uid="uid://cmqlqdffte7d4" path="res://Scripts/dialogue_node.gd" id="5_shiou"]
-[ext_resource type="Texture2D" uid="uid://dh4s7ra8tdq3n" path="res://Assets/PixelArtAssets/MainMenu Assets/DialougeCutscene.png" id="6_vmhu5"]
-[ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/Fonts/BoldPixels1.4.ttf" id="7_vmhu5"]
-=======
 [gd_scene load_steps=15 format=3 uid="uid://rfj35l1jm5me"]
 
 [ext_resource type="Script" uid="uid://don4vc4t01atq" path="res://Assets/Scripts/Cutscenes/cutscene1_script.gd" id="1_2887s"]
@@ -80,7 +69,6 @@ _data = {
 &"RESET": SubResource("Animation_shiou"),
 &"transition": SubResource("Animation_pvwyg")
 }
->>>>>>> origin/main
 
 [sub_resource type="Animation" id="Animation_0mh0k"]
 length = 0.001
@@ -147,27 +135,11 @@ _data = {
 script = ExtResource("1_2887s")
 
 [node name="CutsceneBg" type="Sprite2D" parent="."]
-<<<<<<< HEAD
-position = Vector2(2, -3)
-scale = Vector2(1.21973, 1.14752)
-=======
 show_behind_parent = true
 position = Vector2(577, 354)
 scale = Vector2(1.2, 1.2)
->>>>>>> origin/main
 texture = ExtResource("1_i2wuq")
-centered = false
 
-<<<<<<< HEAD
-[node name="Earth1" type="Sprite2D" parent="."]
-position = Vector2(205, 174)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("2_p0wsn")
-script = ExtResource("3_titso")
-
-[node name="DialogueNode" type="Node2D" parent="."]
-script = ExtResource("5_shiou")
-=======
 [node name="Mawkie-mascot" type="Sprite2D" parent="."]
 show_behind_parent = true
 position = Vector2(939, 222)
@@ -193,7 +165,6 @@ libraries = {
 }
 
 [node name="FadeOut" type="CanvasLayer" parent="."]
->>>>>>> origin/main
 
 [node name="ColorRect" type="ColorRect" parent="FadeOut"]
 modulate = Color(0, 0, 0, 0)
