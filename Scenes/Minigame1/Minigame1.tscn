@@ -309,6 +309,30 @@ theme_override_font_sizes/font_size = 80
 text = "START THE GAME?"
 horizontal_alignment = 1
 
+[node name="Tutorial" type="Label" parent="StartGameBoard/MarginContainer/TextureRect"]
+offset_left = -363.0
+offset_top = -629.0
+offset_right = 41.0
+offset_bottom = -512.0
+scale = Vector2(0.795, 1.26)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("13_ii2c5")
+theme_override_font_sizes/font_size = 80
+text = "tutorial:"
+
+[node name="Instructions" type="Label" parent="StartGameBoard/MarginContainer/TextureRect"]
+offset_left = -360.719
+offset_top = -527.2
+offset_right = 43.2813
+offset_bottom = -410.2
+scale = Vector2(0.795, 1.26)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("13_ii2c5")
+theme_override_font_sizes/font_size = 80
+text = "1. hold spacebar to increase or decrease"
+
 [node name="StartGameButton" type="TextureButton" parent="StartGameBoard/MarginContainer/TextureRect"]
 layout_mode = 0
 offset_left = 274.698
@@ -323,7 +347,6 @@ texture_pressed = SubResource("AtlasTexture_3pawu")
 stream = ExtResource("21_ii2c5")
 
 [node name="TimesUpBoard" type="PanelContainer" parent="."]
-visible = false
 offset_left = 383.145
 offset_top = 212.34
 offset_right = 1186.15

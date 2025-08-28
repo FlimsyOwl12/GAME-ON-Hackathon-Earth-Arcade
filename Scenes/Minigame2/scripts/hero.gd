@@ -104,6 +104,8 @@ func _physics_process(delta: float) -> void:
 			# Stop the timer from going below zero
 			if time_remaining < 0:
 				time_remaining = 0
+				
+				
 			
 			timer_label.text = "Time Left: " + str(int(time_remaining))
 			
@@ -111,7 +113,7 @@ func _physics_process(delta: float) -> void:
 			if time_remaining <= 0:
 				current_phase = Phase.DONE
 				update_counter() # This will trigger the "Final Score" display
-				update_instructions()
+				update_instructions()	
 			
 		move_and_slide()
 
@@ -227,27 +229,23 @@ func update_counter():
 			counter_label.text = str(seeds_covered) + " / " + str(holes_needed) + " Holes Covered"
 		Phase.DONE:
 			# --- UPDATED SCORING LOGIC ---
-			# Only calculate the final score once
-			if start_time_msec != 0: 
-				# Calculate elapsed time in seconds
+			if start_time_msec != 0:
 				var time_taken_sec = (Time.get_ticks_msec() - start_time_msec) / 1000.0
-				
-				# Calculate final score (ensuring it can't go below zero)
 				var final_score = max(0, 101 - time_taken_sec)
-				
-				# Display the score as a whole number
 				counter_label.text = "Final Score: " + str(int(final_score))
-				
-				# Set start_time_msec to 0 to prevent this from running again
 				start_time_msec = 0
 
+				# 🔥 Tell the UI to show the TimesUpBoard
+				var ui = get_tree().current_scene.get_node("UI")
+				ui.show_times_up()
+
 	update_instructions()
-			
+
 # Add this new function to hero.gd
 func update_instructions():
 	match current_phase:
 		Phase.DIG:
-			instruction_label.text = "Press 'Q' or 'right click' to dig 10 holes!"
+			instruction_label.text = "Press 'Q' or 'left click' to dig 10 holes!"
 		Phase.PLANT:
 			instruction_label.text = "Stand on a hole and press 'E' or 'left click' to plant a seed!"
 		Phase.COVER:

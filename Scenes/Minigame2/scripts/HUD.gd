@@ -1,7 +1,7 @@
 extends CanvasLayer
 
 var pause_menu_scene = preload("res://Scenes/Minigame2/scenes/pause_menu.tscn") # Make sure this path is correct
-
+@onready var bullshit = $TimesUpBoard
 # This function is for the on-screen button
 func _on_pause_button_pressed():
 	# Check if the menu is already open before creating a new one
@@ -21,3 +21,16 @@ func _unhandled_input(event):
 		else:
 			# If it's not open, open it
 			_on_pause_button_pressed()
+			
+func _ready():
+	bullshit.visible = false
+
+# Show the TimesUpBoard (for example, when game ends)
+func show_times_up():
+	bullshit.visible = true
+
+# When the TimesUp button is pressed
+func _on_times_up_button_pressed() -> void:
+	# Example: hide the TimesUpBoard and go back to main menu
+	bullshit.visible = false
+	FadeManager.fade_and_change_scene("res://Scenes/MainMenu/MainMenu.tscn")
