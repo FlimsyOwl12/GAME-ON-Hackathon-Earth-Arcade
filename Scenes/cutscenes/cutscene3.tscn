@@ -1,0 +1,59 @@
+[gd_scene load_steps=9 format=3 uid="uid://1q82ng6lde73"]
+
+[ext_resource type="Script" uid="uid://dnghtti3dmhhl" path="res://Assets/Scripts/Cutscenes/cutscene_3.gd" id="1_yjumq"]
+[ext_resource type="Texture2D" uid="uid://cb8kpxp0aev06" path="res://Assets/PixelArtAssets/Cutscene Assets/CutsceneBG.png" id="2_6gmw8"]
+[ext_resource type="Texture2D" uid="uid://ywp1yw6p2dil" path="res://Assets/PixelArtAssets/Cutscene Assets/Mawkie-Mascot.png" id="3_qyu57"]
+[ext_resource type="Script" uid="uid://d4kyrmvtc46fm" path="res://Assets/Scripts/Cutscenes/dialogue_cutscene_3.gd" id="4_6gmw8"]
+[ext_resource type="Texture2D" uid="uid://b25u048xoaxn7" path="res://Assets/PixelArtAssets/Earth2.png" id="5_fhjea"]
+[ext_resource type="Script" uid="uid://b7x2venitjt2g" path="res://Assets/Scripts/Cutscenes/Cutscene1-Earth.gd" id="6_3dh75"]
+[ext_resource type="Texture2D" uid="uid://dh4s7ra8tdq3n" path="res://Assets/PixelArtAssets/Cutscene Assets/DialougeCutscene.png" id="7_romvd"]
+[ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/PixelArtAssets/BoldPixels1.4.ttf" id="8_yi5id"]
+
+[node name="Cutscene3" type="Node2D"]
+script = ExtResource("1_yjumq")
+
+[node name="CutsceneBg" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(577, 354)
+scale = Vector2(1.2, 1.2)
+texture = ExtResource("2_6gmw8")
+
+[node name="Mawkie-mascot" type="Sprite2D" parent="."]
+show_behind_parent = true
+position = Vector2(939, 222)
+scale = Vector2(0.24, 0.24)
+texture = ExtResource("3_qyu57")
+flip_h = true
+
+[node name="DialogueNode3" type="Node2D" parent="."]
+script = ExtResource("4_6gmw8")
+
+[node name="Earth1" type="Sprite2D" parent="DialogueNode3"]
+position = Vector2(181, 182)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("5_fhjea")
+script = ExtResource("6_3dh75")
+
+[node name="Sprite2D" type="Sprite2D" parent="DialogueNode3"]
+position = Vector2(605, 478)
+texture = ExtResource("7_romvd")
+
+[node name="DialogueLabel3" type="RichTextLabel" parent="DialogueNode3"]
+offset_left = 138.0
+offset_top = 413.0
+offset_right = 947.85
+offset_bottom = 569.04
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 12
+theme_override_constants/shadow_outline_size = 10
+theme_override_fonts/normal_font = ExtResource("8_yi5id")
+theme_override_fonts/mono_font = ExtResource("8_yi5id")
+theme_override_fonts/italics_font = ExtResource("8_yi5id")
+theme_override_fonts/bold_italics_font = ExtResource("8_yi5id")
+theme_override_fonts/bold_font = ExtResource("8_yi5id")
+theme_override_font_sizes/bold_italics_font_size = 32
+theme_override_font_sizes/italics_font_size = 32
+theme_override_font_sizes/mono_font_size = 32
+theme_override_font_sizes/normal_font_size = 32
+theme_override_font_sizes/bold_font_size = 32
+metadata/_edit_use_anchors_ = true

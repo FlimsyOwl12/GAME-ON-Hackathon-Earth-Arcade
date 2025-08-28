@@ -1,6 +1,7 @@
-[gd_scene load_steps=32 format=3 uid="uid://djxk74jrq7a6y"]
+[gd_scene load_steps=33 format=3 uid="uid://djxk74jrq7a6y"]
 
 [ext_resource type="Texture2D" uid="uid://b0x5ypmxvwyjn" path="res://Scenes/Minigame2/Background/combined_bg.png" id="1_3isst"]
+[ext_resource type="Script" uid="uid://do55324tux3sw" path="res://Assets/Scripts/Minigame2/minigame_2.gd" id="1_pqgay"]
 [ext_resource type="Texture2D" uid="uid://c8spxiurfwv81" path="res://Scenes/Minigame2/Free assets/Tiles/FarmLand_Tile.png" id="2_pqgay"]
 [ext_resource type="PackedScene" uid="uid://c7wlto2f3rbp1" path="res://Scenes/Minigame2/scenes/Hero.tscn" id="3_cmirq"]
 [ext_resource type="PackedScene" uid="uid://cwuyf0jsmgcqs" path="res://Scenes/Minigame2/scenes/DirtClump.tscn" id="4_ye8k6"]
@@ -241,6 +242,7 @@ shadow_color = Color(0, 0, 0, 0.819608)
 shadow_offset = Vector2(-2, 2)
 
 [node name="Game" type="Node2D"]
+script = ExtResource("1_pqgay")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 offset_right = 40.0
@@ -266,20 +268,19 @@ use_parent_material = true
 tile_set = SubResource("TileSet_qy1jj")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-visible = false
 
 [node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
-visible = false
 motion_mirroring = Vector2(460, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
-visible = false
 position = Vector2(4, -49)
 scale = Vector2(0.400174, 0.384259)
 
-[node name="player" parent="." node_paths=PackedStringArray("counter_label") instance=ExtResource("3_cmirq")]
+[node name="player" parent="." node_paths=PackedStringArray("instruction_label", "timer_label", "counter_label") instance=ExtResource("3_cmirq")]
 z_index = 2
 position = Vector2(-1, 8)
+instruction_label = NodePath("../UI/InstructionLabel")
+timer_label = NodePath("../UI/TimerLabel")
 counter_label = NodePath("../UI/Counter")
 dirt_scene = ExtResource("4_ye8k6")
 seed_scene = ExtResource("5_70sur")

@@ -5,8 +5,8 @@ const JUMP_VELOCITY = -200.0
 var gravity: float = 800.0
 
 
-@onready var instruction_label = $"../UI/InstructionLabel"
-@onready var timer_label = $"../UI/TimerLabel"
+@export var instruction_label: Label
+@export var timer_label = Timer
 @onready var animated_sprite = $AnimatedSprite2D
 @export var counter_label: Label
 

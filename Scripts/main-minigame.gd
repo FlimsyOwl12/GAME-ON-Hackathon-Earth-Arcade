@@ -7,6 +7,7 @@ var time_left: float = 0.0
 var game_started: bool = false
 var music_fade_triggered: bool = false
 var cursor_texture = preload("res://Assets/PixelArtAssets/Minigame1 Assets/Cursor-removebg-preview.png")
+@export var bullet_scene = preload("res://Scenes/Minigame1/trash.tscn")
 
 # Audio Stream
 var click_stream = preload("res://Assets/SoundEffects/CLICKMenu.mp3")
@@ -21,7 +22,7 @@ var minigame_music := preload("res://Assets/BackgroundMusic/KingLebron.ogg")
 @onready var modal_blocker = $ModalBlocker
 @onready var start_game_board = $StartGameBoard
 @onready var times_up_board = $TimesUpBoard
-
+@onready var trash = "res://Scenes/Minigame1/trash.tscn"
 # Audio Players
 @onready var click_start_sfx_player = $StartGameBoard/MarginContainer/TextureRect/StartGameButton/StartGameButtonClickSoundEffect
 @onready var click_times_up_sfx_player = $TimesUpBoard/MarginContainer/TextureRect/TimesUpButton/TimesUpButtonClickSoundEffect
@@ -156,7 +157,7 @@ func _on_times_up_button_pressed():
 	_pause_game(false)
 
 	Input.set_custom_mouse_cursor(null)
-	FadeManager.fade_and_change_scene("res://Scenes/MainMenu/MainMenu.tscn")
+	FadeManager.fade_and_change_scene("res://Scenes/cutscenes/cutscene2.tscn")
 
 # Utility: Pause Game
 func _pause_game(state: bool):

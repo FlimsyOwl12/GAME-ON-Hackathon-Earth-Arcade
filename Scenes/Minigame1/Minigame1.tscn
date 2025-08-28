@@ -1,7 +1,7 @@
 [gd_scene load_steps=38 format=3 uid="uid://bvgjc2k5tv8f2"]
 
 [ext_resource type="Texture2D" uid="uid://c8aoso7hi3p35" path="res://Assets/PixelArtAssets/Minigame1 Assets/Placeholder.png" id="1_770w0"]
-[ext_resource type="Script" uid="uid://w5v46oq5aeqw" path="res://Assets/Scripts/Minigame1/main-minigame.gd" id="1_wq1rt"]
+[ext_resource type="Script" uid="uid://w5v46oq5aeqw" path="res://Scripts/main-minigame.gd" id="1_wq1rt"]
 [ext_resource type="Script" uid="uid://dg84m2wach8bh" path="res://Scripts/maincharacter.gd" id="2_7dw7j"]
 [ext_resource type="Texture2D" uid="uid://dhv7ppbcw2hxs" path="res://Assets/PixelArtAssets/Minigame1 Assets/GAME 1 BG.png" id="2_8jner"]
 [ext_resource type="Texture2D" uid="uid://bfae6cf8wfkja" path="res://Assets/PixelArtAssets/Minigame1 Assets/Relaxed.png" id="2_mamnj"]
@@ -281,7 +281,6 @@ scale = Vector2(14.915, 14.915)
 color = Color(0, 0, 0, 0.796078)
 
 [node name="StartGameBoard" type="PanelContainer" parent="."]
-visible = false
 offset_left = 383.145
 offset_top = 212.34
 offset_right = 1186.15
