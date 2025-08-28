@@ -1,6 +1,6 @@
 extends Node2D
 
-@onready var dialogue_node = $DialogueNode
+@onready var dialogue_node = $DialogueNode1
 
 func _ready():
 	# Trigger a fade-in at the start of the cutscene

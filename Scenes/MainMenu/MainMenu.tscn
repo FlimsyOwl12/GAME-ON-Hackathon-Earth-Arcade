@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://3yt3n0n3h1x7"]
+[gd_scene load_steps=35 format=3 uid="uid://3yt3n0n3h1x7"]
 
 [ext_resource type="Script" uid="uid://cpb63otx13cxm" path="res://Scripts/MainMenuScript.gd" id="1_xrxl6"]
 [ext_resource type="AudioStream" uid="uid://dbsft6mm6qnnf" path="res://Assets/BackgroundMusic/RetroBGMusic.ogg" id="2_wviaj"]
@@ -106,67 +106,6 @@ region = Rect2(2, 4, 257, 257)
 [sub_resource type="AtlasTexture" id="AtlasTexture_e4du8"]
 atlas = ExtResource("18_rw3b1")
 region = Rect2(3, 2, 257, 257)
-
-[sub_resource type="Animation" id="Animation_cmo68"]
-resource_name = "FadeOut"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), 1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_5o35t"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("ColorRect:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("ColorRect:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_ahojg"]
-_data = {
-&"FadeOut": SubResource("Animation_cmo68"),
-&"RESET": SubResource("Animation_5o35t")
-}
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -327,7 +266,6 @@ region_enabled = true
 region_rect = Rect2(347.453, 71.4173, 318.581, 787.856)
 
 [node name="ModalBlocker" type="ColorRect" parent="."]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -337,7 +275,6 @@ grow_vertical = 2
 color = Color(0, 0, 0, 0.796078)
 
 [node name="OptionBoard" type="PanelContainer" parent="."]
-visible = false
 layout_mode = 0
 offset_left = 331.16
 offset_top = 171.045
@@ -517,23 +454,6 @@ texture_pressed = ExtResource("24_v0wod")
 
 [node name="NoClickSound" type="AudioStreamPlayer" parent="ExitBoard/MarginContainerExitBoard/TextureRect/NO"]
 stream = ExtResource("9_xeoa6")
-
-[node name="FadeLayer" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="FadeLayer"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -7.0
-offset_right = 4.66504
-grow_horizontal = 2
-grow_vertical = 2
-color = Color(0, 0, 0, 0)
-
-[node name="FadeOut" type="AnimationPlayer" parent="FadeLayer"]
-libraries = {
-&"": SubResource("AnimationLibrary_ahojg")
-}
 
 [connection signal="pressed" from="EXIT" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="OPTION" to="." method="_on_option_pressed"]

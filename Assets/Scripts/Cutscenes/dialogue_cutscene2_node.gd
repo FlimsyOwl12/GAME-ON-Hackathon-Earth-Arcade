@@ -4,27 +4,27 @@ extends Node2D
 @onready var earth: Sprite2D = $Earth1
 signal dialogue_finished
 var dialogues := [
-"Welcome back, how was your first task?
+" Welcome back, how was your first task?
 - <Leftclick to Continue>",
-"Oh you look to have done a great job on picking up those trash
+" Oh you look to have done a great job on picking up those trash
 - <Leftclick to Continue>",
-"With you're effort you helped cleaned up the world a tad bit
+" With you're effort you helped cleaned up the world a tad bit
 - <Leftclick to Continue>",
-"WAIT! LOOK AT IT
+" WAIT! LOOK AT IT
 - <Leftclick to Continue>",
-"THE EARTH IS IMPROVING!!!
+" THE EARTH IS IMPROVING!!!
 - <Leftclick to Continue>",
-"Great job!!! If you keep doing this we might actually heal the world!
+" Great job!!! If you keep doing this we might actually heal the world!
 - <Leftclick to Continue>",
-"How about it, i shouldn't let you stay here and waste time let's come on down and help the earth once more!
+" How about it, i shouldn't let you stay here and waste time let's come on down and help the earth once more!
 - <Leftclick to Continue>",
-"Now the next task should be straightforward again, let me grab my notes.... Ahh!
+" Now the next task should be straightforward again, let me grab my notes.... Ahh!
 - <Leftclick to Continue>",
-"There it is... So you're next task is to actually plant some more trees
+" There it is... So you're next task is to actually plant some more trees
 - <Leftclick to Continue>",
-"Sounds simple enough so lets head straight to planting!
+" Sounds simple enough so lets head straight to planting!
 - <Leftclick to Continue>",
-"Goodluck!!! I'll see you soon
+" Goodluck!!! I'll see you soon
 - <Leftclick to enter Minigame 2>"
 ]
 

@@ -1,7 +1,12 @@
 extends CanvasLayer
 
 @onready var anim_player: AnimationPlayer = $AnimationPlayer
+@onready var fade_rect: ColorRect = $ColorRect  # Assuming your fade overlay is a ColorRect
 var _target_scene: String = ""
+
+func _ready() -> void:
+	# Ensure the fade overlay doesn't block input
+	fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func fade_and_change_scene(path: String) -> void:
 	_target_scene = path
@@ -23,3 +28,4 @@ func _fade_in_next_frame() -> void:
 	await get_tree().process_frame
 	await get_tree().create_timer(0.1).timeout  # Give time for scene to initialize
 	fade_in_only()
+	

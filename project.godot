@@ -15,6 +15,12 @@ run/main_scene="uid://3yt3n0n3h1x7"
 config/features=PackedStringArray("4.4", "GL Compatibility")
 config/icon="res://icon.svg"
 
+[autoload]
+
+FadeManager="*res://Scripts/FadeManager.tscn"
+AudioManager="*res://Scripts/AudioManager.gd"
+Global="*res://Scripts/Global.gd"
+
 [display]
 
 window/stretch/mode="viewport"

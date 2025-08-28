@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://bfeno0sxp7js6"]
+[gd_scene load_steps=9 format=3 uid="uid://bfeno0sxp7js6"]
 
 [ext_resource type="Texture2D" uid="uid://cb8kpxp0aev06" path="res://Assets/PixelArtAssets/Cutscene Assets/CutsceneBG.png" id="1_xmfbb"]
 [ext_resource type="Script" uid="uid://xl2dv2qap7vg" path="res://Assets/Scripts/Cutscenes/cutscene_2.gd" id="1_xty6g"]
@@ -8,128 +8,6 @@
 [ext_resource type="Texture2D" uid="uid://dh4s7ra8tdq3n" path="res://Assets/PixelArtAssets/Cutscene Assets/DialougeCutscene.png" id="7_u32jc"]
 [ext_resource type="Texture2D" uid="uid://b25u048xoaxn7" path="res://Assets/PixelArtAssets/Earth2.png" id="7_xty6g"]
 [ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/PixelArtAssets/BoldPixels1.4.ttf" id="8_w1je1"]
-
-[sub_resource type="Animation" id="Animation_shiou"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [1.0]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="Animation" id="Animation_pvwyg"]
-resource_name = "transition"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:modulate:a")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [1.0, Color(0, 0, 0, 0)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:color")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_vmhu5"]
-_data = {
-&"RESET": SubResource("Animation_shiou"),
-&"transition": SubResource("Animation_pvwyg")
-}
-
-[sub_resource type="Animation" id="Animation_0mh0k"]
-length = 0.001
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0),
-"transitions": PackedFloat32Array(1),
-"update": 0,
-"values": [Color(0, 0, 0, 0)]
-}
-
-[sub_resource type="Animation" id="Animation_vmhu5"]
-resource_name = "transition"
-length = 3.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath(".:color")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath(".:modulate")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(0, 3),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
-}
-
-[sub_resource type="AnimationLibrary" id="AnimationLibrary_7ft58"]
-_data = {
-&"RESET": SubResource("Animation_0mh0k"),
-&"transition": SubResource("Animation_vmhu5")
-}
 
 [node name="Cutscene2" type="Node2D"]
 script = ExtResource("1_xty6g")
@@ -147,41 +25,14 @@ scale = Vector2(0.24, 0.24)
 texture = ExtResource("3_g8qd0")
 flip_h = true
 
-[node name="FadeIn" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="FadeIn"]
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeIn"]
-root_node = NodePath("../ColorRect")
-libraries = {
-&"": SubResource("AnimationLibrary_vmhu5")
-}
-
-[node name="FadeOut" type="CanvasLayer" parent="."]
-
-[node name="ColorRect" type="ColorRect" parent="FadeOut"]
-modulate = Color(0, 0, 0, 0)
-top_level = true
-offset_right = 1152.0
-offset_bottom = 648.0
-mouse_filter = 2
-color = Color(0, 0, 0, 1)
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="FadeOut"]
-root_node = NodePath("../ColorRect")
-libraries = {
-&"": SubResource("AnimationLibrary_7ft58")
-}
-
 [node name="DialogueNode2" type="Node2D" parent="."]
 script = ExtResource("6_n4fbh")
+
+[node name="Earth1" type="Sprite2D" parent="DialogueNode2"]
+position = Vector2(181, 182)
+scale = Vector2(0.5, 0.5)
+texture = ExtResource("7_xty6g")
+script = ExtResource("5_si7kr")
 
 [node name="Sprite2D" type="Sprite2D" parent="DialogueNode2"]
 position = Vector2(605, 478)
@@ -206,9 +57,3 @@ theme_override_font_sizes/mono_font_size = 32
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 32
 metadata/_edit_use_anchors_ = true
-
-[node name="Earth1" type="Sprite2D" parent="DialogueNode2"]
-position = Vector2(181, 182)
-scale = Vector2(0.5, 0.5)
-texture = ExtResource("7_xty6g")
-script = ExtResource("5_si7kr")

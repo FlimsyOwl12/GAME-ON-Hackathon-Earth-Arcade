@@ -1,24 +1,29 @@
 extends Node2D
 
-@onready var anim_player_in = $FadeIn/AnimationPlayer 
-@onready var anim_player_out = $FadeOut/AnimationPlayer
-@onready var dialogue_node = $DialogueNode2
+@onready var dialogue_node = $DialogueNode1
+var target_scene := "res://Scenes/Minigame1/Minigame1.tscn"
+var is_transitioning := false
 
 func _ready():
-	if anim_player_in:
-		print("Found AnimationPlayer")
-		anim_player_in.play("transition")
+	# Trigger global fade-in if needed
+	if FadeManager:
+		FadeManager.fade_in_only()
 	else:
-		print("AnimationPlayer not found!") #Debug Print
+		print("FadeManager not found — skipping fade-in.")
+
+	# Connect dialogue finished signal
 	if dialogue_node:
 		dialogue_node.dialogue_finished.connect(_on_dialogue_finished)
+
 func _on_dialogue_finished():
-	print("Dialogue finished! Trying FadeOut...")
-	if anim_player_out:
-		print("Found FadeOut Player, animations:", anim_player_out.get_animation_list())
-		anim_player_out.play("transition")	
-		
-		await get_tree().create_timer(3.0).timeout
-		get_tree().change_scene_to_file("res://Scenes/Minigame1/Minigame1.tscn")
+	if is_transitioning:
+		return
+
+	is_transitioning = true
+	print("Dialogue finished — triggering global fade-out and scene change.")
+
+	if FadeManager:
+		FadeManager.fade_and_change_scene(target_scene)
 	else:
-		print("FadeOut AnimationPlayer not found")
+		print("FadeManager not found — fallback to direct scene change.")
+		get_tree().change_scene_to_file(target_scene)

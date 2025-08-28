@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://t1bsgpdhd0yo"]
 
-[ext_resource type="Script" uid="uid://cd3lp0hvonon6" path="res://FadeManager.gd" id="1_7di5r"]
+[ext_resource type="Script" uid="uid://cd3lp0hvonon6" path="res://Scripts/FadeManager.gd" id="1_7di5r"]
 
 [sub_resource type="Animation" id="Animation_8pf6s"]
 resource_name = "FadeIn"
@@ -16,6 +16,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [Color(0, 0, 0, 1), Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.1, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [1.0, Color(0, 0, 0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_ma66e"]
@@ -33,6 +45,18 @@ tracks/0/keys = {
 "update": 0,
 "values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0.407843), 1.0]
+}
 
 [sub_resource type="Animation" id="Animation_mtp1p"]
 length = 0.001
@@ -47,6 +71,18 @@ tracks/0/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("ColorRect:modulate:a")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [1.0]
 }
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_3oiaq"]

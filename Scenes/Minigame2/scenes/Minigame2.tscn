@@ -1,7 +1,7 @@
 [gd_scene load_steps=32 format=3 uid="uid://djxk74jrq7a6y"]
 
-[ext_resource type="Texture2D" uid="uid://b0x5ypmxvwyjn" path="res://Assets/PixelArtAssets/Minigame2 Assets/Background/combined_bg.png" id="1_3isst"]
-[ext_resource type="Texture2D" uid="uid://c8spxiurfwv81" path="res://Assets/PixelArtAssets/Minigame2 Assets/Free assets/Tiles/FarmLand_Tile.png" id="2_pqgay"]
+[ext_resource type="Texture2D" uid="uid://b0x5ypmxvwyjn" path="res://Scenes/Minigame2/Background/combined_bg.png" id="1_3isst"]
+[ext_resource type="Texture2D" uid="uid://c8spxiurfwv81" path="res://Scenes/Minigame2/Free assets/Tiles/FarmLand_Tile.png" id="2_pqgay"]
 [ext_resource type="PackedScene" uid="uid://c7wlto2f3rbp1" path="res://Scenes/Minigame2/scenes/Hero.tscn" id="3_cmirq"]
 [ext_resource type="PackedScene" uid="uid://cwuyf0jsmgcqs" path="res://Scenes/Minigame2/scenes/DirtClump.tscn" id="4_ye8k6"]
 [ext_resource type="PackedScene" uid="uid://bbe7gsa4flmii" path="res://Scenes/Minigame2/scenes/seed.tscn" id="5_70sur"]
@@ -299,6 +299,7 @@ shape = SubResource("WorldBoundaryShape2D_400sg")
 shape = SubResource("WorldBoundaryShape2D_g4kob")
 
 [node name="UI" type="CanvasLayer" parent="."]
+layer = 2
 script = ExtResource("7_o4rqg")
 
 [node name="pause" type="TextureButton" parent="UI"]

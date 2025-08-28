@@ -18,6 +18,7 @@ extends Control
 # ExitBoard Buttons
 @onready var yes_button = $ExitBoard/MarginContainerExitBoard/TextureRect/YES
 @onready var no_button = $ExitBoard/MarginContainerExitBoard/TextureRect/NO
+@onready var return_button = $OptionBoard/MarginContainerOptionBoard/TextureRect/RETURN
 
 # SFX Players
 @onready var sfx_players = [
@@ -45,6 +46,7 @@ func _ready():
 	option_board.visible = false
 	exit_board.visible = false
 	modal_blocker.visible = false
+	modal_blocker.mouse_filter = Control.MOUSE_FILTER_IGNORE
 	print("Modal blocker and boards hidden.")
 
 	# Initialize sliders
@@ -56,6 +58,7 @@ func _ready():
 	music_slider.value_changed.connect(_on_music_slider_changed)
 	sfx_slider.value_changed.connect(_on_sfx_slider_changed)
 	sfx_slider.drag_ended.connect(_on_sfx_slider_drag_ended)
+
 
 	# Set initial volume levels
 	AudioManager.set_music_volume(music_slider.value, music_slider.max_value)
@@ -74,13 +77,9 @@ func _on_play_pressed():
 	if not modal_blocker.visible:
 		play_click.play()
 		print("Play button clicked — fading out music.")
-		
 		FadeManager.fade_and_change_scene("res://Scenes/cutscenes/cutscene1.tscn")
-		
 		await AudioManager.fade_out_music(-80.0, 2.0)
 		print("Music faded out. Transitioning to cutscene1.")
-
-		
 
 # Option button logic
 func _on_option_pressed():
@@ -137,3 +136,4 @@ func _on_sfx_slider_drag_ended(value_changed: bool) -> void:
 		AudioManager.apply_sfx_volume(option_click)
 		option_click.play()
 		print("SFX preview played.")
+		
