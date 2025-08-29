@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://rfj35l1jm5me"]
 
-[ext_resource type="Script" uid="uid://don4vc4t01atq" path="res://Scripts/cutscene1_script.gd" id="1_2887s"]
+[ext_resource type="Script" uid="uid://don4vc4t01atq" path="res://Assets/Scripts/Cutscenes/cutscene1_script.gd" id="1_2887s"]
 [ext_resource type="Texture2D" uid="uid://cb8kpxp0aev06" path="res://Assets/PixelArtAssets/Cutscene Assets/CutsceneBG.png" id="1_i2wuq"]
 [ext_resource type="Texture2D" uid="uid://dtkjjhkbsii6w" path="res://Assets/PixelArtAssets/Earth1.png" id="2_p0wsn"]
 [ext_resource type="Texture2D" uid="uid://ywp1yw6p2dil" path="res://Assets/PixelArtAssets/Cutscene Assets/Mawkie-Mascot.png" id="3_0mh0k"]

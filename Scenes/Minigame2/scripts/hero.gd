@@ -243,7 +243,7 @@ func show_times_up_ui() -> void:
 	AudioManager.set_music_volume(0, 2.0)
 
 func _on_times_up_button_pressed() -> void:
-	print("✅ Button clicked — transitioning scene")
+	print("Button clicked — transitioning scene")
 	if click_effect != null:
 		click_effect.play()
 

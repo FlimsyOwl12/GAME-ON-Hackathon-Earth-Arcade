@@ -1,5 +1,7 @@
 extends Node2D
 
+@onready var music_player = $AudioStreamPlayer2D
+
 @onready var dialogue_node = $DialogueNode2
 var target_scene := "res://Scenes/Minigame2/scenes/Minigame2.tscn"
 var is_transitioning := false
@@ -18,7 +20,12 @@ func _ready():
 func _on_dialogue_finished():
 	if is_transitioning:
 		return
-
+	
+	var music_tween := create_tween()
+	music_tween.set_trans(Tween.TRANS_LINEAR)
+	music_tween.set_ease(Tween.EASE_IN_OUT)
+	music_tween.tween_property(music_player, "volume_db", -80, 5.0)
+	
 	is_transitioning = true
 	print("Dialogue finished — triggering global fade-out and scene change.")
 

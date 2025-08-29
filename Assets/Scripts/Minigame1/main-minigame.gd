@@ -10,7 +10,7 @@ var cursor_texture = preload("res://Assets/PixelArtAssets/Minigame1 Assets/Curso
 
 # Audio Stream
 var click_stream = preload("res://Assets/SoundEffects/CLICKMenu.mp3")
-var minigame_music := preload("res://Assets/BackgroundMusic/KingLebron.ogg")
+var minigame_music := preload("res://Assets/BackgroundMusic/416-8-bit-chiptune-instrumental-for-games-339237.mp3")
 
 # UI Nodes
 @onready var timer_label = $TimerLabel
