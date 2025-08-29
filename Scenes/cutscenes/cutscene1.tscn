@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://rfj35l1jm5me"]
+[gd_scene load_steps=10 format=3 uid="uid://rfj35l1jm5me"]
 
 [ext_resource type="Script" uid="uid://don4vc4t01atq" path="res://Scripts/cutscene1_script.gd" id="1_2887s"]
 [ext_resource type="Texture2D" uid="uid://cb8kpxp0aev06" path="res://Assets/PixelArtAssets/Cutscene Assets/CutsceneBG.png" id="1_i2wuq"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" uid="uid://b7x2venitjt2g" path="res://Assets/Scripts/Cutscenes/Cutscene1-Earth.gd" id="4_vmhu5"]
 [ext_resource type="Texture2D" uid="uid://dh4s7ra8tdq3n" path="res://Assets/PixelArtAssets/Cutscene Assets/DialougeCutscene.png" id="6_vmhu5"]
 [ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/PixelArtAssets/BoldPixels1.4.ttf" id="7_vmhu5"]
+[ext_resource type="AudioStream" uid="uid://cqv40orb08k8t" path="res://Assets/BackgroundMusic/waiting-time-175800.mp3" id="9_7ft58"]
 
 [node name="Cutscene1" type="Node2D"]
 script = ExtResource("1_2887s")
@@ -57,3 +58,7 @@ theme_override_font_sizes/mono_font_size = 32
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 32
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_7ft58")
+autoplay = true

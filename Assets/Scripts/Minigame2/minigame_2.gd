@@ -6,7 +6,7 @@ var music_fade_triggered: bool = false
 
 var click_stream = preload("res://Assets/SoundEffects/CLICKMenu.mp3")
 
-var minigame_music := preload("C:/Users/JL/OneDrive/Documents/GitHub/GAME-ON-Hackathon-Earth-Arcade/Scenes/Minigame2/Sounds/G2_Music.mp3")
+var minigame_music := preload("res://Scenes/Minigame2/Sounds/G2_Music.mp3")
 # UI Nodes
 @onready var start_game_board := $UILayer/StartGameBoard
 @onready var play_button := $UILayer/StartGameBoard/TextureRect/StartGameButton

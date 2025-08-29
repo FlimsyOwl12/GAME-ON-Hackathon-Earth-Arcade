@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://bfeno0sxp7js6"]
+[gd_scene load_steps=10 format=3 uid="uid://bfeno0sxp7js6"]
 
 [ext_resource type="Texture2D" uid="uid://cb8kpxp0aev06" path="res://Assets/PixelArtAssets/Cutscene Assets/CutsceneBG.png" id="1_xmfbb"]
 [ext_resource type="Script" uid="uid://xl2dv2qap7vg" path="res://Assets/Scripts/Cutscenes/cutscene_2.gd" id="1_xty6g"]
@@ -8,6 +8,7 @@
 [ext_resource type="Texture2D" uid="uid://dh4s7ra8tdq3n" path="res://Assets/PixelArtAssets/Cutscene Assets/DialougeCutscene.png" id="7_u32jc"]
 [ext_resource type="Texture2D" uid="uid://b25u048xoaxn7" path="res://Assets/PixelArtAssets/Earth2.png" id="7_xty6g"]
 [ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/PixelArtAssets/BoldPixels1.4.ttf" id="8_w1je1"]
+[ext_resource type="AudioStream" uid="uid://cro4xjfjwdyc2" path="res://Assets/BackgroundMusic/pixel-party-218705.mp3" id="9_g8qd0"]
 
 [node name="Cutscene2" type="Node2D"]
 script = ExtResource("1_xty6g")
@@ -57,3 +58,7 @@ theme_override_font_sizes/mono_font_size = 32
 theme_override_font_sizes/normal_font_size = 32
 theme_override_font_sizes/bold_font_size = 32
 metadata/_edit_use_anchors_ = true
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("9_g8qd0")
+autoplay = true

@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://djxk74jrq7a6y"]
+[gd_scene load_steps=40 format=3 uid="uid://djxk74jrq7a6y"]
 
 [ext_resource type="Texture2D" uid="uid://b0x5ypmxvwyjn" path="res://Scenes/Minigame2/Background/combined_bg.png" id="1_3isst"]
 [ext_resource type="Script" uid="uid://do55324tux3sw" path="res://Assets/Scripts/Minigame2/minigame_2.gd" id="1_pqgay"]
@@ -7,8 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://cwuyf0jsmgcqs" path="res://Scenes/Minigame2/scenes/DirtClump.tscn" id="4_ye8k6"]
 [ext_resource type="PackedScene" uid="uid://bbe7gsa4flmii" path="res://Scenes/Minigame2/scenes/seed.tscn" id="5_70sur"]
 [ext_resource type="PackedScene" uid="uid://w4qu0whahsuh" path="res://Scenes/Minigame2/scenes/covered_clump.tscn" id="6_40kxc"]
-[ext_resource type="Texture2D" uid="uid://bt5677o2qeqam" path="res://Scenes/Minigame2/buttons/MyNormalReturnButton.png" id="8_ktos7"]
-[ext_resource type="Texture2D" uid="uid://pqh4j2s6h7kd" path="res://Scenes/Minigame2/buttons/MyPressedButton.png" id="9_htdbt"]
 [ext_resource type="FontFile" uid="uid://du38hsxxifgjr" path="res://Assets/PixelArtAssets/Minigame2 Assets/Fonts/GrapeSoda.ttf" id="10_mu3qu"]
 [ext_resource type="Texture2D" uid="uid://c84oxm8gtjwbr" path="res://Assets/PixelArtAssets/Minigame1 Assets/TimesUpBoard.png" id="13_o4rqg"]
 [ext_resource type="FontFile" uid="uid://c147if7tplg4j" path="res://Assets/Fonts/ARCADECLASSIC.TTF" id="14_ktos7"]
@@ -339,20 +337,6 @@ A - move left
 D - moveright
 Spacebar - jump"
 label_settings = SubResource("LabelSettings_3xj3m")
-
-[node name="pause" type="TextureButton" parent="UILayer/BlockableUI"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 971.48
-offset_top = 21.935
-offset_right = 1232.48
-offset_bottom = 284.935
-grow_horizontal = 0
-scale = Vector2(0.355, 0.349)
-texture_normal = ExtResource("8_ktos7")
-texture_pressed = ExtResource("9_htdbt")
 
 [node name="Counter" type="Label" parent="UILayer/BlockableUI"]
 top_level = true

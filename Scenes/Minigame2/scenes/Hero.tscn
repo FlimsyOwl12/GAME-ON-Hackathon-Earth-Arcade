@@ -92,8 +92,8 @@ radius = 6.40312
 script = ExtResource("1_3a4aj")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
-position = Vector2(-1, -13)
-scale = Vector2(0.266052, 0.193648)
+position = Vector2(-1, -19.1406)
+scale = Vector2(0.266052, 0.260758)
 sprite_frames = SubResource("SpriteFrames_nqwae")
 animation = &"idle"
 

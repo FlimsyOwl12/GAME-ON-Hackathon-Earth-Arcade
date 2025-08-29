@@ -6,9 +6,9 @@ signal dialogue_finished
 var dialogues := [
 	" Who goes there?
 	- <Left Click to Continue>",
-	" Oh it's another human, seemed surprised to see a talking cat? 😅
+	" Oh it's another human, seemed surprised to see a talking cat? :3
 	- <Left Click to Continue>",
-	" Don't be afraid i won't bite, 😄 
+	" Don't be afraid i won't bite, :D 
 	- <Left Click to Continue>",
 	" I'm Mawkie, the cat guide
 	- <Left Click to Continue>",
@@ -34,8 +34,7 @@ var dialogues := [
 	- <Left Click to Continue>",
 	" You sure look excited of course! Now about picking up the trash ill guide how you do it
 	- <Left Click to Continue>",
-	" The objective on your first mission again is to pick up the trash, you throw the trash towards
-	the trashbins
+	" The objective on your first mission again is to pick up the trash, you throw the trash towards the trashbins
 	- <Left Click to Continue>",
 	" Are you ready to save the world!
 	- <Left Click to Continue>", 
