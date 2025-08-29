@@ -6,6 +6,7 @@ var _target_scene: String = ""
 
 func _ready() -> void:
 	# Ensure the fade overlay doesn't block input
+	layer = 100
 	fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
 
 func fade_and_change_scene(path: String) -> void:

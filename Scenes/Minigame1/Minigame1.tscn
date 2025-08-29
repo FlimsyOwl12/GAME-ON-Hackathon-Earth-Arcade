@@ -310,6 +310,7 @@ text = "START THE GAME?"
 horizontal_alignment = 1
 
 [node name="Tutorial" type="Label" parent="StartGameBoard/MarginContainer/TextureRect"]
+layout_mode = 0
 offset_left = -363.0
 offset_top = -629.0
 offset_right = 41.0
@@ -322,6 +323,7 @@ theme_override_font_sizes/font_size = 80
 text = "tutorial:"
 
 [node name="Instructions" type="Label" parent="StartGameBoard/MarginContainer/TextureRect"]
+layout_mode = 0
 offset_left = -360.719
 offset_top = -527.2
 offset_right = 43.2813

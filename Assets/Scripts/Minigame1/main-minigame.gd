@@ -28,16 +28,23 @@ var minigame_music := preload("res://Assets/BackgroundMusic/KingLebron.ogg")
 
 func _ready():
 	print("Minigame1 scene is ready.")
-	Global.lock_input()  # Lock input at scene start
+	Global.lock_input()
 
+	# Show modal blocker immediately to cover screen during fade-in
 	modal_blocker.visible = true
+
+	# Hide all other modals to prevent flicker
+	start_game_board.visible = false
+	start_button.visible = false
+	times_up_board.visible = false
+	times_up_button.visible = false
 
 	# FadeManager setup
 	if FadeManager and FadeManager.has_node("ColorRect"):
 		var fade_rect := FadeManager.get_node("ColorRect") as ColorRect
 		if fade_rect:
 			fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			
+
 	await get_tree().process_frame
 	await get_tree().create_timer(0.1).timeout
 	FadeManager.fade_in_only()
@@ -61,17 +68,9 @@ func _ready():
 
 	Input.set_custom_mouse_cursor(cursor_texture)
 
-	# Debug visibility of key UI nodes
-	var ui_nodes = [timer_label, score_label, goal_popup, start_button, times_up_button, modal_blocker, start_game_board, times_up_board]
-	for node in ui_nodes:
-		if node:
-			node.visible = true
-			print("%s visible: %s" % [node.name, node.visible])
-
 	_pause_game(true)
 	_show_start_screen()
 
-# Score Handling
 func _on_Hoop_scored():
 	if Global.input_locked: return
 	score += 1
@@ -84,12 +83,10 @@ func _on_wrong():
 	score_label.text = "Score: %d" % score
 	goal_popup.text = "Oh no! Wrong Trashcan"
 
-# Trash Display
 func update_display_label():
 	if $DisplayTrash:
 		$DisplayTrash.text = current_trash.capitalize()
 
-# Timer
 func _process(delta):
 	if Global.input_locked or not game_started or get_tree().paused:
 		return
@@ -105,7 +102,6 @@ func _process(delta):
 	else:
 		game_over()
 
-# Game Over
 func game_over():
 	timer_label.text = ""
 	goal_popup.text = ""
@@ -115,7 +111,6 @@ func game_over():
 	_pause_game(true)
 	_show_times_up_screen()
 
-# Start Button
 func _on_start_game_button_pressed():
 	click_start_sfx_player.play()
 	await get_tree().create_timer(0.3).timeout
@@ -123,7 +118,7 @@ func _on_start_game_button_pressed():
 	_hide_all_modals()
 
 	score = 0
-	time_left = 10
+	time_left = 120
 	score_label.text = "Score: 0"
 	timer_label.text = str(int(time_left))
 	goal_popup.text = ""
@@ -135,7 +130,6 @@ func _on_start_game_button_pressed():
 	game_started = true
 	_pause_game(false)
 
-# Continue Button
 func _on_continue_button_pressed():
 	click_times_up_sfx_player.play()
 	await get_tree().create_timer(0.3).timeout
@@ -146,7 +140,6 @@ func _on_continue_button_pressed():
 	_pause_game(false)
 	_hide_all_modals()
 
-# Times Up Button
 func _on_times_up_button_pressed():
 	click_times_up_sfx_player.play()
 	await get_tree().create_timer(0.5).timeout
@@ -158,21 +151,16 @@ func _on_times_up_button_pressed():
 	Input.set_custom_mouse_cursor(null)
 	FadeManager.fade_and_change_scene("res://Scenes/cutscenes/cutscene2.tscn")
 
-# Utility: Pause Game
 func _pause_game(state: bool):
 	get_tree().paused = state
 	print("Game paused:", state)
 
-# Utility: Show Start Screen
 func _show_start_screen():
 	modal_blocker.visible = true
 	start_game_board.visible = true
 	start_button.visible = true
-	times_up_board.visible = false
-	times_up_button.visible = false
 
 	start_button.focus_mode = Control.FOCUS_NONE
-
 	if get_viewport().gui_get_focus_owner():
 		get_viewport().gui_get_focus_owner().release_focus()
 
@@ -182,21 +170,16 @@ func _show_times_up_screen():
 	modal_blocker.visible = true
 	times_up_board.visible = true
 	times_up_button.visible = true
-	start_game_board.visible = false
-	start_button.visible = false
 
 	times_up_button.focus_mode = Control.FOCUS_NONE
-
 	if get_viewport().gui_get_focus_owner():
 		get_viewport().gui_get_focus_owner().release_focus()
 
 	print("Times up screen shown.")
-	
-# Utility: Hide All Modals
+
 func _hide_all_modals():
 	modal_blocker.visible = false
 	start_game_board.visible = false
 	start_button.visible = false
 	times_up_board.visible = false
 	times_up_button.visible = false
-	print("All modals hidden.")

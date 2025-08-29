@@ -23,22 +23,24 @@ var minigame_music := preload("res://Assets/BackgroundMusic/KingLebron.ogg")
 @onready var start_game_board = $StartGameBoard
 @onready var times_up_board = $TimesUpBoard
 @onready var trash = "res://Scenes/Minigame1/trash.tscn"
+
 # Audio Players
 @onready var click_start_sfx_player = $StartGameBoard/MarginContainer/TextureRect/StartGameButton/StartGameButtonClickSoundEffect
 @onready var click_times_up_sfx_player = $TimesUpBoard/MarginContainer/TextureRect/TimesUpButton/TimesUpButtonClickSoundEffect
 
 func _ready():
 	print("Minigame1 scene is ready.")
-	Global.lock_input()  # Lock input at scene start
+	Global.lock_input()
 
-	modal_blocker.visible = true
+	_reset_ui()
+	_show_start_screen()
 
 	# FadeManager setup
 	if FadeManager and FadeManager.has_node("ColorRect"):
 		var fade_rect := FadeManager.get_node("ColorRect") as ColorRect
 		if fade_rect:
 			fade_rect.mouse_filter = Control.MOUSE_FILTER_IGNORE
-			
+
 	await get_tree().process_frame
 	await get_tree().create_timer(0.1).timeout
 	FadeManager.fade_in_only()
@@ -62,15 +64,7 @@ func _ready():
 
 	Input.set_custom_mouse_cursor(cursor_texture)
 
-	# Debug visibility of key UI nodes
-	var ui_nodes = [timer_label, score_label, goal_popup, start_button, times_up_button, modal_blocker, start_game_board, times_up_board]
-	for node in ui_nodes:
-		if node:
-			node.visible = true
-			print("%s visible: %s" % [node.name, node.visible])
-
 	_pause_game(true)
-	_show_start_screen()
 
 # Score Handling
 func _on_Hoop_scored():
@@ -164,40 +158,41 @@ func _pause_game(state: bool):
 	get_tree().paused = state
 	print("Game paused:", state)
 
-# Utility: Show Start Screen
-func _show_start_screen():
-	modal_blocker.visible = true
-	start_game_board.visible = true
-	start_button.visible = true
-	times_up_board.visible = false
-	times_up_button.visible = false
-
-	start_button.focus_mode = Control.FOCUS_NONE
-
-	if get_viewport().gui_get_focus_owner():
-		get_viewport().gui_get_focus_owner().release_focus()
-
-	print("Start screen shown.")
-
-func _show_times_up_screen():
-	modal_blocker.visible = true
-	times_up_board.visible = true
-	times_up_button.visible = true
-	start_game_board.visible = false
-	start_button.visible = false
-
-	times_up_button.focus_mode = Control.FOCUS_NONE
-
-	if get_viewport().gui_get_focus_owner():
-		get_viewport().gui_get_focus_owner().release_focus()
-
-	print("Times up screen shown.")
-	
-# Utility: Hide All Modals
-func _hide_all_modals():
+# Utility: Reset UI
+func _reset_ui():
 	modal_blocker.visible = false
 	start_game_board.visible = false
 	start_button.visible = false
 	times_up_board.visible = false
 	times_up_button.visible = false
+
+# Utility: Show Start Screen
+func _show_start_screen():
+	_reset_ui()
+	modal_blocker.visible = true
+	start_game_board.visible = true
+	start_button.visible = true
+
+	start_button.focus_mode = Control.FOCUS_NONE
+	if get_viewport().gui_get_focus_owner():
+		get_viewport().gui_get_focus_owner().release_focus()
+
+	print("Start screen shown.")
+
+# Utility: Show Times Up Screen
+func _show_times_up_screen():
+	_reset_ui()
+	modal_blocker.visible = true
+	times_up_board.visible = true
+	times_up_button.visible = true
+
+	times_up_button.focus_mode = Control.FOCUS_NONE
+	if get_viewport().gui_get_focus_owner():
+		get_viewport().gui_get_focus_owner().release_focus()
+
+	print("Times up screen shown.")
+
+# Utility: Hide All Modals
+func _hide_all_modals():
+	_reset_ui()
 	print("All modals hidden.")

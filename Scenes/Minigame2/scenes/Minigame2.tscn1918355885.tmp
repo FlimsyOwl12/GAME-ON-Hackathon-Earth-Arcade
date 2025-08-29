@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://djxk74jrq7a6y"]
+[gd_scene load_steps=41 format=3 uid="uid://djxk74jrq7a6y"]
 
 [ext_resource type="Texture2D" uid="uid://b0x5ypmxvwyjn" path="res://Scenes/Minigame2/Background/combined_bg.png" id="1_3isst"]
 [ext_resource type="Script" uid="uid://do55324tux3sw" path="res://Assets/Scripts/Minigame2/minigame_2.gd" id="1_pqgay"]
@@ -7,9 +7,11 @@
 [ext_resource type="PackedScene" uid="uid://cwuyf0jsmgcqs" path="res://Scenes/Minigame2/scenes/DirtClump.tscn" id="4_ye8k6"]
 [ext_resource type="PackedScene" uid="uid://bbe7gsa4flmii" path="res://Scenes/Minigame2/scenes/seed.tscn" id="5_70sur"]
 [ext_resource type="PackedScene" uid="uid://w4qu0whahsuh" path="res://Scenes/Minigame2/scenes/covered_clump.tscn" id="6_40kxc"]
+[ext_resource type="Script" uid="uid://beiw3c44x1qo" path="res://Scenes/Minigame2/scripts/HUD.gd" id="7_o4rqg"]
 [ext_resource type="Texture2D" uid="uid://bt5677o2qeqam" path="res://Scenes/Minigame2/buttons/MyNormalReturnButton.png" id="8_ktos7"]
 [ext_resource type="Texture2D" uid="uid://pqh4j2s6h7kd" path="res://Scenes/Minigame2/buttons/MyPressedButton.png" id="9_htdbt"]
 [ext_resource type="FontFile" uid="uid://du38hsxxifgjr" path="res://Assets/PixelArtAssets/Minigame2 Assets/Fonts/GrapeSoda.ttf" id="10_mu3qu"]
+[ext_resource type="AudioStream" uid="uid://dp105yh2gipni" path="res://Scenes/Minigame2/Sounds/G2_Music.mp3" id="11_jobeo"]
 [ext_resource type="Texture2D" uid="uid://c84oxm8gtjwbr" path="res://Assets/PixelArtAssets/Minigame1 Assets/TimesUpBoard.png" id="13_o4rqg"]
 [ext_resource type="FontFile" uid="uid://c147if7tplg4j" path="res://Assets/Fonts/ARCADECLASSIC.TTF" id="14_ktos7"]
 [ext_resource type="Texture2D" uid="uid://bu26jl1i1js6b" path="res://Assets/PixelArtAssets/Minigame1 Assets/MyNormalTimesUpButton.png" id="15_htdbt"]
@@ -215,13 +217,14 @@ distance = 20.0
 normal = Vector2(-1, 0)
 distance = -441.0
 
-[sub_resource type="LabelSettings" id="LabelSettings_3xj3m"]
-font = ExtResource("10_mu3qu")
-font_size = 25
-outline_color = Color(0, 0, 0, 1)
-shadow_size = 15
-shadow_color = Color(0, 0, 0, 0.819608)
-shadow_offset = Vector2(-2, 2)
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_o4rqg"]
+bg_color = Color(0.6, 0.6, 0.6, 0)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ktos7"]
+atlas = ExtResource("15_htdbt")
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_htdbt"]
+atlas = ExtResource("16_mu3qu")
 
 [sub_resource type="LabelSettings" id="LabelSettings_qy1jj"]
 font = ExtResource("10_mu3qu")
@@ -237,29 +240,20 @@ shadow_size = 13
 shadow_color = Color(0, 0, 0, 0.819608)
 shadow_offset = Vector2(-2, 2)
 
+[sub_resource type="LabelSettings" id="LabelSettings_3xj3m"]
+font = ExtResource("10_mu3qu")
+font_size = 25
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 15
+shadow_color = Color(0, 0, 0, 0.819608)
+shadow_offset = Vector2(-2, 2)
+
 [sub_resource type="LabelSettings" id="LabelSettings_mcffj"]
 font = ExtResource("10_mu3qu")
 font_size = 40
 shadow_size = 13
 shadow_color = Color(0, 0, 0, 0.819608)
 shadow_offset = Vector2(-2, 2)
-
-[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_70sur"]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_ktos7"]
-atlas = ExtResource("15_htdbt")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_htdbt"]
-atlas = ExtResource("16_mu3qu")
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_70sur"]
-bg_color = Color(0.6, 0.6, 0.6, 0)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_40kxc"]
-atlas = ExtResource("15_htdbt")
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_o4rqg"]
-atlas = ExtResource("16_mu3qu")
 
 [node name="Game" type="Node2D"]
 script = ExtResource("1_pqgay")
@@ -285,7 +279,6 @@ layer_0/tile_data = PackedInt32Array(131089, 65538, 1, 131090, 65538, 1, 131091,
 
 [node name="mid" type="TileMapLayer" parent="Map"]
 use_parent_material = true
-position = Vector2(375.8, 0)
 tile_set = SubResource("TileSet_qy1jj")
 
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
@@ -300,15 +293,15 @@ scale = Vector2(0.400174, 0.384259)
 [node name="player" parent="." node_paths=PackedStringArray("instruction_label", "timer_label", "counter_label") instance=ExtResource("3_cmirq")]
 z_index = 2
 position = Vector2(-1, 8)
-instruction_label = NodePath("../UILayer/BlockableUI/InstructionLabel")
-timer_label = NodePath("../UILayer/BlockableUI/TimerLabel")
-counter_label = NodePath("../UILayer/BlockableUI/Counter")
+instruction_label = NodePath("")
+timer_label = NodePath("")
+counter_label = NodePath("")
 dirt_scene = ExtResource("4_ye8k6")
 seed_scene = ExtResource("5_70sur")
 covered_clump_scene = ExtResource("6_40kxc")
 
 [node name="Camera2D" type="Camera2D" parent="player"]
-position = Vector2(0, -59.655)
+position = Vector2(0, -66)
 zoom = Vector2(4, 3)
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
@@ -320,16 +313,122 @@ shape = SubResource("WorldBoundaryShape2D_400sg")
 [node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
 shape = SubResource("WorldBoundaryShape2D_g4kob")
 
-[node name="UILayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="."]
+layer = 2
+script = ExtResource("7_o4rqg")
 
-[node name="BlockableUI" type="Control" parent="UILayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("11_jobeo")
+autoplay = true
+bus = &"Music"
 
-[node name="Controls" type="Label" parent="UILayer/BlockableUI"]
+[node name="ModalBlocker" type="ColorRect" parent="."]
+visible = false
+offset_right = 77.525
+offset_bottom = 43.515
+scale = Vector2(14.915, 14.915)
+color = Color(0, 0, 0, 0.796078)
+
+[node name="StartGameBoard" type="PanelContainer" parent="."]
+offset_left = 383.145
+offset_top = 212.34
+offset_right = 1186.15
+offset_bottom = 760.34
+scale = Vector2(0.48, 0.325)
+theme_override_styles/panel = SubResource("StyleBoxFlat_o4rqg")
+
+[node name="MarginContainer" type="MarginContainer" parent="StartGameBoard"]
+layout_mode = 2
+
+[node name="TextureRect" type="TextureRect" parent="StartGameBoard/MarginContainer"]
+layout_mode = 2
+texture = ExtResource("13_o4rqg")
+
+[node name="START THE GAME?" type="Label" parent="StartGameBoard/MarginContainer/TextureRect"]
 layout_mode = 0
+offset_left = 78.8646
+offset_top = 103.569
+offset_right = 886.865
+offset_bottom = 211.569
+scale = Vector2(0.795, 1.26)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("14_ktos7")
+theme_override_font_sizes/font_size = 80
+text = "START THE GAME?"
+horizontal_alignment = 1
+
+[node name="Tutorial" type="Label" parent="StartGameBoard/MarginContainer/TextureRect"]
+layout_mode = 0
+offset_left = -363.0
+offset_top = -629.0
+offset_right = 41.0
+offset_bottom = -512.0
+scale = Vector2(0.795, 1.26)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("14_ktos7")
+theme_override_font_sizes/font_size = 80
+text = "tutorial:"
+
+[node name="Instructions" type="Label" parent="StartGameBoard/MarginContainer/TextureRect"]
+layout_mode = 0
+offset_left = -360.719
+offset_top = -527.2
+offset_right = 43.2813
+offset_bottom = -410.2
+scale = Vector2(0.795, 1.26)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 15
+theme_override_fonts/font = ExtResource("14_ktos7")
+theme_override_font_sizes/font_size = 80
+text = "1. hold spacebar to increase or decrease"
+
+[node name="StartGameButton" type="TextureButton" parent="StartGameBoard/MarginContainer/TextureRect"]
+layout_mode = 0
+offset_left = 274.698
+offset_top = 260.646
+offset_right = 867.698
+offset_bottom = 528.646
+scale = Vector2(0.433, 0.567)
+texture_normal = SubResource("AtlasTexture_ktos7")
+texture_pressed = SubResource("AtlasTexture_htdbt")
+
+[node name="StartGameButtonClickSoundEffect" type="AudioStreamPlayer" parent="StartGameBoard/MarginContainer/TextureRect/StartGameButton"]
+stream = ExtResource("17_jobeo")
+
+[node name="pause" type="TextureButton" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -121.0
+offset_top = 44.0
+offset_right = 140.0
+offset_bottom = 307.0
+grow_horizontal = 0
+scale = Vector2(0.28, 0.28)
+texture_normal = ExtResource("8_ktos7")
+texture_pressed = ExtResource("9_htdbt")
+
+[node name="Counter" type="Label" parent="."]
+top_level = true
+offset_left = 74.0
+offset_top = 52.0
+offset_right = 265.0
+offset_bottom = 101.0
+theme_override_font_sizes/font_size = 35
+text = "Seeds: 0/15"
+label_settings = SubResource("LabelSettings_qy1jj")
+
+[node name="InstructionLabel" type="Label" parent="."]
+offset_left = 72.0
+offset_top = 125.0
+offset_right = 364.0
+offset_bottom = 233.0
+theme_override_font_sizes/font_size = 32
+label_settings = SubResource("LabelSettings_y5y3l")
+
+[node name="Controls" type="Label" parent="."]
 offset_left = 72.0
 offset_top = 174.0
 offset_right = 236.0
@@ -340,56 +439,7 @@ D - moveright
 Spacebar - jump"
 label_settings = SubResource("LabelSettings_3xj3m")
 
-[node name="pause" type="TextureButton" parent="UILayer/BlockableUI"]
-layout_mode = 1
-anchors_preset = 1
-anchor_left = 1.0
-anchor_right = 1.0
-offset_left = 971.48
-offset_top = 21.935
-offset_right = 1232.48
-offset_bottom = 284.935
-grow_horizontal = 0
-scale = Vector2(0.355, 0.349)
-texture_normal = ExtResource("8_ktos7")
-texture_pressed = ExtResource("9_htdbt")
-
-[node name="Counter" type="Label" parent="UILayer/BlockableUI"]
-top_level = true
-layout_mode = 0
-offset_left = 74.0
-offset_top = 52.0
-offset_right = 290.0
-offset_bottom = 103.0
-theme_override_font_sizes/font_size = 35
-text = "Seeds: 0/15"
-label_settings = SubResource("LabelSettings_qy1jj")
-
-[node name="Instructions" type="Label" parent="UILayer/BlockableUI"]
-visible = false
-layout_mode = 0
-offset_left = 210.0
-offset_top = 41.0
-offset_right = 1739.0
-offset_bottom = 158.0
-scale = Vector2(0.795, 1.26)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("14_ktos7")
-theme_override_font_sizes/font_size = 80
-text = "1. hold spacebar to increase or decrease"
-
-[node name="InstructionLabel" type="Label" parent="UILayer/BlockableUI"]
-layout_mode = 0
-offset_left = 72.0
-offset_top = 125.0
-offset_right = 364.0
-offset_bottom = 233.0
-theme_override_font_sizes/font_size = 32
-label_settings = SubResource("LabelSettings_y5y3l")
-
-[node name="TimerLabel" type="Label" parent="UILayer/BlockableUI"]
-layout_mode = 0
+[node name="TimerLabel" type="Label" parent="."]
 offset_left = 776.0
 offset_top = 63.0
 offset_right = 816.0
@@ -397,95 +447,4 @@ offset_bottom = 114.0
 theme_override_font_sizes/font_size = 50
 label_settings = SubResource("LabelSettings_mcffj")
 
-[node name="ModalBlocker" type="ColorRect" parent="UILayer"]
-offset_left = -3.0
-offset_top = -5.0
-offset_right = 308.0
-offset_bottom = 126.0
-scale = Vector2(3.72, 5.005)
-color = Color(0, 0, 0, 0.796078)
-
-[node name="StartGameBoard" type="PanelContainer" parent="UILayer"]
-visible = false
-offset_left = 326.27
-offset_top = 191.2
-offset_right = 1129.28
-offset_bottom = 739.2
-scale = Vector2(0.606, 0.439)
-size_flags_horizontal = 3
-size_flags_vertical = 3
-theme_override_styles/panel = SubResource("StyleBoxTexture_70sur")
-
-[node name="TextureRect" type="TextureRect" parent="UILayer/StartGameBoard"]
-layout_mode = 2
-texture = ExtResource("13_o4rqg")
-
-[node name="START THE GAME?" type="Label" parent="UILayer/StartGameBoard/TextureRect"]
-layout_mode = 2
-offset_left = 132.2
-offset_top = 110.0
-offset_right = 716.2
-offset_bottom = 218.0
-scale = Vector2(0.93, 1.028)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
-theme_override_fonts/font = ExtResource("14_ktos7")
-theme_override_font_sizes/font_size = 80
-text = "START THE GAME?"
-horizontal_alignment = 1
-
-[node name="StartGameButton" type="TextureButton" parent="UILayer/StartGameBoard/TextureRect"]
-layout_mode = 2
-offset_left = 266.615
-offset_top = 241.935
-offset_right = 859.615
-offset_bottom = 509.935
-scale = Vector2(0.45, 0.556)
-texture_normal = SubResource("AtlasTexture_ktos7")
-texture_pressed = SubResource("AtlasTexture_htdbt")
-
-[node name="StartGameButtonClickSoundEffect" type="AudioStreamPlayer" parent="UILayer/StartGameBoard/TextureRect/StartGameButton"]
-stream = ExtResource("17_jobeo")
-
-[node name="TimesUpBoard" type="PanelContainer" parent="UILayer"]
-visible = false
-offset_left = 383.145
-offset_top = 212.34
-offset_right = 1186.15
-offset_bottom = 760.34
-scale = Vector2(0.48, 0.325)
-theme_override_styles/panel = SubResource("StyleBoxFlat_70sur")
-
-[node name="TextureRect" type="TextureRect" parent="UILayer/TimesUpBoard"]
-layout_mode = 2
-texture = ExtResource("13_o4rqg")
-
-[node name="CONTINUE TO THE NEXT GAME" type="Label" parent="UILayer/TimesUpBoard/TextureRect"]
-layout_mode = 0
-offset_left = 78.8646
-offset_top = 140.646
-offset_right = 886.865
-offset_bottom = 209.646
-scale = Vector2(0.795, 1.26)
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 10
-theme_override_fonts/font = ExtResource("14_ktos7")
-theme_override_font_sizes/font_size = 67
-text = "CONTINUE TO THE NEXT GAME"
-horizontal_alignment = 1
-
-[node name="TimesUpButton" type="TextureButton" parent="UILayer/TimesUpBoard/TextureRect"]
-layout_mode = 0
-offset_left = 274.698
-offset_top = 260.646
-offset_right = 867.698
-offset_bottom = 528.646
-scale = Vector2(0.433, 0.567)
-texture_normal = SubResource("AtlasTexture_40kxc")
-texture_pressed = SubResource("AtlasTexture_o4rqg")
-
-[node name="TimesUpButtonClickSoundEffect" type="AudioStreamPlayer" parent="UILayer/TimesUpBoard/TextureRect/TimesUpButton"]
-stream = ExtResource("17_jobeo")
-
-[connection signal="pressed" from="UILayer/StartGameBoard/TextureRect/StartGameButton" to="." method="_on_start_game_button_pressed"]
-[connection signal="pressed" from="UILayer/TimesUpBoard/TextureRect/TimesUpButton" to="player" method="_on_times_up_button_pressed"]
+[connection signal="pressed" from="pause" to="UI" method="_on_pause_button_pressed"]

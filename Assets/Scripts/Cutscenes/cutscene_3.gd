@@ -1,7 +1,7 @@
 extends Node2D
 
 @onready var dialogue_node = $DialogueNode3
-var target_scene := "res://Scenes/Minigame2/scenes/Minigame2.tscn"
+var target_scene := "res://Scenes/MainMenu/MainMenu.tscn"
 var is_transitioning := false
 
 func _ready():
