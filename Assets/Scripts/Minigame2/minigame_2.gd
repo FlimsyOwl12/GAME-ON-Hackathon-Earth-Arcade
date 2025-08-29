@@ -55,6 +55,7 @@ func _ready() -> void:
 	
 func _on_start_game_button_pressed() -> void:
 	click_start_sfx_player.play()
+	await get_tree().create_timer(0.3).timeout
 	print("Start button pressed — starting game")
 	Global.unlock_input()
 	modal_blocker.visible = false
@@ -65,7 +66,7 @@ func _on_start_game_button_pressed() -> void:
 	pause_ui_logic(false)
 	pause_player(false)
 	
-	AudioManager.set_music_volume(100, 100)
+	AudioManager.set_music_volume(50, 100)
 	await AudioManager.play_music_stream(minigame_music, 2.0)
 
 func pause_ui_logic(pause: bool) -> void:   # Pause UI during fade in animation

@@ -69,6 +69,8 @@ func _ready():
 	Input.set_custom_mouse_cursor(cursor_texture)
 
 	_pause_game(true)
+
+	# Show start screen only after fade-in is complete
 	_show_start_screen()
 
 func _on_Hoop_scored():
@@ -76,12 +78,20 @@ func _on_Hoop_scored():
 	score += 1
 	score_label.text = "Score: %d" % score
 	goal_popup.text = "Good job! Correct Trashcan"
+	
+	await get_tree().create_timer(1.5).timeout
+	goal_popup.text = ""
+
 
 func _on_wrong():
 	if Global.input_locked: return
 	score = max(score - 1, 0)
 	score_label.text = "Score: %d" % score
 	goal_popup.text = "Oh no! Wrong Trashcan"
+	
+	await get_tree().create_timer(1.5).timeout
+	goal_popup.text = ""
+
 
 func update_display_label():
 	if $DisplayTrash:

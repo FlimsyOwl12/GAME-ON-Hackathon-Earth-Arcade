@@ -19,7 +19,7 @@ var gravity := 800.0
 @onready var times_up_button := get_node("/root/Game/UILayer/TimesUpBoard/TextureRect/TimesUpButton")
 @onready var modal_blocker := get_node("/root/Game/UILayer/ModalBlocker")
 
-@onready var click_effect := preload("C:/Users/JL/OneDrive/Documents/GitHub/GAME-ON-Hackathon-Earth-Arcade/Assets/SoundEffects/CLICKMenu.mp3")
+@onready var click_effect := get_node("/root/Game/UILayer/TimesUpBoard/TextureRect/TimesUpButton/TimesUpButtonClickSoundEffect")
 
 enum Phase { DIG, PLANT, COVER, DONE }
 var current_phase: Phase = Phase.DIG
@@ -35,6 +35,7 @@ func _ready() -> void:
 		push_error("times_up_board is null. Check node path.")
 	if times_up_button == null:
 		push_error("times_up_button is null. Check node path or type mismatch.")
+
 
 	start_time_msec = Time.get_ticks_msec()
 	update_counter()
@@ -243,4 +244,9 @@ func show_times_up_ui() -> void:
 
 func _on_times_up_button_pressed() -> void:
 	print("✅ Button clicked — transitioning scene")
+	if click_effect != null:
+		click_effect.play()
+
+	await get_tree().create_timer(0.3).timeout
+
 	FadeManager.fade_and_change_scene("res://Scenes/cutscenes/cutscene3.tscn")

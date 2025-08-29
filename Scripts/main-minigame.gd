@@ -118,7 +118,7 @@ func _on_start_game_button_pressed():
 	_hide_all_modals()
 
 	score = 0
-	time_left = 20
+	time_left = 120
 	score_label.text = "Score: 0"
 	timer_label.text = str(int(time_left))
 	goal_popup.text = ""

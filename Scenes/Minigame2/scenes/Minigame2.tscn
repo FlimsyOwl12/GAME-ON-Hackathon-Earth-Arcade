@@ -406,12 +406,11 @@ scale = Vector2(3.72, 5.005)
 color = Color(0, 0, 0, 0.796078)
 
 [node name="StartGameBoard" type="PanelContainer" parent="UILayer"]
-visible = false
-offset_left = 326.27
-offset_top = 191.2
-offset_right = 1129.28
-offset_bottom = 739.2
-scale = Vector2(0.606, 0.439)
+offset_left = 391.32
+offset_top = 205.205
+offset_right = 1194.33
+offset_bottom = 753.205
+scale = Vector2(0.5, 0.419)
 size_flags_horizontal = 3
 size_flags_vertical = 3
 theme_override_styles/panel = SubResource("StyleBoxTexture_70sur")
@@ -428,7 +427,7 @@ offset_right = 716.2
 offset_bottom = 218.0
 scale = Vector2(0.93, 1.028)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 15
+theme_override_constants/outline_size = 10
 theme_override_fonts/font = ExtResource("14_ktos7")
 theme_override_font_sizes/font_size = 80
 text = "START THE GAME?"
@@ -449,11 +448,11 @@ stream = ExtResource("17_jobeo")
 
 [node name="TimesUpBoard" type="PanelContainer" parent="UILayer"]
 visible = false
-offset_left = 383.145
+offset_left = 372.145
 offset_top = 212.34
-offset_right = 1186.15
+offset_right = 1175.15
 offset_bottom = 760.34
-scale = Vector2(0.48, 0.325)
+scale = Vector2(0.56, 0.405)
 theme_override_styles/panel = SubResource("StyleBoxFlat_70sur")
 
 [node name="TextureRect" type="TextureRect" parent="UILayer/TimesUpBoard"]
