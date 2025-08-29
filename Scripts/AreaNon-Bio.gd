@@ -3,7 +3,7 @@ extends Area2D
 signal scored
 signal wrong_trash
 
-@export var accepted_trash: Array[String] = []  # multiple trash types
+@export var accepted_trash: Array[String] = ["juicecarton"]  # multiple trash types
 
 func _ready():
 	body_entered.connect(_on_body_entered)

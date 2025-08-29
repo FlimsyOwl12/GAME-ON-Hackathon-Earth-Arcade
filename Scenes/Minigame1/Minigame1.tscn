@@ -1,6 +1,5 @@
 [gd_scene load_steps=38 format=3 uid="uid://bvgjc2k5tv8f2"]
 
-[ext_resource type="Texture2D" uid="uid://c8aoso7hi3p35" path="res://Assets/PixelArtAssets/Minigame1 Assets/Placeholder.png" id="1_770w0"]
 [ext_resource type="Script" uid="uid://w5v46oq5aeqw" path="res://Scripts/main-minigame.gd" id="1_wq1rt"]
 [ext_resource type="Script" uid="uid://dg84m2wach8bh" path="res://Scripts/maincharacter.gd" id="2_7dw7j"]
 [ext_resource type="Texture2D" uid="uid://dhv7ppbcw2hxs" path="res://Assets/PixelArtAssets/Minigame1 Assets/GAME 1 BG.png" id="2_8jner"]
@@ -9,6 +8,7 @@
 [ext_resource type="FontFile" uid="uid://j13h60holdji" path="res://Assets/PixelArtAssets/BoldPixels1.4.ttf" id="4_8jner"]
 [ext_resource type="Texture2D" uid="uid://b6ajkp32njt7b" path="res://Assets/PixelArtAssets/Minigame1 Assets/Hold.png" id="4_lp0bk"]
 [ext_resource type="Texture2D" uid="uid://cchkgui4itcwh" path="res://Assets/PixelArtAssets/Minigame1 Assets/Ready.png" id="5_e8iw6"]
+[ext_resource type="Texture2D" uid="uid://dv2bawht4xvqn" path="res://Assets/PixelArtAssets/Minigame1 Assets/PlaceholderBlue.png" id="5_s0p2d"]
 [ext_resource type="Texture2D" uid="uid://bom5spwi3g8mg" path="res://Assets/PixelArtAssets/Minigame1 Assets/Throw.png" id="6_uqgsb"]
 [ext_resource type="Script" uid="uid://joalmfwdkqgs" path="res://Scripts/AreaNon-Bio.gd" id="10_8jner"]
 [ext_resource type="Texture2D" uid="uid://b3odco48r7fja" path="res://Assets/PixelArtAssets/Minigame1 Assets/Non-Biodegradable.png" id="11_nrv47"]
@@ -129,15 +129,15 @@ offset_bottom = 64.0
 label_settings = SubResource("LabelSettings_wq1rt")
 
 [node name="Placeholder" type="Sprite2D" parent="CharacterBody2D"]
-position = Vector2(106, 106)
-scale = Vector2(0.683594, 0.701774)
-texture = ExtResource("1_770w0")
+position = Vector2(103, 106)
+scale = Vector2(1.46, 1.46)
+texture = ExtResource("5_s0p2d")
 
 [node name="ThrowPreview" type="TextureRect" parent="CharacterBody2D"]
-offset_left = 41.0
-offset_top = 35.0
-offset_right = 159.0
-offset_bottom = 151.0
+offset_left = 25.0
+offset_top = 26.0
+offset_right = 183.0
+offset_bottom = 187.0
 
 [node name="SpawnerNode" type="Node2D" parent="CharacterBody2D"]
 position = Vector2(236, 449)
@@ -311,10 +311,10 @@ horizontal_alignment = 1
 
 [node name="Tutorial" type="Label" parent="StartGameBoard/MarginContainer/TextureRect"]
 layout_mode = 0
-offset_left = -363.0
-offset_top = -629.0
-offset_right = 41.0
-offset_bottom = -512.0
+offset_left = -362.802
+offset_top = -681.046
+offset_right = 41.1979
+offset_bottom = -564.046
 scale = Vector2(0.795, 1.26)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
@@ -324,10 +324,10 @@ text = "tutorial:"
 
 [node name="Instructions" type="Label" parent="StartGameBoard/MarginContainer/TextureRect"]
 layout_mode = 0
-offset_left = -361.0
-offset_top = -527.0
-offset_right = 1550.0
-offset_bottom = -405.0
+offset_left = -369.052
+offset_top = -567.2
+offset_right = 1541.95
+offset_bottom = -132.2
 scale = Vector2(0.795, 1.26)
 theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
 theme_override_constants/outline_size = 15
@@ -337,7 +337,8 @@ text = "1. hold spacebar to increase or decrease the power
 the  charging bar would be your reference 
 2. Your cursor acts as a pointer for your angle of throw
 3. make sure you throw the trash into its right trash can
-4. you have two minutes to get as much points as you can"
+4. top left shows the trash, the color corrosponds to the trash bin 
+5. you have two minutes to get as much points as you can"
 
 [node name="StartGameButton" type="TextureButton" parent="StartGameBoard/MarginContainer/TextureRect"]
 layout_mode = 0

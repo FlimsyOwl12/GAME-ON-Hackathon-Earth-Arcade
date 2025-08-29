@@ -11,6 +11,7 @@ extends RigidBody2D
 	"can": "res://Assets/PixelArtAssets/Minigame1 Assets/can.png",
 	"paper": "res://Assets/PixelArtAssets/Minigame1 Assets/crumpled paper.png",
 	"bottle": "res://Assets/PixelArtAssets/Minigame1 Assets/bottle.png",
+	"juicecarton": "res://Assets/PixelArtAssets/Minigame1 Assets/JuiceCarton.png"
 
 }
 

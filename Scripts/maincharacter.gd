@@ -5,7 +5,7 @@ extends Node2D
 @export var max_speed = 1200
 @export var max_active_balls = 3
 @export var charge_rate = 500
-@export var trash_types = ["apple", "can", "paper", "can1", "apple2", "bottle"]
+@export var trash_types = ["apple", "can", "paper", "can1", "apple2", "bottle","juicecarton"]
 
 @onready var preview = $ThrowPreview
 @onready var spawner = $SpawnerNode
@@ -27,7 +27,24 @@ var trash_names = {
 	"can1": "Intact Can",
 	"paper": "Crumpled Paper",
 	"bottle": "Plastic Bottle",
+	"juicecarton": "Juice Carton"
 }
+var trash_category = {
+	"apple": "biodegradable",
+	"apple2": "biodegradable",
+	"can": "recyclable",
+	"can1": "recyclable",
+	"paper": "biodegradable",
+	"bottle": "recyclable",
+	"juicecarton:": "non_biodegradable"
+}
+
+var placeholders = {
+	"biodegradable": preload("res://Assets/PixelArtAssets/Minigame1 Assets/PlaceholderGreen.png"),
+	"recyclable": preload("res://Assets/PixelArtAssets/Minigame1 Assets/PlaceholderBlue.png"),
+	"non_biodegradable": preload("res://Assets/PixelArtAssets/Minigame1 Assets/PlaceholderBrown.png"),
+}
+
 
 func _ready():
 	pick_random_trash()
@@ -91,6 +108,8 @@ func pick_random_trash():
 func update_preview():
 	if preview == null:
 		return
+
+	# Pick the trash texture
 	var tex: Texture = null
 	match current_trash:
 		"apple": tex = load("res://Assets/PixelArtAssets/Minigame1 Assets/apple.png")
@@ -99,11 +118,19 @@ func update_preview():
 		"apple2": tex = load("res://Assets/PixelArtAssets/Minigame1 Assets/apple2.png")
 		"can1": tex = load("res://Assets/PixelArtAssets/Minigame1 Assets/can 1.png")
 		"bottle": tex = load("res://Assets/PixelArtAssets/Minigame1 Assets/bottle.png")
+		"juicecarton": tex = load("res://Assets/PixelArtAssets/Minigame1 Assets/JuiceCarton.png")
+
+	# Apply trash sprite
 	if tex:
 		if preview is Sprite2D:
 			preview.texture = tex
 		elif preview is TextureRect:
 			preview.texture = tex
+
+	# Apply category placeholder to background node
+	if $Placeholder:
+		var category = trash_category.get(current_trash, "non_biodegradable")
+		$Placeholder.texture = placeholders.get(category, null)
 
 func update_display_label():
 	if display_label:
