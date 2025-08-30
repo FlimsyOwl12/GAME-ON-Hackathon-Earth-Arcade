@@ -4,7 +4,7 @@
 
 ## Development Team Name: GruppTu
 
-## Team Members:##
+## Team Members:
 **Gilo, Janwel - Project Lead<br/>**
 **Andrada, Rey Jane - Full Stack Developer<br/>**
 **Arquesola, John Jessienel - Full Stack Developer<br/>**
