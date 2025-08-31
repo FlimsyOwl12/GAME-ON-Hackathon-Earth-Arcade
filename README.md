@@ -8,7 +8,7 @@
 **Gilo, Janwel - Project Lead<br/>**
 **Andrada, Rey Jane - Full Stack Developer<br/>**
 **Arquesola, John Jessienel - Full Stack Developer<br/>**
-**Baja, Riza May - Front End/Graphics Designer<br/>
+**Baja, Riza May - Front End/Graphics Designer<br/>**
 **Solis, Charleign Kim - Front End/Graphics Designer<br/>**
 
 ## Game Title: 
